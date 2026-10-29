@@ -55,13 +55,8 @@
 <section class="newsletter" aria-labelledby="nl-h">
 <h2 id="nl-h">Get price updates</h2>
 <p>One short email when prices change or new clubs are added. No spam.</p>
-<!-- TODO: wire this form to a newsletter provider (e.g. set action= to the provider's endpoint). It currently submits nowhere. -->
-<form class="nl-form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.nl-msg').hidden=false;">
-<label for="nl-email" class="sr-only">Email address</label>
-<input id="nl-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-<button type="submit">Sign up</button>
-<p class="nl-msg" hidden>Thanks! Sign-up isn’t live yet — this is a placeholder.</p>
-</form>
+<div class="nl-embed"><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="deb346d0-18cb-4841-9af7-22936ea0b6fc"></script></div>
+<noscript><p><a href="https://matthews-newsletter-1fa3a3.beehiiv.com/subscribe">Subscribe on beehiiv</a></p></noscript>
 </section>
 
 </main>
