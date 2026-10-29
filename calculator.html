@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Away day cost calculator – ticket, pint, pie &amp; train | Price of Football</title>
+<meta name="description" content="Work out what a Premier League away day costs: £30 away ticket, pint, pie, programme and your rail fare, using sourced prices for every ground.">
+<link rel="canonical" href="https://matthewallmark.github.io/Price-of-Football/calculator.html">
+<meta property="og:title" content="Away day cost calculator – ticket, pint, pie &amp; train | Price of Football">
+<meta property="og:description" content="Work out what a Premier League away day costs: £30 away ticket, pint, pie, programme and your rail fare, using sourced prices for every ground.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matthewallmark.github.io/Price-of-Football/calculator.html">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark">£</span> Price of Football</a>
+<nav aria-label="Main"><a href="index.html">Prices</a><a href="calculator.html">Away day calculator</a><a href="about.html">About & methodology</a></nav>
+</div></header>
+<main id="main" class="wrap">
+
+<h1>Away day cost calculator</h1>
+<p class="lede">Pick the ground you’re visiting. We fill in the £30 away ticket cap and that ground’s pint, pie and programme prices from our database — change any figure, add your train fare, and see the total.</p>
+<form id="calc" class="calc" onsubmit="return false">
+<div class="field full"><label for="club">Ground you’re visiting</label>
+<select id="club"><option value="">Choose a club…</option><option value="bournemouth">AFC Bournemouth – Vitality Stadium (Dean Court)</option><option value="arsenal">Arsenal – Emirates Stadium</option><option value="aston-villa">Aston Villa – Villa Park</option><option value="brentford">Brentford – Gtech Community Stadium</option><option value="brighton">Brighton &amp; Hove Albion – Amex Stadium (Falmer Stadium)</option><option value="chelsea">Chelsea – Stamford Bridge</option><option value="coventry-city">Coventry City – Coventry Building Society Arena</option><option value="crystal-palace">Crystal Palace – Selhurst Park</option><option value="everton">Everton – Hill Dickinson Stadium</option><option value="fulham">Fulham – Craven Cottage</option><option value="hull-city">Hull City – MKM Stadium</option><option value="ipswich-town">Ipswich Town – Portman Road</option><option value="leeds-united">Leeds United – Elland Road</option><option value="liverpool">Liverpool – Anfield</option><option value="manchester-city">Manchester City – Etihad Stadium</option><option value="manchester-united">Manchester United – Old Trafford</option><option value="newcastle-united">Newcastle United – St James&#x27; Park</option><option value="nottingham-forest">Nottingham Forest – City Ground</option><option value="sunderland">Sunderland – Stadium of Light</option><option value="tottenham-hotspur">Tottenham Hotspur – Tottenham Hotspur Stadium</option></select></div>
+<div class="field"><label for="ticket">Away ticket (£)</label><input id="ticket" type="number" min="0" step="0.01" inputmode="decimal" value="30"></div>
+<div class="field"><label for="pint">Pint (£)</label><input id="pint" type="number" min="0" step="0.01" inputmode="decimal"></div>
+<div class="field"><label for="pints">Number of pints</label><input id="pints" type="number" min="0" step="1" value="1"></div>
+<div class="field"><label for="pie">Pie (£)</label><input id="pie" type="number" min="0" step="0.01" inputmode="decimal"></div>
+<div class="field"><label for="prog">Programme (£)</label><input id="prog" type="number" min="0" step="0.01" inputmode="decimal"></div>
+<div class="field"><label for="rail">Rail fare, return (£) <span class="opt">optional</span></label><input id="rail" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 45.60"></div>
+</form>
+<div class="result" aria-live="polite">
+<p class="total-label">Your away day</p>
+<p class="total" id="total">£30.00</p>
+<ul id="breakdown"></ul>
+<p class="small" id="missing"></p>
+</div>
+<p class="small">Away ticket: Premier League adult away tickets are capped at £30 (<a href="https://www.premierleague.com/en/news/4617247/premier-league-statement-on-30-pounds-cap-on-away-tickets" target="_blank" rel="noopener">Premier League statement, 19 Mar 2026</a>); some clubs charge less and concessions are cheaper. Food and drink prices are for the home ground and come from the sources on each club page. Blank fields mean we have no reliable figure — type your own.</p>
+<section class="newsletter" aria-labelledby="nl-h">
+<h2 id="nl-h">Get price updates</h2>
+<p>One short email when prices change or new clubs are added. No spam.</p>
+<!-- TODO: wire this form to a newsletter provider (e.g. set action= to the provider's endpoint). It currently submits nowhere. -->
+<form class="nl-form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.nl-msg').hidden=false;">
+<label for="nl-email" class="sr-only">Email address</label>
+<input id="nl-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+<button type="submit">Sign up</button>
+<p class="nl-msg" hidden>Thanks! Sign-up isn’t live yet — this is a placeholder.</p>
+</form>
+</section>
+<script>window.POF_CLUBS = {"bournemouth": {"away_ticket": 30, "pint": 7.0, "pie": 6.25, "programme": 4.0, "name": "AFC Bournemouth", "ground": "Vitality Stadium (Dean Court)"}, "arsenal": {"away_ticket": 30, "pint": 7.0, "pie": 6.95, "programme": 4.0, "name": "Arsenal", "ground": "Emirates Stadium"}, "aston-villa": {"away_ticket": 30, "pint": 5.75, "pie": 6.0, "programme": 4.0, "name": "Aston Villa", "ground": "Villa Park"}, "brentford": {"away_ticket": 30, "pint": 6.0, "pie": 5.95, "programme": 3.0, "name": "Brentford", "ground": "Gtech Community Stadium"}, "brighton": {"away_ticket": 30, "pint": 5.9, "pie": 6.1, "programme": 4.0, "name": "Brighton & Hove Albion", "ground": "Amex Stadium (Falmer Stadium)"}, "chelsea": {"away_ticket": 30, "pint": 7.99, "pie": 6.35, "programme": 4.0, "name": "Chelsea", "ground": "Stamford Bridge"}, "coventry-city": {"away_ticket": 30, "pint": 5.8, "pie": 4.95, "programme": 4.0, "name": "Coventry City", "ground": "Coventry Building Society Arena"}, "crystal-palace": {"away_ticket": 30, "pint": 6.0, "pie": 6.5, "programme": 3.5, "name": "Crystal Palace", "ground": "Selhurst Park"}, "everton": {"away_ticket": 30, "pint": 5.95, "pie": 6.2, "programme": null, "name": "Everton", "ground": "Hill Dickinson Stadium"}, "fulham": {"away_ticket": 30, "pint": 7.5, "pie": 6.0, "programme": 4.0, "name": "Fulham", "ground": "Craven Cottage"}, "hull-city": {"away_ticket": 30, "pint": 6.3, "pie": 5.75, "programme": null, "name": "Hull City", "ground": "MKM Stadium"}, "ipswich-town": {"away_ticket": 30, "pint": 5.8, "pie": 6.75, "programme": null, "name": "Ipswich Town", "ground": "Portman Road"}, "leeds-united": {"away_ticket": 30, "pint": 6.75, "pie": 5.25, "programme": 4.0, "name": "Leeds United", "ground": "Elland Road"}, "liverpool": {"away_ticket": 30, "pint": 4.8, "pie": 4.5, "programme": null, "name": "Liverpool", "ground": "Anfield"}, "manchester-city": {"away_ticket": 30, "pint": 6.35, "pie": 5.25, "programme": 4.0, "name": "Manchester City", "ground": "Etihad Stadium"}, "manchester-united": {"away_ticket": 30, "pint": 6.6, "pie": 5.5, "programme": null, "name": "Manchester United", "ground": "Old Trafford"}, "newcastle-united": {"away_ticket": 30, "pint": 5.85, "pie": 6.1, "programme": 3.5, "name": "Newcastle United", "ground": "St James' Park"}, "nottingham-forest": {"away_ticket": 30, "pint": 6.1, "pie": 5.3, "programme": 4.0, "name": "Nottingham Forest", "ground": "City Ground"}, "sunderland": {"away_ticket": 30, "pint": 4.95, "pie": 5.2, "programme": null, "name": "Sunderland", "ground": "Stadium of Light"}, "tottenham-hotspur": {"away_ticket": 30, "pint": 6.6, "pie": 6.0, "programme": null, "name": "Tottenham Hotspur", "ground": "Tottenham Hotspur Stadium"}};</script>
+<script src="js/calculator.js" defer></script>
+
+</main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>Price of Football</strong> is an independent project and is not affiliated with, endorsed by or connected to the Premier League, any football club or any ticketing provider. Club names are used for identification only.</p>
+<p>Prices are collected by hand from club websites and the press, and every figure links to its source. Prices change, can vary by seat, fixture and kiosk, and may be out of date or wrong — always check with the club before you buy. Where we could not find a figure from a source we trust we show “—”; we never estimate.</p>
+<p>Data: 2026/27 Premier League season. Last full check 29 Oct 2026. <a href="data/clubs.json">Download JSON</a> · <a href="data/clubs.csv">CSV</a> · <a href="about.html#corrections">Report a correction</a></p>
+</div></footer>
+</body>
+</html>
