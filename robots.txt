@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matthewallmark.github.io/Price-of-Football/sitemap.xml
