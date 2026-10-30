@@ -76,3 +76,61 @@ button:hover,.btn:hover{filter:brightness(1.08)}
 .site-footer .wrap{max-width:900px}
 .sources li{margin:6px 0}
 @media (max-width:640px){.hide-sm{display:none}th,td{padding:9px 9px}main{padding:20px 14px 32px}.wrap{padding:0 14px}#prices th[scope=row]{min-width:130px}}
+.league-tag{margin:.2rem 0 0;font-size:.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.coverage ul{margin:.3rem 0 0;padding-left:1.1rem}
+.coverage li{margin:.15rem 0}
+
+/* UI fixes 29 Oct 2026: filters, counts, empty state, long names, breadcrumbs, mobile table */
+.filters select,.filters input[type=search]{flex:1 1 180px}
+.btn-secondary{background:#fff;color:var(--ink);border:1px solid #cfd4da;font-weight:600;padding:9px 14px}
+.count{margin:8px 0 0;font-size:.88rem;color:var(--muted)}
+.empty-state{background:var(--card);border:1px dashed #cfd4da;border-radius:var(--radius);padding:16px;margin-top:10px;color:#334155}
+.empty-state[hidden]{display:none}
+.table-wrap{max-width:100%;-webkit-overflow-scrolling:touch}
+#prices th[scope=row]{max-width:230px;overflow-wrap:anywhere;hyphens:auto}
+.crumbs{overflow-wrap:anywhere;line-height:1.5}
+h1{overflow-wrap:anywhere}
+@media (max-width:640px){
+ .table-tools{display:block}
+ .filters{margin-top:10px;gap:8px}
+ .filters select,.filters input[type=search]{flex:1 1 100%;width:100%}
+ #prices{font-size:.86rem}
+ #prices th[scope=row]{min-width:120px;max-width:150px}
+ #prices .sub{font-size:.74rem}
+ .club-table td:last-child{min-width:200px}
+ .club-table th[scope=row]{width:auto;min-width:110px}
+}
+
+/* Away day guide (club pages) and calculator away box — 29 Oct 2026 */
+.lede-sub{max-width:760px;color:#334155;font-size:1rem}
+.jump{margin:.2rem 0 1rem}.jump a{font-weight:600}
+.away-guide{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:6px 20px 16px;margin:28px 0}
+.away-guide h2{margin-top:.8em}
+.away-guide h3{font-size:1.05rem;margin:1.3em 0 .4em}
+.ag-warn{background:#fff7e6;border:1px solid #f1d9a6;color:#5c3d00;border-radius:10px;padding:10px 12px;font-weight:600;font-size:.95rem}
+.ag-main{font-weight:650;font-size:1.05rem;margin:.2em 0}
+.ag-list{list-style:none;padding:0;margin:0}
+.ag-list li{padding:9px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.ag-list li:last-child{border-bottom:0}
+.ag-name{font-weight:650}
+.ag-type,.ag-note{color:#334155;font-size:.92rem}
+.ag-map{font-size:.85rem}
+.ag-avoid .ag-name{text-decoration:line-through;text-decoration-color:#c2410c80}
+.ag-src{display:inline;font-size:.8rem;color:var(--muted);line-height:1.6}
+.ag-src a{color:var(--muted)}
+.ag-tag{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;padding:0 7px;margin-right:2px;vertical-align:1px;background:#eef1f4;color:#475569;white-space:nowrap}
+.ag-official{background:#e6f4f1;color:#0f5e57}
+.ag-official_other_club{background:#eef2ff;color:#3730a3}
+.ag-trust{background:#f3e8ff;color:#6b21a8}
+.ag-press{background:#f1f5f9;color:#334155}
+.ag-other{background:#f4f4f5;color:#52525b}
+.ag-old{color:var(--warn);font-weight:600}
+.away-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:4px 18px 14px;margin:16px 0}
+.away-box[hidden]{display:none}
+.away-box h2{margin-top:.7em}
+.away-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:8px 0}
+.away-facts div{background:var(--soft);border-radius:10px;padding:8px 12px}
+.away-facts dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.away-facts dd{margin:0;font-weight:600}
+.away-pubs-h{font-weight:650;margin:.8em 0 .2em}
+@media (max-width:640px){.away-guide{padding:4px 14px 12px}.away-box{padding:4px 14px 12px}}

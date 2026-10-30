@@ -19,6 +19,13 @@ No backend, no dependencies beyond Python 3 standard library to build. Not deplo
 - Wire the newsletter form (`newsletter()` in build.py) to a provider.
 - Add a corrections contact on the About page.
 
-## Extending to the Championship
-Add club objects with `"league": "Championship"` to `data/clubs.json` (same schema); for the away ticket field the
-PL £30 cap does not apply, so source each club's away price. Then extend build.py to group/filter by league.
+## Leagues and adding or updating data
+The site already covers 116 clubs in five leagues: Premier League, Championship, League One, League Two and National League. `meta.leagues` in `data/clubs.json` sets the order. build.py groups, filters (`index.html?league=championship` etc.) and builds the coverage summary from that list, so adding a league means adding it to `meta.leagues` and adding club objects with that `league` value.
+
+Every price field is `{value, source_title, source_url, source_type, checked, note}`:
+- `source_type` is one of official, press, reference, guide, fan site, enthusiast or other. Fan guides such as Football Ground Guide are "other" and are only used when the page is dated.
+- `value: null` renders as "—". **Never estimate, interpolate or derive a figure.** That includes filling a price from a tied rank, computing an advance price from a matchday one, or copying one listed price into both min and max unless the source says it's the only adult price. Put any context (stand, category, advance or matchday) in `note`.
+- The £30 away cap applies only to the Premier League. For EFL and National League grounds, source the home club's away price: the club, the visiting club's published ticket details, or press.
+- No ticket-resale or betting sites as sources (press articles reporting betting-firm research are fine), and no club badges or logos.
+
+Then run `python3 tools/build.py`. It regenerates every HTML page, `data/clubs.csv` (including `_source_title` and `_source_type` columns), `sitemap.xml` and `robots.txt`.
