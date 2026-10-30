@@ -13,12 +13,23 @@ SITE = "Price of Football"
 data = json.loads((ROOT / "data" / "clubs.json").read_text())
 META, CLUBS = data["meta"], sorted(data["clubs"], key=lambda c: c["name"])
 SEASON = META["season"]
+LEAGUES = META.get("leagues", ["Premier League"])  # display order, top tier first
+PL = "Premier League"
+def lslug(l): return l.lower().replace(" ", "-")
+def is_pl(c): return c["league"] == PL
+def by_league(lg): return [c for c in CLUBS if c["league"] == lg]
+N_CLUBS = len(CLUBS)
+# Away day guide (optional file; built pages simply omit the section if a club has no entry)
+_ag_path = ROOT / "data" / "away_guide.json"
+AWAY_DATA = json.loads(_ag_path.read_text()) if _ag_path.exists() else {"meta": {}, "clubs": []}
+AWAY = {a["id"]: a for a in AWAY_DATA["clubs"]}
+LEAGUE_COUNTS = ", ".join(f"{len(by_league(l))} {l}" for l in LEAGUES)
 FIELDS = [  # key, label, short label
     ("season_ticket_min", "Cheapest adult season ticket", "Season ticket from"),
     ("season_ticket_max", "Dearest adult season ticket", "Season ticket to"),
     ("matchday_min", "Cheapest adult matchday ticket", "Matchday from"),
     ("matchday_max", "Dearest adult matchday ticket", "Matchday to"),
-    ("away_ticket", "Away ticket (league cap)", "Away ticket"),
+    ("away_ticket", "Away ticket (adult, away end)", "Away ticket"),
     ("pint", "Pint of lager", "Pint"),
     ("pie", "Pie", "Pie"),
     ("programme", "Matchday programme", "Programme"),
@@ -63,9 +74,9 @@ def page(title, desc, path, body, extra_head="", depth=0):
 {body}
 </main>
 <footer class="site-footer"><div class="wrap">
-<p><strong>{SITE}</strong> is an independent project and is not affiliated with, endorsed by or connected to the Premier League, any football club or any ticketing provider. Club names are used for identification only.</p>
+<p><strong>{SITE}</strong> is an independent project and is not affiliated with, endorsed by or connected to the Premier League, the EFL, the National League, any football club or any ticketing provider. Club names are used for identification only.</p>
 <p>Prices are collected by hand from club websites and the press, and every figure links to its source. Prices change, can vary by seat, fixture and kiosk, and may be out of date or wrong — always check with the club before you buy. Where we could not find a figure from a source we trust we show “—”; we never estimate.</p>
-<p>Data: {SEASON} {META['league']} season. Last full check {fmt_date(META['generated'])}. <a href="{pre}data/clubs.json">Download JSON</a> · <a href="{pre}data/clubs.csv">CSV</a> · <a href="{pre}about.html#corrections">Report a correction</a></p>
+<p>Data: {SEASON} season — {LEAGUE_COUNTS} clubs. Last full check {fmt_date(META['generated'])}. <a href="{pre}data/clubs.json">Download JSON</a> · <a href="{pre}data/clubs.csv">CSV</a> · <a href="{pre}data/away_guide.json">Away guide JSON</a> · <a href="{pre}about.html#corrections">Report a correction</a></p>
 </div></footer>
 </body>
 </html>
@@ -83,6 +94,101 @@ def src_link(f):
     if f["value"] is None or not f["source_url"]: return "—"
     return f'<a href="{e(f["source_url"])}" rel="nofollow noopener" target="_blank">{e(f["source_title"])}</a>'
 
+
+# ---------- away day guide ----------
+AG_TAG = {"official": "Official", "official_other_club": "Other club's guide", "trust": "Supporters' trust",
+          "press": "Press", "other": "Fan guide"}
+AG_WARN = "Pub policies change, so check before you travel. Colours rules may apply."
+PARK_LBL = {"away_coach": "Away coaches", "matchday_car": "Matchday parking", "park_and_ride": "Park and ride"}
+STN_LBL = {"rail": "Rail", "tram": "Tram", "metro": "Underground/Metro"}
+
+def ag_src(o):
+    """Small source tag: type label, linked source name, checked date, and an age warning for old guides."""
+    if not o or not o.get("source_url"): return ""
+    t = o.get("source_type", "other")
+    name = o.get("source_name") or "source"
+    if t == "official_other_club": label_txt = f"From the {name}"
+    else: label_txt = name
+    bits = [f'<span class="ag-tag ag-{e(t)}">{e(AG_TAG.get(t, "Fan guide"))}</span>',
+            f'<a href="{e(o["source_url"])}" rel="nofollow noopener" target="_blank">{e(label_txt)}</a>']
+    if o.get("source_last_updated"): bits.append(f'page updated {e(fmt_date(o["source_last_updated"]) if len(o["source_last_updated"]) == 10 else o["source_last_updated"])}')
+    bits.append(f'checked {fmt_date(o["checked"])}')
+    stale = ""
+    if o.get("stale"):
+        gs = o.get("guide_season")
+        stale = f' <span class="ag-old">From the {e(gs)} guide, check before you travel.</span>' if gs else \
+                f' <span class="ag-old">Published {e(o.get("source_date", "before 2025"))}, check before you travel.</span>'
+    return f'<span class="ag-src">{" · ".join(bits)}{stale}</span>'
+
+def ag_walk(s):
+    return s if s else ""
+
+def away_section(c):
+    a = AWAY.get(c["slug"])
+    if not a: return ""
+    ground = c["stadium"]["value"]
+    parts = []
+    sec = a.get("away_section") or {}
+    if sec.get("stand"):
+        rows = [f'<p class="ag-main">{e(sec["stand"])}</p>']
+        if sec.get("allocation"):
+            alloc_src = sec.get("allocation_source")
+            rows.append(f'<p><strong>Allocation:</strong> {e(sec["allocation"])}' + (f' {ag_src(alloc_src)}' if alloc_src else '') + '</p>')
+        if sec.get("note"): rows.append(f'<p>{e(sec["note"])}</p>')
+        rows.append(f'<p>{ag_src(sec)}</p>')
+        parts.append('<h3>Away end</h3>' + "".join(rows))
+    st = a.get("nearest_station") or []
+    if st:
+        li = []
+        for s_ in st:
+            walk = f' — <strong>{e(s_["walk"])}</strong>' if s_.get("walk") else ""
+            typ = STN_LBL.get(s_.get("type"), "")
+            typ_html = f' <span class="ag-type">({e(typ)})</span>' if typ else ""
+            li.append(f'<li><span class="ag-name">{e(s_["name"])}</span>{typ_html}{walk}'
+                      + (f'<br><span class="ag-note">{e(s_["note"])}</span>' if s_.get("note") else "") + f'<br>{ag_src(s_)}</li>')
+        parts.append('<h3>Getting there</h3><ul class="ag-list">' + "".join(li) + '</ul>')
+    def publist(items, avoid=False):
+        out = []
+        for p_ in items:
+            nm = f'<a class="ag-name" href="{e(p_["maps_url"])}" target="_blank" rel="noopener">{e(p_["name"])}</a>' if p_.get("maps_url") and not avoid else f'<span class="ag-name">{e(p_["name"])}</span>'
+            maps = f' <a class="ag-map" href="{e(p_["maps_url"])}" target="_blank" rel="noopener">map</a>' if avoid and p_.get("maps_url") else ""
+            out.append(f'<li>{nm}{maps}' + (f' — {e(p_["note"])}' if p_.get("note") else "") + f'<br>{ag_src(p_)}</li>')
+        return "".join(out)
+    if a.get("pubs"):
+        parts.append('<h3>Away-friendly pubs</h3><p class="small">Pub names link to Google Maps.</p><ul class="ag-list">' + publist(a["pubs"]) + '</ul>')
+    if a.get("pubs_to_avoid"):
+        parts.append('<h3>Pubs to avoid</h3><p class="small">Listed by the sources below as home-only or not for visiting fans.</p><ul class="ag-list ag-avoid">' + publist(a["pubs_to_avoid"], True) + '</ul>')
+    if a.get("parking"):
+        order = {"away_coach": 0, "matchday_car": 1, "park_and_ride": 2}
+        li = "".join(f'<li><span class="ag-name">{e(PARK_LBL.get(p_["type"], "Parking"))}:</span> {e(p_["detail"])}<br>{ag_src(p_)}</li>'
+                     for p_ in sorted(a["parking"], key=lambda p_: order.get(p_["type"], 9)))
+        parts.append('<h3>Parking and coach drop-off</h3><ul class="ag-list">' + li + '</ul>')
+    food = a.get("food") or []
+    if isinstance(food, dict): food = [food]
+    food = [f_ for f_ in food if f_.get("note")]
+    if food:
+        li = "".join(f'<li>{e(f_["note"])}<br>{ag_src(f_)}</li>' for f_ in food)
+        parts.append('<h3>Food and drink</h3><ul class="ag-list">' + li + '</ul>')
+    if a.get("official_links"):
+        li = "".join(f'<li><a href="{e(l["url"])}" target="_blank" rel="noopener">{e(l["label"])}</a> <span class="ag-src">checked {fmt_date(l["checked"])}</span></li>' for l in a["official_links"])
+        parts.append('<h3>Official visiting-supporter information</h3><ul class="ag-list">' + li + '</ul>')
+    if a.get("notes"):
+        parts.append('<h3>Good to know</h3><ul class="ag-list">' + "".join(f'<li>{e(n)}</li>' for n in a["notes"]) + '</ul>')
+    if not parts: return ""
+    return (f'<section class="away-guide" id="away-guide" aria-labelledby="ag-h"><h2 id="ag-h">Away day guide: {e(ground)}</h2>'
+            f'<p class="ag-warn">{e(AG_WARN)}</p>' + "".join(parts) +
+            f'<p class="small">Each item shows where it came from and when we checked it. Tags: Official = {e(c["name"])}’s own information; Other club’s guide = a visiting club’s official away guide; Supporters’ trust; Press; Fan guide = independent fan sites. <a href="../about.html#away-guide-method">How we build the away guide</a>.</p></section>')
+
+def away_summary(slug):
+    """Compact data for the calculator box."""
+    a = AWAY.get(slug)
+    if not a: return None
+    sec = a.get("away_section") or {}
+    st = (a.get("nearest_station") or [None])[0]
+    return {"stand": sec.get("stand", ""),
+            "station": ({"name": st["name"], "walk": st.get("walk", "")} if st else None),
+            "pubs": [{"name": p_["name"], "maps": p_.get("maps_url", "")} for p_ in (a.get("pubs") or [])[:3]]}
+
 # ---------- home ----------
 def build_home():
     def cell(c, k):
@@ -92,8 +198,8 @@ def build_home():
     rows = []
     for c in CLUBS:
         cap = c["capacity"]["value"]
-        rows.append(f'<tr data-name="{e(c["name"].lower())}">'
-                    f'<th scope="row" data-v="{e(c["name"])}"><a href="clubs/{c["slug"]}.html">{e(c["name"])}</a><span class="sub">{e(c["stadium"]["value"])}</span></th>'
+        rows.append(f'<tr data-name="{e(c["name"].lower())}" data-ground="{e(str(c["stadium"]["value"]).lower())}" data-league="{lslug(c["league"])}">'
+                    f'<th scope="row" data-v="{e(c["name"])}"><a href="clubs/{c["slug"]}.html">{e(c["name"])}</a><span class="sub">{e(c["stadium"]["value"])} · {e(c["league"])}</span></th>'
                     f'<td data-v="{cap}" class="num hide-sm">{cap:,}</td>'
                     + "".join(cell(c, k) for k, _, _ in FIELDS) + "</tr>")
     def best(k, rev=False):
@@ -105,25 +211,33 @@ def build_home():
                         ("pint", "Cheapest pint", False), ("pint", "Dearest pint", True)]:
         v, c = best(k, rev)
         cards.append(f'<div class="stat"><span class="stat-label">{lbl}</span><span class="stat-value">{money(v)}</span>'
-                     f'<a href="clubs/{c["slug"]}.html">{e(c["name"])}</a></div>')
-    filled = {k: sum(1 for c in CLUBS if c[k]["value"] is not None) for k, _, _ in FIELDS}
+                     f'<a href="clubs/{c["slug"]}.html">{e(c["name"])}</a> <span class="sub">{e(c["league"])}</span></div>')
+    def cov(lg):
+        cl = by_league(lg)
+        return f'<li><strong>{e(lg)}</strong> ({len(cl)} clubs): ' + ', '.join(f'{s} {sum(1 for c in cl if c[k]["value"] is not None)}/{len(cl)}' for k, l, s in FIELDS) + '</li>'
+    league_opts = '<option value="">All leagues</option>' + "".join(f'<option value="{lslug(l)}">{e(l)}</option>' for l in LEAGUES)
     heads = "".join(f'<th scope="col" class="num"><button type="button" data-k="{i+2}">{e(s)}</button></th>' for i, (k, l, s) in enumerate(FIELDS))
     body = f"""
 <section class="hero">
-<h1>What it really costs to watch Premier League football</h1>
-<p class="lede">Season tickets, matchday tickets, away tickets, pints, pies and programmes for all 20 {META['league']} clubs in {SEASON} — every figure linked to its source, with the date we checked it.</p>
+<h1>What it really costs to watch English football</h1>
+<p class="lede">Season tickets, matchday tickets, away tickets, pints, pies and programmes for all {N_CLUBS} clubs in the Premier League, Championship, League One, League Two and National League in {SEASON} — every figure linked to its source, with the date we checked it.</p>
+<p class="lede-sub">New: an <strong>away day guide</strong> on every club page — the away end, nearest station and walk, away-friendly pubs (and ones to avoid), parking and coach drop-off, each with its source and the date we checked it. Pick a club below, or plan the trip in the <a href="calculator.html">away day calculator</a>.</p>
 <div class="stats">{''.join(cards)}</div>
 </section>
 <section aria-labelledby="t-h">
 <div class="table-tools">
-<h2 id="t-h">{META['league']} prices {SEASON}</h2>
+<h2 id="t-h">Ticket, pint and pie prices {SEASON}</h2>
 <div class="filters">
+<label for="league" class="sr-only">League</label>
+<select id="league">{league_opts}</select>
 <label for="q" class="sr-only">Filter clubs</label>
 <input id="q" type="search" placeholder="Filter clubs or grounds…" autocomplete="off">
 <label class="chk"><input type="checkbox" id="complete"> Only clubs with matchday prices</label>
+<button type="button" id="reset" class="btn-secondary">Reset</button>
 </div>
 </div>
-<p class="hint">Click a column heading to sort. “—” means we couldn’t find a trustworthy figure (we never guess). Hover a price for its note; click a club for sources and dates.</p>
+<p id="count" class="count" aria-live="polite">Showing all {N_CLUBS} clubs</p>
+<p class="hint">Choose a league, or click a column heading to sort. “—” means we couldn’t find a trustworthy figure (we never guess). Hover a price for its note; click a club for sources and dates. Season-ticket figures for EFL and National League clubs are often early-bird or renewal prices — check each club’s notes.</p>
 <div class="table-wrap">
 <table id="prices">
 <thead><tr><th scope="col"><button type="button" data-k="0">Club</button></th><th scope="col" class="num hide-sm"><button type="button" data-k="1">Capacity</button></th>{heads}</tr></thead>
@@ -132,19 +246,22 @@ def build_home():
 </tbody>
 </table>
 </div>
-<p class="coverage">Coverage: {', '.join(f'{s} {filled[k]}/20' for k, l, s in FIELDS)}.</p>
+<p id="empty" class="empty-state" hidden>No clubs match these filters. Try another league, clear the search box or untick “Only clubs with matchday prices”.</p>
+<div class="coverage"><p>Coverage by league (figures found from sources we trust):</p><ul>{''.join(cov(l) for l in LEAGUES)}</ul></div>
 </section>
 <section class="seo-copy">
-<h2>Cheapest season tickets in the Premier League</h2>
-<p>Sort the “Season ticket from” column to rank clubs by their cheapest adult season ticket for {SEASON}. Many clubs sell a handful of restricted or family-area seats below their usual entry price, so read each club’s notes before comparing. Away tickets in the Premier League are capped at £30 for adults until at least the end of 2027/28.</p>
+<h2>Cheapest season tickets from the Premier League to the National League</h2>
+<p>Pick a league and sort the “Season ticket from” column to rank clubs by their cheapest adult season ticket for {SEASON}. Many clubs sell a handful of restricted, terrace or family-area places below their usual entry price, and lower-league clubs often quote early-bird or renewal prices, so read each club’s notes before comparing.</p>
+<h2>Away tickets: the £30 cap is Premier League only</h2>
+<p>Adult away tickets at Premier League grounds are capped at £30 until at least the end of 2027/28. There is no cap in the EFL or the National League: the away price is whatever the home club charges, and we show it only where we found it from the club or a source we trust.</p>
 <h2>Price of a pint and a pie at every ground</h2>
-<p>Pint and pie prices come from a club-by-club press survey and vary by kiosk and brand. Use the <a href="calculator.html">away day cost calculator</a> to add up a ticket, a pint, a pie, a programme and your train fare.</p>
+<p>Premier League pint and pie prices come from a club-by-club press survey. We haven’t found a reputable 2026/27 survey for the EFL or National League, so below the Premier League we only show a pint, pie or programme price where a club’s own guide (or, labelled “other”, a dated fan guide) lists one — most of those cells are still blank. Use the <a href="calculator.html">away day cost calculator</a> to add up a ticket, a pint, a pie, a programme and your train fare.</p>
 </section>
 {newsletter()}
 <script src="js/table.js" defer></script>
 """
-    desc = f"Compare {META['league']} {SEASON} ticket prices: cheapest and dearest season tickets, matchday tickets, £30 away tickets, and the price of a pint, pie and programme at all 20 grounds. Sourced and dated."
-    (ROOT / "index.html").write_text(page(f"Premier League ticket prices {SEASON}: season tickets, pints & pies | {SITE}", desc, "", body))
+    desc = f"Compare {SEASON} football ticket prices for all {N_CLUBS} Premier League, Championship, League One, League Two and National League clubs: season tickets, matchday and away tickets, pints, pies and programmes. Sourced and dated."
+    (ROOT / "index.html").write_text(page(f"Football ticket prices {SEASON}: Premier League to National League | {SITE}", desc, "", body))
 
 # ---------- club pages ----------
 def build_club(c):
@@ -158,23 +275,42 @@ def build_club(c):
     name, ground = c["name"], st["value"]
     def q(k): return money(c[k]["value"])
     summary = []
-    if c["season_ticket_min"]["value"] is not None:
+    smin, smax = c["season_ticket_min"]["value"], c["season_ticket_max"]["value"]
+    if smin is not None and smax is not None and smin == smax:
+        summary.append(f"An adult {name} season ticket for {SEASON} costs {q('season_ticket_min')}.")
+    elif smin is not None:
         summary.append(f"The cheapest adult {name} season ticket for {SEASON} is {q('season_ticket_min')}" +
-                       (f" and the dearest we found is {q('season_ticket_max')}" if c['season_ticket_max']['value'] is not None else "") + ".")
-    if c["matchday_min"]["value"] is not None:
+                       (f" and the dearest we found is {q('season_ticket_max')}" if smax is not None else "") + ".")
+    elif smax is not None:
+        summary.append(f"The dearest adult {name} season ticket we found for {SEASON} is {q('season_ticket_max')}; we have not yet found a reliable cheapest price.")
+    mmin, mmax = c["matchday_min"]["value"], c["matchday_max"]["value"]
+    if mmin is not None and mmax is not None and mmin == mmax:
+        summary.append(f"An adult matchday ticket costs {q('matchday_min')}.")
+    elif mmin is not None and mmax is not None:
         summary.append(f"Adult matchday tickets range from {q('matchday_min')} to {q('matchday_max')}.")
+    elif mmin is not None:
+        summary.append(f"Adult matchday tickets start at {q('matchday_min')}; we have not yet found a reliable top price.")
+    elif mmax is not None:
+        summary.append(f"Adult matchday tickets cost up to {q('matchday_max')}; we have not yet found a reliable cheapest price.")
     else:
         summary.append("We have not yet found a reliable adult matchday ticket price range.")
     if pint is not None:
         summary.append(f"A pint at {ground} costs {money(pint)}" + (f" and a pie {money(pie)}" if pie is not None else "") + ".")
-    summary.append(f"Away fans pay no more than £30 under the Premier League cap.")
-    others = "".join(f'<li><a href="{o["slug"]}.html">{e(o["name"])}</a></li>' for o in CLUBS if o["slug"] != c["slug"])
+    if is_pl(c):
+        summary.append("Away fans pay no more than £30 under the Premier League cap.")
+    elif c["away_ticket"]["value"] is not None:
+        summary.append(f"Away fans pay {q('away_ticket')} for an adult ticket (there is no away price cap outside the Premier League).")
+    else:
+        summary.append(f"We haven't yet found a reliable away ticket price; the Premier League's £30 cap doesn't apply outside the Premier League.")
+    others = "".join(f'<li><a href="{o["slug"]}.html">{e(o["name"])}</a></li>' for o in by_league(c["league"]) if o["slug"] != c["slug"])
     ld = {"@context": "https://schema.org", "@type": "StadiumOrArena", "name": ground,
           "maximumAttendeeCapacity": cap["value"], "url": f"{SITE_URL}/clubs/{c['slug']}.html"}
     body = f"""
-<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Premier League prices</a> › {e(name)}</nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Prices</a> › <a href="../index.html?league={lslug(c['league'])}#t-h">{e(c['league'])}</a> › {e(name)}</nav>
+<p class="league-tag">{e(c['league'])} · {e(SEASON)}</p>
 <h1>{e(name)} ticket prices {SEASON}</h1>
 <p class="lede">{' '.join(e(s) for s in summary)}</p>
+{('<p class="jump"><a href="#away-guide">Away day guide: away end, station, pubs and parking ↓</a></p>') if c['slug'] in AWAY else ''}
 <dl class="facts">
 <div><dt>Ground</dt><dd>{e(ground)}</dd></div>
 <div><dt>Capacity</dt><dd>{cap['value']:,}</dd></div>
@@ -190,25 +326,28 @@ def build_club(c):
 <p><a class="btn" href="../calculator.html?club={c['slug']}">Work out an away day at {e(ground)} →</a></p>
 <h2>Price of a pint at {e(ground)}</h2>
 <p>{('A pint of lager at ' + e(ground) + ' costs ' + money(pint) + ' in ' + SEASON + ', according to the source above. Prices vary by kiosk, brand and promotion.') if pint is not None else 'We have not found a reliable pint price for ' + e(ground) + ' yet.'}</p>
-<p>Spotted a wrong or outdated price? See <a href="../about.html#corrections">how to report a correction</a>.</p>
+{away_section(c)}
+<p>Spotted a wrong or outdated price or away-day detail? See <a href="../about.html#corrections">how to report a correction</a>.</p>
 {newsletter(1)}
-<section class="others"><h2>Other clubs</h2><ul class="club-list">{others}</ul></section>
+<section class="others"><h2>Other {e(c['league'])} clubs</h2><ul class="club-list">{others}</ul><p><a href="../index.html">All {N_CLUBS} clubs →</a></p></section>
 """
-    desc = (f"{name} ticket prices {SEASON}: season tickets from {q('season_ticket_min')}, matchday tickets, £30 away tickets and the price of a pint and pie at {ground}. Every price sourced and dated.")
+    st = f"season tickets from {q('season_ticket_min')}" if c['season_ticket_min']['value'] is not None else "season tickets"
+    aw = "£30 away tickets" if is_pl(c) else "away tickets"
+    desc = (f"{name} ({c['league']}) ticket prices {SEASON}: {st}, matchday tickets, {aw} and the price of a pint and pie at {ground}" + (", plus an away day guide: away end, nearest station, pubs and parking" if c["slug"] in AWAY else "") + ". Every price sourced and dated.")
     head = f'<script type="application/ld+json">{json.dumps(ld)}</script>'
     (ROOT / "clubs" / f"{c['slug']}.html").write_text(
         page(f"{name} ticket prices {SEASON} – season tickets, pint & pie at {ground} | {SITE}", desc, f"clubs/{c['slug']}.html", body, head, depth=1))
 
 # ---------- calculator ----------
 def build_calc():
-    opts = "".join(f'<option value="{c["slug"]}">{e(c["name"])} – {e(c["stadium"]["value"])}</option>' for c in CLUBS)
+    opts = "".join(f'<optgroup label="{e(l)}">' + "".join(f'<option value="{c["slug"]}">{e(c["name"])} – {e(c["stadium"]["value"])}</option>' for c in by_league(l)) + '</optgroup>' for l in LEAGUES)
     body = f"""
 <h1>Away day cost calculator</h1>
-<p class="lede">Pick the ground you’re visiting. We fill in the £30 away ticket cap and that ground’s pint, pie and programme prices from our database — change any figure, add your train fare, and see the total.</p>
+<p class="lede">Pick the ground you’re visiting. For Premier League grounds we fill in the £30 away ticket cap; for EFL and National League grounds we fill in the home club’s away price if we have one, otherwise we leave it blank. We also fill in that ground’s pint, pie and programme prices where we have them — change any figure, add your train fare, and see the total.</p>
 <form id="calc" class="calc" onsubmit="return false">
 <div class="field full"><label for="club">Ground you’re visiting</label>
 <select id="club"><option value="">Choose a club…</option>{opts}</select></div>
-<div class="field"><label for="ticket">Away ticket (£)</label><input id="ticket" type="number" min="0" step="0.01" inputmode="decimal" value="30"></div>
+<div class="field"><label for="ticket">Away ticket (£)</label><input id="ticket" type="number" min="0" step="0.01" inputmode="decimal"></div>
 <div class="field"><label for="pint">Pint (£)</label><input id="pint" type="number" min="0" step="0.01" inputmode="decimal"></div>
 <div class="field"><label for="pints">Number of pints</label><input id="pints" type="number" min="0" step="1" value="1"></div>
 <div class="field"><label for="pie">Pie (£)</label><input id="pie" type="number" min="0" step="0.01" inputmode="decimal"></div>
@@ -217,16 +356,18 @@ def build_calc():
 </form>
 <div class="result" aria-live="polite">
 <p class="total-label">Your away day</p>
-<p class="total" id="total">£30.00</p>
+<p class="total" id="total">£0.00</p>
 <ul id="breakdown"></ul>
 <p class="small" id="missing"></p>
 </div>
-<p class="small">Away ticket: Premier League adult away tickets are capped at £30 (<a href="https://www.premierleague.com/en/news/4617247/premier-league-statement-on-30-pounds-cap-on-away-tickets" target="_blank" rel="noopener">Premier League statement, 19 Mar 2026</a>); some clubs charge less and concessions are cheaper. Food and drink prices are for the home ground and come from the sources on each club page. Blank fields mean we have no reliable figure — type your own.</p>
+<section class="away-box" id="awaybox" aria-live="polite" hidden></section>
+<p class="small">Away ticket: Premier League adult away tickets are capped at £30 (<a href="https://www.premierleague.com/en/news/4617247/premier-league-statement-on-30-pounds-cap-on-away-tickets" target="_blank" rel="noopener">Premier League statement, 19 Mar 2026</a>); some clubs charge less and concessions are cheaper. The cap does not apply in the EFL or National League, where away prices are set by the home club and can vary by fixture. Food and drink prices are for the home ground and come from the sources on each club page. Blank fields mean we have no reliable figure — type your own.</p>
 {newsletter()}
-<script>window.POF_CLUBS = {json.dumps({c['slug']: {k: c[k]['value'] for k in ('away_ticket','pint','pie','programme')} | {'name': c['name'], 'ground': c['stadium']['value']} for c in CLUBS})};</script>
+<script>window.POF_CLUBS = {json.dumps({c['slug']: {k: c[k]['value'] for k in ('away_ticket','pint','pie','programme')} | {'name': c['name'], 'ground': c['stadium']['value'], 'pl': is_pl(c)} for c in CLUBS}, separators=(',', ':'))};</script>
+<script>window.POF_AWAY = {json.dumps({c['slug']: away_summary(c['slug']) for c in CLUBS if c['slug'] in AWAY}, separators=(',', ':'), ensure_ascii=False)};</script>
 <script src="js/calculator.js" defer></script>
 """
-    desc = "Work out what a Premier League away day costs: £30 away ticket, pint, pie, programme and your rail fare, using sourced prices for every ground."
+    desc = f"Work out what an away day costs at any of {N_CLUBS} grounds from the Premier League to the National League: away ticket, pint, pie, programme and your rail fare, using sourced prices."
     (ROOT / "calculator.html").write_text(page(f"Away day cost calculator – ticket, pint, pie & train | {SITE}", desc, "calculator.html", body))
 
 # ---------- about ----------
@@ -236,23 +377,30 @@ def build_about():
         for k in ["stadium", "capacity"] + [f[0] for f in FIELDS]:
             f = c[k]
             if f["source_url"]: srcs.setdefault(f["source_url"], (f["source_title"], f["source_type"], set()))[2].add(c["name"])
-    order = {"official": 0, "press": 1, "reference": 2, "guide": 3, "fan site": 4, "enthusiast": 5}
+    order = {"official": 0, "press": 1, "reference": 2, "guide": 3, "fan site": 4, "enthusiast": 5, "other": 6}
     li = "".join(f'<li><span class="tag">{e(t)}</span> <a href="{e(u)}" target="_blank" rel="nofollow noopener">{e(ti)}</a> <span class="small">({len(cl)} club{"s" if len(cl)!=1 else ""})</span></li>'
                  for u, (ti, t, cl) in sorted(srcs.items(), key=lambda kv: (order.get(kv[1][1], 9), kv[1][0])))
     d = META["definitions"]
+    n_pubs = sum(len(a.get("pubs") or []) for a in AWAY.values()); n_avoid = sum(len(a.get("pubs_to_avoid") or []) for a in AWAY.values())
     defs = "".join(f"<li><strong>{e(l)}</strong>: {e(d[k])}</li>" for k, l, _ in FIELDS)
     body = f"""
 <h1>About Price of Football &amp; our methodology</h1>
-<p class="lede">Price of Football is an independent, unaffiliated database of what it costs to watch UK football. Version 1 covers the 20 {META['league']} clubs for the {SEASON} season.</p>
+<p class="lede">Price of Football is an independent, unaffiliated database of what it costs to watch UK football. It covers all {N_CLUBS} clubs in the top five English divisions for the {SEASON} season: {LEAGUE_COUNTS}.</p>
 <h2>Independent and unaffiliated</h2>
-<p>We are not connected to, sponsored by or endorsed by the Premier League, the EFL, any club, any ticket seller or any brewer. Club and competition names are used only to identify them. We deliberately don’t use club badges, crests or logos.</p>
+<p>We are not connected to, sponsored by or endorsed by the Premier League, the EFL, the National League, any club, any ticket seller or any brewer. Club and competition names are used only to identify them. We deliberately don’t use club badges, crests or logos.</p>
 <h2>Where the numbers come from</h2>
 <ol>
 <li><strong>Club websites first</strong> — official ticketing pages, price lists and announcements.</li>
-<li><strong>Reputable press second</strong> — national and local newspapers (e.g. BBC Sport, The Mirror, Manchester Evening News, Liverpool Echo, Birmingham Mail, local titles) and GiveMeSport, where the club’s own figures couldn’t be read.</li>
-<li><strong>Other sources only when labelled</strong> — a small number of figures come from fan sites, a ticket-guide site or a programme-collector site. These are tagged on each club page so you can judge them.</li>
+<li><strong>Reputable press second</strong> — national and local newspapers (e.g. BBC Sport, The Mirror, Manchester Evening News, Liverpool Echo, Birmingham Mail, Daily Echo, Lancashire Evening Post, Halifax Courier, Bristol Live, Peterborough Telegraph, The Star and other local titles) and GiveMeSport, where the club’s own figures couldn’t be read.</li>
+<li><strong>Other sources only when labelled</strong> — a small number of figures come from fan sites, a ticket-guide site, a programme-collector site, a local news aggregator or a regional website republishing a price survey, or the fan guide site Football Ground Guide (used only where its page is dated and gives 2026/27 prices). These are tagged on each club page (e.g. “other”) so you can judge them.</li>
 </ol>
-<p>Stadium names and capacities are taken from the Wikipedia 2026–27 Premier League article (which cites club sources). Pint and pie prices come from a single press survey in which the newspaper contacted every club, so they’re comparable but are not club-published price lists.</p>
+<p>League membership, stadium names and capacities are taken from Wikipedia’s 2026–27 Premier League, EFL Championship, League One, League Two and National League articles (which cite club and league sources). Premier League pint and pie prices come from a single press survey in which the newspaper contacted every club, so they’re comparable but are not club-published price lists.</p>
+<h2>League-specific notes</h2>
+<ul>
+<li><strong>Premier League</strong>: adult away tickets are capped at £30 (extended for 2026/27 and 2027/28), so we show £30 for every ground.</li>
+<li><strong>EFL (Championship, League One, League Two)</strong>: there is no away cap. Away prices come from the club, the visiting club’s published ticket details, or press reports of published research comparing every EFL club’s away-end prices; where a club prices by category we show the top tier and say so. Where that research gives only a club’s rank and not its price, we leave the price blank. Season-ticket figures mostly come from local-press comparisons and are often early-bird or renewal prices.</li>
+<li><strong>National League</strong>: most clubs publish one adult price, with discounts for buying in advance. Where a club charges more on the day, we show the advance price and give the on-the-day price in the note. Away prices come from the home club’s ticket page or the visiting club’s published ticket details.</li>
+</ul>
 <h2>Rules we follow</h2>
 <ul>
 <li>Every figure has a source link and the date we last checked it.</li>
@@ -264,33 +412,47 @@ def build_about():
 <ul>{defs}</ul>
 <h2>Known limitations</h2>
 <ul>
-<li>Several clubs publish prices only as images, behind log-ins, or individually to season ticket holders (e.g. Sunderland, Fulham), so some figures rely on press reports.</li>
+<li>Several clubs publish prices only as images, behind log-ins, or individually to season ticket holders (e.g. Sunderland, Fulham), so some figures rely on press reports. Many EFL club sites block automated reading; a few figures were read from a search engine’s extract of the club page and are marked as such in the note.</li>
+<li>Below the Premier League, coverage is uneven: we have season-ticket prices for most clubs but matchday prices for fewer, and only a handful of pint, pie or programme prices, taken from clubs’ own visitor guides, because we found no reputable 2026/27 survey for those leagues.</li>
+<li>Early-bird, renewal and general-sale season-ticket prices differ; lower-league figures often reflect the early-bird or renewal rate, so the price a new fan pays now may be higher.</li>
 <li>Clubs often sell a few restricted or family-area seats below their usual entry price; compare notes, not just numbers.</li>
 <li>Matchday prices depend on the fixture category, which clubs set match by match.</li>
 </ul>
+<h2 id="away-guide-method">The away day guide: where it comes from</h2>
+<p>Every club page has an away day guide for visiting supporters: where the away end is, the nearest station and how long the walk is, away-friendly pubs (with a Google Maps link) and pubs to avoid, parking and coach drop-off, food in the away end, and links to the club’s own visiting-supporter information. It currently covers {len(AWAY)} grounds and lists {n_pubs} away-friendly pubs and {n_avoid} pubs to avoid.</p>
+<p>We use sources in this order, and every item carries a tag saying which kind it is:</p>
+<ul>
+<li><span class="ag-tag ag-official">Official</span> — the home club’s own visiting-supporters page or away guide (or, where named, a public body such as a council or transport authority).</li>
+<li><span class="ag-tag ag-official_other_club">Other club’s guide</span> — an official away guide published by a <em>visiting</em> club about this ground, shown as “From the X away guide”. These are usually written for one fixture, so details such as parking prices can be fixture-specific.</li>
+<li><span class="ag-tag ag-trust">Supporters’ trust</span> — a supporters’ trust or supporters’ club.</li>
+<li><span class="ag-tag ag-press">Press</span> — reputable newspapers.</li>
+<li><span class="ag-tag ag-other">Fan guide</span> — independent fan guides such as Football Ground Guide or Away Day Pubs, used mainly for pubs and only where the page says so.</li>
+</ul>
+<p>Each item links to its source and shows the date we checked it. If a source is a guide from the 2024-25 season or earlier, we still show it but say “From the 2024-25 guide, check before you travel.” If a pub has closed, or a source says it is now home-only, we drop it or move it to “pubs to avoid”. We only include a pub, station, stand or walking time if a page we actually read says so — <strong>we never invent or estimate them</strong>, and if we couldn’t find something the section is simply left out. We don’t link to betting, ticket-resale or affiliate sites.</p>
+<p>Pub policies change, so check before you travel. Colours rules may apply, and police can change arrangements for high-risk fixtures at short notice. The full data is available as <a href="data/away_guide.json">away_guide.json</a>.</p>
 <h2 id="corrections">Corrections</h2>
 <p>If a price is wrong or out of date, please send the correct figure with a link to the club’s page. <!-- TODO: add a contact email or form before publishing. --> Contact details will be added before launch.</p>
 <h2>Every source used</h2>
 <ul class="sources">{li}</ul>
 {newsletter()}
 """
-    desc = "How Price of Football collects ticket, pint and pie prices: club websites first, reputable press second, every figure sourced and dated. Independent and unaffiliated."
+    desc = "How Price of Football collects ticket, pint and pie prices and builds its away day guide: club websites first, reputable press second, every figure and tip sourced and dated. Independent and unaffiliated."
     (ROOT / "about.html").write_text(page(f"About & methodology | {SITE}", desc, "about.html", body))
 
 def build_csv():
     with open(ROOT / "data" / "clubs.csv", "w", newline="") as fh:
         w = csv.writer(fh)
         hdr = ["slug", "name", "league", "season", "stadium", "capacity"]
-        for k, _, _ in FIELDS: hdr += [k, k + "_source_url", k + "_checked", k + "_note"]
+        for k, _, _ in FIELDS: hdr += [k, k + "_source_title", k + "_source_url", k + "_source_type", k + "_checked", k + "_note"]
         w.writerow(hdr)
         for c in CLUBS:
             r = [c["slug"], c["name"], c["league"], c["season"], c["stadium"]["value"], c["capacity"]["value"]]
             for k, _, _ in FIELDS:
-                f = c[k]; r += ["" if f["value"] is None else f["value"], f["source_url"], f["checked"], f["note"]]
+                f = c[k]; r += ["" if f["value"] is None else f["value"], f.get("source_title", ""), f["source_url"], f.get("source_type", ""), f["checked"], f["note"]]
             w.writerow(r)
 
 def build_seo():
-    today = META["generated"]
+    today = max(META["generated"], AWAY_DATA.get("meta", {}).get("generated", META["generated"]))
     urls = ["", "calculator.html", "about.html"] + [f"clubs/{c['slug']}.html" for c in CLUBS]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
          "".join(f"  <url><loc>{SITE_URL}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n"
@@ -299,4 +461,6 @@ def build_seo():
 
 build_home(); build_calc(); build_about(); build_csv(); build_seo()
 for c in CLUBS: build_club(c)
-print("built", len(CLUBS), "club pages")
+_missing = sorted(set(AWAY) - {c["slug"] for c in CLUBS})
+if _missing: print("WARNING: away_guide ids with no club page:", _missing)
+print("built", len(CLUBS), "club pages;", sum(1 for c in CLUBS if c["slug"] in AWAY), "with an away day guide")
