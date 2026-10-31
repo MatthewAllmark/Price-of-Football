@@ -1,0 +1,149 @@
+:root{--bg:#f7f7f5;--card:#fff;--ink:#0f172a;--muted:#5b6474;--line:#e3e5e8;--accent:#7c3aed;--accent-ink:#fff;--soft:#f3effd;--warn:#8a5a00;--radius:12px;
+--font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.55 var(--font);color:var(--ink);background:var(--bg)}
+a{color:var(--accent)}a:hover{text-decoration-thickness:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;padding:8px;z-index:9}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.site-header{background:var(--ink);color:#fff}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{color:#fff;text-decoration:none;font-weight:700;font-size:1.15rem;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.brand-mark{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--accent);font-weight:800}
+.site-header nav{display:flex;gap:4px;flex-wrap:wrap}
+.site-header nav a{color:#d6dbe3;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:.95rem}
+.site-header nav a:hover{background:#1e293b;color:#fff}
+main{padding:28px 20px 40px}
+h1{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.15;letter-spacing:-.02em;margin:.2em 0 .4em}
+h2{font-size:1.3rem;letter-spacing:-.01em;margin:1.8em 0 .5em}
+.lede{font-size:1.1rem;color:#334155;max-width:760px}
+.small,.hint,.coverage{font-size:.88rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:22px 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column}
+.stat-label{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.stat-value{font-size:1.8rem;font-weight:750;letter-spacing:-.02em}
+.table-tools{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.table-tools h2{margin-bottom:0}
+.filters{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+input[type=search],input[type=email],input[type=number],select{font:inherit;padding:10px 12px;border:1px solid #cfd4da;border-radius:10px;background:#fff;color:var(--ink);min-width:0}
+input:focus,select:focus,button:focus-visible{outline:3px solid #c4b5fd;outline-offset:1px}
+.chk{font-size:.92rem;color:#334155;display:flex;gap:6px;align-items:center}
+.table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+#prices th,#prices td{padding:9px 10px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+thead th{background:#f1f3f5;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:#475569;position:sticky;top:0;white-space:normal;line-height:1.25;vertical-align:bottom}
+thead button{all:unset;cursor:pointer;display:inline-flex;gap:4px;align-items:center}
+thead button::after{content:"↕";opacity:.35;font-size:.9em}
+thead button[aria-sort=ascending]::after{content:"↑";opacity:1}
+thead button[aria-sort=descending]::after{content:"↓";opacity:1}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.empty{color:#9aa3ae}
+#prices tbody th a{font-weight:650;text-decoration:none;color:var(--ink)}
+#prices tbody th a:hover{color:var(--accent);text-decoration:underline}
+.sub{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+#prices tbody tr:hover{background:var(--soft)}
+#prices th[scope=row]{position:sticky;left:0;background:inherit;background:var(--card);min-width:150px}
+#prices tbody tr:hover th[scope=row]{background:var(--soft)}
+.seo-copy p{max-width:760px}
+.newsletter{background:var(--ink);color:#e2e8f0;border-radius:var(--radius);padding:22px;margin:36px 0 10px}
+.newsletter h2{color:#fff;margin-top:0}
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-form input{flex:1 1 240px}
+button,.btn{font:inherit;font-weight:650;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:10px 16px;cursor:pointer;text-decoration:none;display:inline-block}
+button:hover,.btn:hover{filter:brightness(1.08)}
+.nl-msg{flex-basis:100%;margin:6px 0 0;color:#a7f3d0}
+.crumbs{font-size:.9rem;color:var(--muted)}.crumbs a{color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 6px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.facts dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.facts dd{margin:0;font-weight:650}
+.club-table td.big{font-size:1.2rem;font-weight:700}
+.club-table th[scope=row]{width:24%;font-weight:600}
+.club-table td:last-child{font-size:.9rem;color:#334155;min-width:280px}
+.src{margin-top:4px}.checked{color:var(--muted);font-size:.82rem}
+.tag{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;background:#eef1f4;color:#475569;border-radius:999px;padding:1px 8px;vertical-align:1px}
+.club-list{columns:3 180px;padding-left:18px}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:16px}
+.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}
+.field label{font-weight:600;font-size:.92rem}.opt{font-weight:400;color:var(--muted)}
+.result{background:var(--soft);border:1px solid #ddd3fb;border-radius:var(--radius);padding:18px;margin:16px 0}
+.total-label{margin:0;color:var(--muted);text-transform:uppercase;font-size:.8rem;letter-spacing:.04em}
+.total{font-size:2.4rem;font-weight:800;margin:0;letter-spacing:-.02em}
+#breakdown{margin:6px 0;padding-left:18px}
+.site-footer{border-top:1px solid var(--line);background:#fff;font-size:.86rem;color:var(--muted);padding:18px 0 28px}
+.site-footer .wrap{max-width:900px}
+.sources li{margin:6px 0}
+@media (max-width:640px){.hide-sm{display:none}th,td{padding:9px 9px}main{padding:20px 14px 32px}.wrap{padding:0 14px}#prices th[scope=row]{min-width:130px}}
+.league-tag{margin:.2rem 0 0;font-size:.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.coverage ul{margin:.3rem 0 0;padding-left:1.1rem}
+.coverage li{margin:.15rem 0}
+
+/* UI fixes 29 Oct 2026: filters, counts, empty state, long names, breadcrumbs, mobile table */
+.filters select,.filters input[type=search]{flex:1 1 180px}
+.btn-secondary{background:#fff;color:var(--ink);border:1px solid #cfd4da;font-weight:600;padding:9px 14px}
+.count{margin:8px 0 0;font-size:.88rem;color:var(--muted)}
+.empty-state{background:var(--card);border:1px dashed #cfd4da;border-radius:var(--radius);padding:16px;margin-top:10px;color:#334155}
+.empty-state[hidden]{display:none}
+.table-wrap{max-width:100%;-webkit-overflow-scrolling:touch}
+#prices th[scope=row]{max-width:230px;overflow-wrap:anywhere;hyphens:auto}
+.crumbs{overflow-wrap:anywhere;line-height:1.5}
+h1{overflow-wrap:anywhere}
+@media (max-width:640px){
+ .table-tools{display:block}
+ .filters{margin-top:10px;gap:8px}
+ .filters select,.filters input[type=search]{flex:1 1 100%;width:100%}
+ #prices{font-size:.86rem}
+ #prices th[scope=row]{min-width:120px;max-width:150px}
+ #prices .sub{font-size:.74rem}
+ .club-table td:last-child{min-width:200px}
+ .club-table th[scope=row]{width:auto;min-width:110px}
+}
+
+/* Away day guide (club pages) and calculator away box — 29 Oct 2026 */
+.lede-sub{max-width:760px;color:#334155;font-size:1rem}
+.jump{margin:.2rem 0 1rem}.jump a{font-weight:600}
+.away-guide{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:6px 20px 16px;margin:28px 0}
+.away-guide h2{margin-top:.8em}
+.away-guide h3{font-size:1.05rem;margin:1.3em 0 .4em}
+.ag-warn{background:#fff7e6;border:1px solid #f1d9a6;color:#5c3d00;border-radius:10px;padding:10px 12px;font-weight:600;font-size:.95rem}
+.ag-main{font-weight:650;font-size:1.05rem;margin:.2em 0}
+.ag-list{list-style:none;padding:0;margin:0}
+.ag-list li{padding:9px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.ag-list li:last-child{border-bottom:0}
+.ag-name{font-weight:650}
+.ag-type,.ag-note{color:#334155;font-size:.92rem}
+.ag-map{font-size:.85rem}
+.ag-avoid .ag-name{text-decoration:line-through;text-decoration-color:#c2410c80}
+.ag-src{display:inline;font-size:.8rem;color:var(--muted);line-height:1.6}
+.ag-src a{color:var(--muted)}
+.ag-tag{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;padding:0 7px;margin-right:2px;vertical-align:1px;background:#eef1f4;color:#475569;white-space:nowrap}
+.ag-official{background:#e6f4f1;color:#0f5e57}
+.ag-official_other_club{background:#eef2ff;color:#3730a3}
+.ag-trust{background:#f3e8ff;color:#6b21a8}
+.ag-press{background:#f1f5f9;color:#334155}
+.ag-other{background:#f4f4f5;color:#52525b}
+.ag-old{color:var(--warn);font-weight:600}
+.away-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:4px 18px 14px;margin:16px 0}
+.away-box[hidden]{display:none}
+.away-box h2{margin-top:.7em}
+.away-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:8px 0}
+.away-facts div{background:var(--soft);border-radius:10px;padding:8px 12px}
+.away-facts dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.away-facts dd{margin:0;font-weight:600}
+.away-pubs-h{font-weight:650;margin:.8em 0 .2em}
+@media (max-width:640px){.away-guide{padding:4px 14px 12px}.away-box{padding:4px 14px 12px}}
+.status{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.st-on_sale{background:#dcfce7;color:#166534}.st-sold_out{background:#fee2e2;color:#991b1b}.st-coming_soon{background:#fef3c7;color:#92400e}
+.st-sale_held{background:#e0e7ff;color:#3730a3}.st-unknown{background:#eef1f4;color:#475569}
+.todo{border:2px dashed #c4b5fd;background:#faf7ff;border-radius:var(--radius);padding:14px 16px;margin:18px 0;font-size:.92rem;color:#4c1d95}
+.todo strong{display:block;margin-bottom:4px}
+.month h2{margin-top:1.4em}.month ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.month li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.notice{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:10px 14px;font-size:.9rem;color:#78350f}
+@media (max-width:640px){.club-table tr{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid var(--line)}.club-table th,.club-table td{border-bottom:0}.club-table th[scope=row]{width:auto}.club-table td:last-child{grid-column:1/-1;min-width:0;padding-top:0}}
+
+/* v2: cross-link bar to the parent Price of Football site */
+.xlink{background:#f5f3ff;border-bottom:1px solid #ddd6fe;font-size:.875rem;padding:.4rem 0;color:#4c1d95}
+.xlink a{color:#6d28d9;font-weight:600}
