@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://matthewallmark.github.io/Price-of-Football/sitemap.xml
+Sitemap: https://matthewallmark.github.io/Price-of-Football/festivals/sitemap.xml
