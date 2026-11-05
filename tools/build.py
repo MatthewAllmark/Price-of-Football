@@ -46,7 +46,7 @@ def fmt_date(s):
 def page(title, desc, path, body, extra_head="", depth=0):
     pre = "../" * depth
     canon = SITE_URL + "/" + path
-    nav = [("index.html", "Prices"), ("calculator.html", "Away day calculator"), ("about.html", "About & methodology"), ("festivals/", "Festivals")]
+    nav = [("index.html", "Prices"), ("calculator.html", "Away day calculator"), ("about.html", "About & methodology"), ("festivals/", "Festivals"), ("abroad/index.html", "Abroad")]
     navhtml = "".join(f'<a href="{pre}{h}">{t}</a>' for h, t in nav)
     return f"""<!doctype html>
 <html lang="en-GB">
@@ -458,7 +458,7 @@ def build_seo():
          "".join(f"  <url><loc>{SITE_URL}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n"
     (ROOT / "sitemap.xml").write_text(sm)
     (ROOT / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\nSitemap: {SITE_URL}/festivals/sitemap.xml\n"
+        f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\nSitemap: {SITE_URL}/festivals/sitemap.xml\nSitemap: {SITE_URL}/abroad/sitemap.xml\n"
     )
 
 build_home(); build_calc(); build_about(); build_csv(); build_seo()
