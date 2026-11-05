@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-02",
+  "generated": "2026-11-05",
   "window": [
    "2026-11-02",
    "2026-12-20"
@@ -46,84 +46,84 @@
     "label": "already in pounds",
     "source_url": null,
     "source_title": null,
-    "date": "2026-11-02"
+    "date": "2026-11-05"
    }
   },
   "tables": {
    "2026–27_Bundesliga": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Croatian_Football_League": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Ekstraklasa": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Eredivisie": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Kategoria_Superiore": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_La_Liga": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Liga_Portugal_2": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Liga_Portugal_2&oldid=1383235586",
     "source_title": "Wikipedia: 2026–27 Liga Portugal 2 (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Primeira_Liga": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Scottish_Premiership": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Segunda_División": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Serbian_SuperLiga": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serbian_SuperLiga&oldid=1382258049",
     "source_title": "Wikipedia: 2026–27 Serbian SuperLiga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Serie_A": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Super_League_Greece": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "2026–27_Süper_Lig": {
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "MNE": {
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   "fixture_sources": {
@@ -138,22 +138,22 @@
     ]
    },
    "2026–27_Eredivisie": {
-    "name": "ESPN public scoreboard feed",
-    "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/scoreboard",
+    "name": "football-data.org v4 (official-grade feed)",
+    "url": "https://api.football-data.org/v4/competitions/DED/matches?season=2026",
     "all": [
      {
-      "name": "ESPN public scoreboard feed",
-      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/scoreboard"
+      "name": "football-data.org v4 (official-grade feed)",
+      "url": "https://api.football-data.org/v4/competitions/DED/matches?season=2026"
      }
     ]
    },
    "2026–27_Serie_A": {
-    "name": "ESPN public scoreboard feed",
-    "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard",
+    "name": "football-data.org v4 (official-grade feed)",
+    "url": "https://api.football-data.org/v4/competitions/SA/matches?season=2026",
     "all": [
      {
-      "name": "ESPN public scoreboard feed",
-      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard"
+      "name": "football-data.org v4 (official-grade feed)",
+      "url": "https://api.football-data.org/v4/competitions/SA/matches?season=2026"
      }
     ]
    },
@@ -192,36 +192,40 @@
     ]
    },
    "2026–27_Primeira_Liga": {
-    "name": "ESPN public scoreboard feed",
-    "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard",
+    "name": "football-data.org v4 (official-grade feed)",
+    "url": "https://api.football-data.org/v4/competitions/PPL/matches?season=2026",
     "all": [
      {
-      "name": "ESPN public scoreboard feed",
-      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard"
+      "name": "football-data.org v4 (official-grade feed)",
+      "url": "https://api.football-data.org/v4/competitions/PPL/matches?season=2026"
      }
     ]
    },
    "2026–27_Bundesliga": {
-    "name": "Bundesliga official matchday page",
+    "name": "Bundesliga official matchday page + football-data.org v4 (official-grade feed)",
     "url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/14",
     "all": [
      {
       "name": "Bundesliga official matchday page",
       "url": "https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/14"
+     },
+     {
+      "name": "football-data.org v4 (official-grade feed)",
+      "url": "https://api.football-data.org/v4/competitions/BL1/matches?season=2026"
      }
     ]
    },
    "2026–27_La_Liga": {
-    "name": "LaLiga official results page + ESPN public scoreboard feed",
-    "url": "https://www.laliga.com/en-GB/laliga-easports/results?week=13",
+    "name": "football-data.org v4 (official-grade feed) + LaLiga official results page",
+    "url": "https://api.football-data.org/v4/competitions/PD/matches?season=2026",
     "all": [
      {
-      "name": "LaLiga official results page",
-      "url": "https://www.laliga.com/en-GB/laliga-easports/results?week=13"
+      "name": "football-data.org v4 (official-grade feed)",
+      "url": "https://api.football-data.org/v4/competitions/PD/matches?season=2026"
      },
      {
-      "name": "ESPN public scoreboard feed",
-      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard"
+      "name": "LaLiga official results page",
+      "url": "https://www.laliga.com/en-GB/laliga-easports/results?week=15"
      }
     ]
    },
@@ -242,6 +246,16 @@
      {
       "name": "FSCG official fixtures",
       "url": "https://fscg.me/takmicenja/meridianbet-1-cfl/"
+     }
+    ]
+   },
+   "2026–27_Serbian_SuperLiga": {
+    "name": "FSS official fixtures (Mozzart Bet SuperLiga)",
+    "url": "https://fss.rs/takmicenje/mozzart-bet-super-liga-srbije-26-27/?script=lat",
+    "all": [
+     {
+      "name": "FSS official fixtures (Mozzart Bet SuperLiga)",
+      "url": "https://fss.rs/takmicenje/mozzart-bet-super-liga-srbije-26-27/?script=lat"
      }
     ]
    },
@@ -276,6 +290,26 @@
      {
       "name": "ESPN public scoreboard feed",
       "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard"
+     }
+    ]
+   },
+   "2026–27_Liga_Portugal_2": {
+    "name": "Liga Portugal official calendar (ICS)",
+    "url": "https://www.ligaportugal.pt/calendars-ics/ligaportugalmeusuper.ics",
+    "all": [
+     {
+      "name": "Liga Portugal official calendar (ICS)",
+      "url": "https://www.ligaportugal.pt/calendars-ics/ligaportugalmeusuper.ics"
+     }
+    ]
+   },
+   "2026–27_Primera_Federación": {
+    "name": "RFEF official results portal (Primera Federación)",
+    "url": "https://marcadores.rfef.es/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120&CodCompeticion=33836088&CodGrupo=33836090&CodTemporada=22&cod_agrupacion=&CodJornada=11",
+    "all": [
+     {
+      "name": "RFEF official results portal (Primera Federación)",
+      "url": "https://marcadores.rfef.es/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120&CodCompeticion=33836088&CodGrupo=33836090&CodTemporada=22&cod_agrupacion=&CodJornada=11"
      }
     ]
    }
@@ -354,7 +388,7 @@
    "tickets": {
     "url": "https://entradas.deportivoalaves.com/b2c/ticketSale/matches?competition=LALIGA",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -379,7 +413,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -413,7 +447,7 @@
    "tickets": {
     "url": "https://algeciras.compralaentrada.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Costa del Sol (Marbella)",
@@ -453,7 +487,7 @@
    "tickets": {
     "url": "http://www.udalmeriasad.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -463,7 +497,7 @@
     "source_url": "https://www.udalmeriasad.com/noticias/a-la-venta-las-entradas-para-el-almeria-real-oviedo-del-sabado",
     "source_title": "UD Almería: A la venta las entradas para el Almería-Real Oviedo",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 46,
     "fx": {
@@ -496,7 +530,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -523,7 +557,7 @@
    "tickets": {
     "url": "https://antequeracf.compralaentrada.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "latlon": {
     "lat": 37.0207037,
@@ -570,7 +604,7 @@
    "tickets": {
     "url": "https://www.athletic-club.eus/entradas/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -611,7 +645,7 @@
     "quote": "Safe standing rail seats were installed in part of the north stand in 2019, later expanded into a 'singing section' across the whole lower tier at that end of the ground in 2022.",
     "source_title": "Wikipedia: San Mamés Stadium (2013)",
     "source_url": "https://en.wikipedia.org/w/index.php?title=San_Mam%C3%A9s_Stadium_%282013%29&oldid=1381759671",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Bilbao city break",
@@ -626,7 +660,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -660,7 +694,7 @@
    "tickets": {
     "url": "https://www.atleticodemadrid.com/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 90.0,
@@ -670,7 +704,7 @@
     "source_url": "https://okdiario.com/deportes/entradas-atletico-madrid-barcelona-liga-cuanto-cuestan-como-comprarlas-20681845",
     "source_title": "OKDiario: Entradas Atlético de Madrid - Barcelona, cuánto cuestan",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 75,
     "gbp_max": 334,
     "fx": {
@@ -711,7 +745,7 @@
     "quote": "They had around 2,500 members in 2014, one of the largest ultra groups in Spanish football.",
     "source_title": "Wikipedia: Atlético Madrid",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Atl%C3%A9tico_Madrid&oldid=1381778552",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Madrid city break",
@@ -726,7 +760,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -760,7 +794,7 @@
    "tickets": {
     "url": "https://www.fcbarcelona.com/en/tickets/football",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 46.0,
@@ -770,7 +804,7 @@
     "source_url": "https://www.goal.com/es/noticias/como-conseguir-entradas-para-laliga-2026-27-entradas-para-el-clasico-proximos-partidos-del-barcelona-precios-del-real-madrid-y-mas/bltabbb3165a6534348",
     "source_title": "Goal.com España: \"Cómo conseguir entradas de La Liga 2026/27\"",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 38,
     "gbp_max": 125,
     "fx": {
@@ -785,7 +819,7 @@
      "note": "The club sells match tickets online only; per-match prices appear when each sale opens and the club does not publish a standing price list.",
      "source_url": "https://www.fcbarcelona.com/en/tickets/football",
      "source_title": "FC Barcelona official: Football tickets",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -819,7 +853,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -853,7 +887,7 @@
    "tickets": {
     "url": "http://www.cartagenaefese.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -903,7 +937,7 @@
    "tickets": {
     "url": "https://entradas.cdcastellon.com/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Costa del Azahar (Castellón)",
@@ -918,7 +952,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -952,7 +986,7 @@
    "tickets": {
     "url": "https://rccelta.es/entradas/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -977,7 +1011,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1011,14 +1045,14 @@
    "tickets": {
     "url": "https://entradas.cadizcf.com",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "atmosphere": {
     "rating": 3,
     "quote": "The group originated as a young anti-fascist collective called Frente Cadiz, which renamed itself Barra Ultra before settling on Brigadas Amarillas in 1982, partly to distance itself from the term \"ultra,\" which carried right-wing connotations in Spain at the time.",
     "source_title": "Wikipedia: Cádiz CF",
     "source_url": "https://en.wikipedia.org/w/index.php?title=C%C3%A1diz_CF&oldid=1381530627",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Costa de la Luz (Cádiz)",
@@ -1033,7 +1067,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1067,7 +1101,7 @@
    "tickets": {
     "url": "http://www.cordobacf.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Seville city break",
@@ -1082,7 +1116,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1116,7 +1150,7 @@
    "tickets": {
     "url": "https://www.rcdeportivo.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -1141,7 +1175,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1175,7 +1209,7 @@
    "tickets": {
     "url": "https://www.elchecf.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -1232,7 +1266,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1266,7 +1300,7 @@
    "tickets": {
     "url": "https://cdeldense.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -1276,7 +1310,7 @@
     "source_url": "https://www.cdeldense.es/noticias/venta-de-entradas-para-el-cd-eldense-granada-cf",
     "source_title": "CD Eldense: Venta de entradas para el CD Eldense – Granada CF",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 29,
     "fx": {
@@ -1309,7 +1343,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1343,7 +1377,7 @@
    "tickets": {
     "url": "https://tickets.rcdespanyol.com/index.php/ca/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -1368,7 +1402,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1402,7 +1436,7 @@
    "tickets": {
     "url": "https://www.getafecf.com/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Madrid city break",
@@ -1417,7 +1451,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1451,7 +1485,7 @@
    "tickets": {
     "url": "https://www.gironafc.cat/entrades",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Costa Brava (Lloret de Mar)",
@@ -1466,7 +1500,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1500,7 +1534,7 @@
    "tickets": {
     "url": "https://entradas.granadacf.es/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 35.0,
@@ -1510,7 +1544,7 @@
     "source_url": "https://www.granadacf.es/noticias/el-granada-cf-lanza-una-promocion-especial-para-el-partido-ante-el-cd-tenerife",
     "source_title": "Granada CF: promoción especial para el partido ante el CD Tenerife",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 29,
     "gbp_max": 50,
     "fx": {
@@ -1543,7 +1577,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1577,7 +1611,7 @@
    "tickets": {
     "url": "http://hercules.compralaentrada.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -1635,7 +1669,7 @@
    "tickets": {
     "url": "https://www.ibizaud.com/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Ibiza",
@@ -1668,7 +1702,7 @@
    "tickets": {
     "url": "https://jtorremolinoscf.clibomanager.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "latlon": {
     "lat": 36.6221142,
@@ -1715,7 +1749,7 @@
    "tickets": {
     "url": "https://www.udlaspalmas.es/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 24.0,
@@ -1725,7 +1759,7 @@
     "source_url": "https://www.udlaspalmas.net/2026/08/11/la-ud-mantiene-los-precios-de-las-entradas-para-esta-temporada/",
     "source_title": "udlaspalmas.NET: La UD mantiene los precios de las entradas (11 Aug 2026)",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 20,
     "gbp_max": 63,
     "fx": {
@@ -1758,7 +1792,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1792,7 +1826,7 @@
    "tickets": {
     "url": "https://ticketing.levanteud.com/es",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -1817,7 +1851,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1851,7 +1885,7 @@
    "tickets": {
     "url": "https://www.rcdmallorca.es/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Mallorca (Palma)",
@@ -1866,7 +1900,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -1900,7 +1934,7 @@
    "tickets": {
     "url": "https://realmurcia.compralaentrada.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -1966,7 +2000,7 @@
    "tickets": {
     "url": "https://www.malagacf.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 50.0,
@@ -1976,7 +2010,7 @@
     "source_url": "https://www.malagahoy.es/malaga_cf/entradas-malaga-cf-deportivo-precios_0_2007714684.html",
     "source_title": "Málaga Hoy: \"Entradas Málaga CF - Deportivo: Precios y dónde comprar\"",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 42,
     "gbp_max": 125,
     "fx": {
@@ -2017,7 +2051,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2051,7 +2085,7 @@
    "tickets": {
     "url": "https://entradas.osasuna.es/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -2076,7 +2110,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2110,7 +2144,7 @@
    "tickets": {
     "url": "https://taquilla.realracingclub.es/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -2135,7 +2169,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2169,7 +2203,7 @@
    "tickets": {
     "url": "http://www.rayovallecano.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Madrid city break",
@@ -2184,7 +2218,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2218,7 +2252,7 @@
    "tickets": {
     "url": "https://www.realbetisbalompie.es/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -2243,7 +2277,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2277,7 +2311,7 @@
    "tickets": {
     "url": "https://www.realmadrid.com/es-ES/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 75.0,
@@ -2287,7 +2321,7 @@
     "source_url": "https://www.mundodeportivo.com/futbol/real-madrid/20260817/1004216855/esto-cuesta-ver-debut-real-madrid-bernabeu.html",
     "source_title": "Mundo Deportivo, 17 Aug 2026: Esto es lo que cuesta ver el debut del Real Madrid en el Bernabéu",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 63,
     "gbp_max": 196,
     "fx": {
@@ -2328,7 +2362,7 @@
     "quote": "This decision was controversial with some of the Bernabéu faithful, however, as the lively atmosphere of games would suffer as a result.",
     "source_title": "Wikipedia: Real Madrid CF",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Real_Madrid_CF&oldid=1382763097",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Madrid city break",
@@ -2343,7 +2377,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2377,7 +2411,7 @@
    "tickets": {
     "url": "https://ticketing.realsociedad.eus/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -2402,7 +2436,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2436,7 +2470,7 @@
    "tickets": {
     "url": "https://www.sevillafc.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -2461,7 +2495,7 @@
     "quote": "The \"Biris Norte\" was created in the 1974–75 season and is one of the oldest groups of Ultra fans in Spain.",
     "source_title": "Wikipedia: Sevilla FC",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Sevilla_FC&oldid=1382204152",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Seville city break",
@@ -2476,7 +2510,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2510,7 +2544,7 @@
    "tickets": {
     "url": "https://www.realsporting.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Asturias (Gijón)",
@@ -2525,7 +2559,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2559,7 +2593,7 @@
    "tickets": {
     "url": "https://www.clubdeportivotenerife.es/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -2569,7 +2603,7 @@
     "source_url": "https://www.clubdeportivotenerife.es/noticias/localidades-para-el-partido-tenerifeandorra",
     "source_title": "CD Tenerife: Localidades para el partido #TenerifeAndorra",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 42,
     "fx": {
@@ -2602,7 +2636,7 @@
     "of": 22,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Segunda_Divisi%C3%B3n&oldid=1383431795",
     "source_title": "Wikipedia: 2026–27 Segunda División (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2636,7 +2670,7 @@
    "tickets": {
     "url": "https://www.valenciacf.com/venta-entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 40.0,
@@ -2646,7 +2680,7 @@
     "source_url": "https://www.superdeporte.es/valencia-cf/2026/08/11/valencia-cf-precio-entradas-laliga-real-betis-rc-celta-133273257.html",
     "source_title": "Superdeporte: El Valencia CF saca a la venta las entradas… (11 Aug 2026)",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 33,
     "gbp_max": 95,
     "fx": {
@@ -2687,7 +2721,7 @@
     "quote": "It is also renowned for its steep terracing and for being one of the most intimidating atmospheres in Europe.",
     "source_title": "Wikipedia: Valencia CF",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Valencia_CF&oldid=1383030068",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Valencia city break",
@@ -2702,7 +2736,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2736,7 +2770,7 @@
    "tickets": {
     "url": "https://villarrealcf.es/es/venta-de-entradas/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -2769,7 +2803,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_La_Liga&oldid=1383277434",
     "source_title": "Wikipedia: 2026–27 La Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2839,7 +2873,7 @@
    "tickets": {
     "url": "http://academicodeviseu.pt/bilheteira.php",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Porto city break",
@@ -2854,7 +2888,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2881,7 +2915,7 @@
    "tickets": {
     "url": "http://www.alvercafutebolsad.pt/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "latlon": {
     "lat": 38.897786,
@@ -2903,7 +2937,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2937,7 +2971,7 @@
    "tickets": {
     "url": "https://fcarouca.eu/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Porto city break",
@@ -2952,7 +2986,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -2986,7 +3020,7 @@
    "tickets": {
     "url": "https://www.slbenfica.pt/pt-pt/bilhetes",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 50.0,
@@ -2996,7 +3030,7 @@
     "source_url": "https://www.slbenfica.pt/pt-pt/agora/noticias/2026/10/13/futebol-bilhetes-benfica-fc-alverca-10-jornada-liga-betclic",
     "source_title": "SL Benfica official: \"Benfica FC Alverca Bilhetes Futebol Liga\"",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 42,
     "gbp_max": 79,
     "fx": {
@@ -3037,7 +3071,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3071,7 +3105,7 @@
    "tickets": {
     "url": "https://scbraga.pt/bilhetes",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -3096,7 +3130,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3130,7 +3164,7 @@
    "tickets": {
     "url": "https://casapiaac.pt/bilheteira",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -3140,7 +3174,7 @@
     "source_url": "https://casapiaac.pt/noticia.php?n=372",
     "source_title": "Casa Pia AC: Casa Pia AC x Sporting CP – Venda de Bilhetes",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 29,
     "fx": {
@@ -3163,7 +3197,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3197,7 +3231,7 @@
    "tickets": {
     "url": "https://estorilpraia.pt/bilheteira",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Lisbon & Cascais",
@@ -3212,7 +3246,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3246,7 +3280,7 @@
    "tickets": {
     "url": "https://www.cdestrela.pt/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Lisbon & Cascais",
@@ -3261,7 +3295,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3295,7 +3329,7 @@
    "tickets": {
     "url": "https://smartfan.tickets/fcfamalicao",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 10.0,
@@ -3305,7 +3339,7 @@
     "source_url": "https://fcfamalicao.pt/noticias/bilhetes-para-a-rececao-ao-fc-arouca-6/",
     "source_title": "FC Famalicão: Bilhetes para a receção ao FC Arouca",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 8,
     "gbp_max": 8,
     "fx": {
@@ -3328,7 +3362,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3362,7 +3396,7 @@
    "tickets": {
     "url": "https://2ticket.pt/scfarense/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -3387,7 +3421,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Liga_Portugal_2&oldid=1383235586",
     "source_title": "Wikipedia: 2026–27 Liga Portugal 2 (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3421,7 +3455,7 @@
    "tickets": {
     "url": "http://www.gilvicentefc.pt/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Porto city break",
@@ -3436,7 +3470,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3470,7 +3504,7 @@
    "tickets": {
     "url": "https://csmaritimo.pt/bilheteira",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -3487,7 +3521,7 @@
     "quote": "The club has three predominant supporter groups, the Claque Esquadrão Marítimista ,  the Ultras Templários and the Ultras Fanatics 13 .",
     "source_title": "Wikipedia: C.S. Marítimo",
     "source_url": "https://en.wikipedia.org/w/index.php?title=C.S._Mar%C3%ADtimo&oldid=1381186296",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Madeira (Funchal)",
@@ -3502,7 +3536,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3536,7 +3570,7 @@
    "tickets": {
     "url": "https://www.moreirensefc.pt/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Porto city break",
@@ -3551,7 +3585,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3585,7 +3619,7 @@
    "tickets": {
     "url": "https://www.cdnacional.pt/bilheteira/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -3610,7 +3644,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3644,7 +3678,7 @@
    "tickets": {
     "url": "https://www.portimonense.pt/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 5.0,
@@ -3654,7 +3688,7 @@
     "source_url": "https://www.portimonensesad.pt/portimonense-recebe-sc-farense-no-derbi-decisivo-da-ultima-jornada_25609",
     "source_title": "Portimonense SAD: Portimonense recebe SC Farense no dérbi",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 4,
     "gbp_max": 4,
     "fx": {
@@ -3687,7 +3721,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Liga_Portugal_2&oldid=1383235586",
     "source_title": "Wikipedia: 2026–27 Liga Portugal 2 (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3721,14 +3755,14 @@
    "tickets": {
     "url": "https://www.fcporto.pt/bilhetes",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "ticket_notes": [
     {
      "note": "For the Clássico v Benfica (Sept 2026), general public had only two categories: €93 central and €160 central nascente premium; cheaper tiers (from €20) were members-only. Ordinary league matches are cheaper.",
      "source_url": "https://www.ojogo.pt/futebol/artigo/fc-porto-bilhetes-para-o-classico-com-o-benfica-chegam-aos-160-euros/18119818",
      "source_title": "O Jogo: \"FC Porto: bilhetes para o clássico com o Benfica chegam aos 160 euros\"",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -3746,7 +3780,7 @@
     "quote": "To Porto, the rivalry with Benfica is the strongest and most passionate, and it opposes the most representative football emblems from each city as well as the current most titled Portuguese clubs .",
     "source_title": "Wikipedia: FC Porto",
     "source_url": "https://en.wikipedia.org/w/index.php?title=FC_Porto&oldid=1382491675",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Porto city break",
@@ -3761,7 +3795,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3795,7 +3829,7 @@
    "tickets": {
     "url": "https://smartfan.tickets/rioavefc/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 10.0,
@@ -3805,7 +3839,7 @@
     "source_url": "https://rioavefc.pt/destaque/bilheteira-rio-ave-fc-x-fc-famalicao-liga-portugal-betclic-4/",
     "source_title": "Rio Ave FC: Bilheteira Rio Ave FC x FC Famalicão",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 8,
     "gbp_max": 17,
     "fx": {
@@ -3828,7 +3862,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3862,7 +3896,7 @@
    "tickets": {
     "url": "https://cdsantaclara.com/bilheteira/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Azores (Ponta Delgada)",
@@ -3877,7 +3911,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3911,14 +3945,14 @@
    "tickets": {
     "url": "https://sporting.pt/bilhetes",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "ticket_notes": [
     {
      "note": "Members (\"Sócios\") get an \"Early Lion\" window from €10 for home league games; general sale opens later at the regular price. Tickets go on sale at tickets.sporting.pt and the Alvalade ticket office.",
      "source_url": "https://www.sporting.pt/pt/noticias/futebol/equipa-principal/2026-10-12/early-lion-chega-aos-jogos-em-casa-da-liga-portugal",
      "source_title": "Sporting CP official: \"Early Lion chega aos jogos em casa da Liga Portugal\"",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -3936,7 +3970,7 @@
     "quote": "Other popular songs include \" Só Eu Sei \" and \" Curva Belíssima \" popularized by organized Sporting CP's supporter's group Juventude Leonina , and \" Dia de Jogo \", \" Força Brutal \" and \" Voto Solene \" sung by Sporting CP's-themed rock band Supporting .",
     "source_title": "Wikipedia: Sporting CP",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Sporting_CP&oldid=1383269641",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Lisbon & Cascais",
@@ -3951,7 +3985,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -3985,7 +4019,7 @@
    "tickets": {
     "url": "https://smartfan.vitoriasc.pt/bilheteira",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4010,7 +4044,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Primeira_Liga&oldid=1383365535",
     "source_title": "Wikipedia: 2026–27 Primeira Liga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4044,7 +4078,7 @@
    "tickets": {
     "url": "https://www.acmilan.com/en/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4077,7 +4111,7 @@
     "quote": "It is therefore renowned in Italy for its fantastic atmosphere during matches, largely thanks to the closeness of the stands to the pitch.",
     "source_title": "Wikipedia: AC Milan",
     "source_url": "https://en.wikipedia.org/w/index.php?title=AC_Milan&oldid=1383186703",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Milan & the Lakes",
@@ -4092,7 +4126,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4126,7 +4160,7 @@
    "tickets": {
     "url": "https://www.atalanta.it/biglietteria",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4159,7 +4193,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4193,7 +4227,7 @@
    "tickets": {
     "url": "https://www.bolognafc.it/biglietti/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4226,7 +4260,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4260,7 +4294,7 @@
    "tickets": {
     "url": "https://cagliaricalcio.com/biglietti/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -4270,7 +4304,7 @@
     "source_url": "https://cagliaricalcio.com/news/cagliari-frosinone-i-biglietti-due-fasi-di-vendita/",
     "source_title": "Cagliari Calcio: Cagliari-Frosinone, i biglietti",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 100,
     "fx": {
@@ -4293,7 +4327,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4327,7 +4361,7 @@
    "tickets": {
     "url": "https://tickets.comofootball.com/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4352,7 +4386,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4386,7 +4420,7 @@
    "tickets": {
     "url": "https://www.acffiorentina.com/ticketing",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4435,7 +4469,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4469,7 +4503,7 @@
    "tickets": {
     "url": "https://www.frosinonecalcio.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 60.0,
@@ -4479,7 +4513,7 @@
     "source_url": "https://www.frosinonecalcio.com/frosinone-torino-la-biglietteria/",
     "source_title": "Frosinone Calcio: Frosinone – Torino, la biglietteria",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 50,
     "gbp_max": 109,
     "fx": {
@@ -4502,7 +4536,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4536,7 +4570,7 @@
    "tickets": {
     "url": "https://genoacfc.it/biglietteria/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4561,7 +4595,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4595,7 +4629,7 @@
    "tickets": {
     "url": "https://www.inter.it/it/notizie/categoria/stadio-e-biglietti",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4628,7 +4662,7 @@
     "quote": "It is therefore renowned in Italy for its atmosphere during matches, owing to the closeness of the stands to the pitch.",
     "source_title": "Wikipedia: Inter Milan",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Inter_Milan&oldid=1383373753",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Milan & the Lakes",
@@ -4643,7 +4677,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4677,7 +4711,7 @@
    "tickets": {
     "url": "https://www.juventus.com/it/biglietti/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -4734,7 +4768,7 @@
     "quote": "Juventus moved out of the unpopular stadium after the 2006 Winter Olympics were held in the city and began plans to build a more intimate and atmospheric venue.",
     "source_title": "Wikipedia: Juventus Stadium",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Juventus_Stadium&oldid=1383276904",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Turin",
@@ -4749,7 +4783,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4783,7 +4817,7 @@
    "tickets": {
     "url": "https://www.sslazio.it/biglietteria/matches",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 22.0,
@@ -4793,7 +4827,7 @@
     "source_url": "https://biglietticalcio.net/squadre/lazio",
     "source_title": "Biglietti Calcio: Lazio 2026/2027 seat prices",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 18,
     "gbp_max": 106,
     "fx": {
@@ -4826,7 +4860,7 @@
     "quote": "A marked shift occurred in 1972 with the formation of the Irriducibili , a group that would become the dominant ultra faction within the Curva Nord, the section of Lazio's home ground, the Stadio Olimpico, where the most vocal supporters stand.",
     "source_title": "Wikipedia: SS Lazio",
     "source_url": "https://en.wikipedia.org/w/index.php?title=SS_Lazio&oldid=1381564408",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rome city break",
@@ -4841,7 +4875,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4875,7 +4909,7 @@
    "tickets": {
     "url": "https://uslecce.it/biglietteria/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Puglia (Lecce)",
@@ -4890,7 +4924,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -4924,7 +4958,7 @@
    "tickets": {
     "url": "https://www.acmonza.com/it/ticketing/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -4934,7 +4968,7 @@
     "source_url": "https://www.acmonza.com/it/news/monza-atalanta-2627-biglietti/",
     "source_title": "AC Monza: Monza – Atalanta info biglietti",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 59,
     "fx": {
@@ -4967,7 +5001,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5001,7 +5035,7 @@
    "tickets": {
     "url": "https://sscnapoli.ticketone.it/catalog",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -5011,7 +5045,7 @@
     "source_url": "https://sscnapoli.it/napoli-vs-lazio-tutte-le-info-per-i-biglietti-della-sfida-al-maradona/",
     "source_title": "SSC Napoli: Napoli vs Lazio, info biglietti",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 96,
     "fx": {
@@ -5026,7 +5060,7 @@
      "note": "Club fidelity card costs €20 online and lasts three years; sale phases give priority to card holders.",
      "source_url": "https://sscnapoli.it/napoli-vs-lazio-tutte-le-info-per-i-biglietti-della-sfida-al-maradona/",
      "source_title": "SSC Napoli ticket info",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -5052,7 +5086,7 @@
     "quote": "Napoli fans have occasionally cheered loud enough to register as earthquakes on seismographs at University of Naples Federico II .",
     "source_title": "Wikipedia: SSC Napoli",
     "source_url": "https://en.wikipedia.org/w/index.php?title=SSC_Napoli&oldid=1383331703",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Naples, Sorrento & Amalfi",
@@ -5067,7 +5101,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5101,7 +5135,7 @@
    "tickets": {
     "url": "https://www.parmacalcio1913.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -5111,7 +5145,7 @@
     "source_url": "https://www.parmacalcio1913.com/tickets/",
     "source_title": "Parma Calcio 1913: Info e acquisto biglietti",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 84,
     "fx": {
@@ -5144,7 +5178,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5178,7 +5212,7 @@
    "tickets": {
     "url": "https://www.asroma.com/en/tickets/men",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 35.0,
@@ -5188,7 +5222,7 @@
     "source_url": "https://www.asroma.com/en/tickets/men",
     "source_title": "AS Roma: Tickets – Men",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 29,
     "gbp_max": 92,
     "fx": {
@@ -5245,7 +5279,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5279,7 +5313,7 @@
    "tickets": {
     "url": "https://www.sassuolocalcio.it/biglietteria/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Bologna",
@@ -5294,7 +5328,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5328,7 +5362,7 @@
    "tickets": {
     "url": "https://www.torinofc.it/biglietteria",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -5338,7 +5372,7 @@
     "source_url": "https://www.torinofc.it/biglietti",
     "source_title": "Torino FC official: tickets and prices",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 50,
     "fx": {
@@ -5379,7 +5413,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5413,7 +5447,7 @@
    "tickets": {
     "url": "https://www.udinese.it/biglietti/vendita-biglietti",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Venice",
@@ -5428,7 +5462,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5462,7 +5496,7 @@
    "tickets": {
     "url": "https://www.veneziafc.it/tickets/biglietteria",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Venice",
@@ -5477,7 +5511,7 @@
     "of": 20,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serie_A&oldid=1383314147",
     "source_title": "Wikipedia: 2026–27 Serie A (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5511,7 +5545,7 @@
    "tickets": {
     "url": "https://fc.de/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -5544,7 +5578,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5578,7 +5612,7 @@
    "tickets": {
     "url": "https://www.bayer04.de/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -5611,7 +5645,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5645,7 +5679,7 @@
    "tickets": {
     "url": "https://fcbayern.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 15.0,
@@ -5655,7 +5689,7 @@
     "source_url": "https://fcbayern.com/en/tickets/info/prices-and-concessions",
     "source_title": "FC Bayern official: \"Prices & concessions\"",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 13,
     "gbp_max": 67,
     "fx": {
@@ -5688,7 +5722,7 @@
     "quote": "The club's most prominent ultra groups are Schickeria München , Inferno Bavaria , Red Munichs '89 , Südkurve '73 , Munichmaniacs 1996 , Red Angels , and Red Sharks .",
     "source_title": "Wikipedia: FC Bayern Munich",
     "source_url": "https://en.wikipedia.org/w/index.php?title=FC_Bayern_Munich&oldid=1383373953",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Munich city break",
@@ -5703,7 +5737,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5737,7 +5771,7 @@
    "tickets": {
     "url": "https://www.ticket-onlineshop.com/ols/bvb/de/home/channel/shop/index",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 18.5,
@@ -5747,7 +5781,7 @@
     "source_url": "https://www.bvb.de/de/de/tickets/ticket-informationen/ticket-preise.html",
     "source_title": "BVB: Preise für BVB-Tickets (2026/27)",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 15,
     "gbp_max": 79,
     "fx": {
@@ -5780,7 +5814,7 @@
     "quote": "The \"Yellow Wall\" gives Westfalenstadion one of the most intimidating home atmospheres in all of Europe, aiding Borussia Dortmund to an unbeaten home campaign in the 2012–13 UEFA Champions League .",
     "source_title": "Wikipedia: Westfalenstadion",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Westfalenstadion&oldid=1381802135",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Cologne & the Rhine",
@@ -5795,7 +5829,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5829,7 +5863,7 @@
    "tickets": {
     "url": "https://www.borussia.de/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -5862,7 +5896,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5896,7 +5930,7 @@
    "tickets": {
     "url": "https://tickets.eintracht.de/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Frankfurt",
@@ -5911,7 +5945,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -5945,7 +5979,7 @@
    "tickets": {
     "url": "https://www.fcaugsburg.de/ticketshop",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 16.0,
@@ -5955,7 +5989,7 @@
     "source_url": "https://www.fcaugsburg.de/page/ticket-heimspiele-15",
     "source_title": "FC Augsburg: Ticket Heimspiele – Preise & Infos",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 13,
     "gbp_max": 63,
     "fx": {
@@ -5978,7 +6012,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6012,7 +6046,7 @@
    "tickets": {
     "url": "https://www.ticket-onlineshop.com/ols/hsv/de",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Hamburg city break",
@@ -6027,7 +6061,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6061,7 +6095,7 @@
    "tickets": {
     "url": "https://www.mainz05.de/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Frankfurt",
@@ -6076,7 +6110,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6110,7 +6144,7 @@
    "tickets": {
     "url": "https://rbleipzig.com/de/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Berlin city break",
@@ -6125,7 +6159,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6159,7 +6193,7 @@
    "tickets": {
     "url": "https://www.scfreiburg.com/tickets/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Black Forest (Freiburg)",
@@ -6174,7 +6208,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6208,7 +6242,7 @@
    "tickets": {
     "url": "https://www.ticket-onlineshop.com/ols/scp07/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Cologne & the Rhine",
@@ -6223,7 +6257,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6257,7 +6291,7 @@
    "tickets": {
     "url": "https://www.ticket-onlineshop.com/ols/sv07elversberg/de",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 18.0,
@@ -6267,7 +6301,7 @@
     "source_url": "https://sv07elversberg.de/ursapharm-arena/tickets/",
     "source_title": "SV 07 Elversberg: Tickets – Preise Einzeltickets 2026/2027",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 15,
     "gbp_max": 39,
     "fx": {
@@ -6290,7 +6324,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6324,7 +6358,7 @@
    "tickets": {
     "url": "https://tickets.schalke04.de/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -6349,7 +6383,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6383,7 +6417,7 @@
    "tickets": {
     "url": "https://www.tsg-hoffenheim.de/tickets/ticketcenter",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Stuttgart",
@@ -6398,7 +6432,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6432,14 +6466,14 @@
    "tickets": {
     "url": "https://tickets.union-zeughaus.de?langid=1",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "atmosphere": {
     "rating": 4,
     "quote": "The club has become well known for its enthusiastic and creative fan base and its chant \"Eisern Union\" (Iron Union).",
     "source_title": "Wikipedia: 1. FC Union Berlin",
     "source_url": "https://en.wikipedia.org/w/index.php?title=1._FC_Union_Berlin&oldid=1383336085",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Berlin city break",
@@ -6454,7 +6488,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6488,7 +6522,7 @@
    "tickets": {
     "url": "http://www.vfb.de/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Stuttgart",
@@ -6503,7 +6537,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6537,7 +6571,7 @@
    "tickets": {
     "url": "https://www.werder.de/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -6554,7 +6588,7 @@
     "quote": "Bremen have seven ultra groups: \"Wanderers-Bremen\", \"The Infamous Youth\", \"Caillera\", \"L'Intesa Verde\", \"HB Crew\", \"Ultra Boys\", and \"UltrA-Team Bremen\".",
     "source_title": "Wikipedia: SV Werder Bremen",
     "source_url": "https://en.wikipedia.org/w/index.php?title=SV_Werder_Bremen&oldid=1383333661",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Hamburg city break",
@@ -6569,7 +6603,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Bundesliga&oldid=1383241795",
     "source_title": "Wikipedia: 2026–27 Bundesliga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6603,7 +6637,7 @@
    "tickets": {
     "url": "https://adodenhaag.nl/en/tickets/ticket-sales",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -6636,7 +6670,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6670,7 +6704,7 @@
    "tickets": {
     "url": "https://www.az.nl/wedstrijden/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -6703,7 +6737,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6737,14 +6771,14 @@
    "tickets": {
     "url": "https://www.ajax.nl/fans/kaartverkoop/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "ticket_notes": [
     {
      "note": "Ajax Club Card 2026/27 (€5) gives access to sales and priority; tickets are sold only via the official Ajax Ticketshop.",
      "source_url": "https://www.ajax.nl/artikelen/meer-informatie-over-losse-kaartverkoop-eredivisie-20262027",
      "source_title": "Ajax: losse kaartverkoop Eredivisie 2026/2027",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -6794,7 +6828,7 @@
     "quote": "The F-side supporters are responsible for a big part of the atmosphere in the stadium, and are also known for rioting during and after matches.",
     "source_title": "Wikipedia: AFC Ajax",
     "source_url": "https://en.wikipedia.org/w/index.php?title=AFC_Ajax&oldid=1383211082",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Amsterdam city break",
@@ -6809,7 +6843,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6843,7 +6877,7 @@
    "tickets": {
     "url": "https://www.cambuur.nl/supporters/tickets/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 23.0,
@@ -6853,7 +6887,7 @@
     "source_url": "https://www.cambuur.nl/supporters/tickets/prijzen-plattegrond/",
     "source_title": "SC Cambuur: Prijzen & Plattegrond",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 19,
     "gbp_max": 28,
     "fx": {
@@ -6886,7 +6920,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6920,7 +6954,7 @@
    "tickets": {
     "url": "https://excelsiorrotterdam.nl/bezoekers-informatie/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -6953,7 +6987,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -6987,7 +7021,7 @@
    "tickets": {
     "url": "https://www.feyenoord.com/nl/tickets/kaartverkoopinformatie",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 49.0,
@@ -6997,7 +7031,7 @@
     "source_url": "https://www.feyenoord.com/nl/tickets/kaartverkoopinformatie/feyenoord--psv",
     "source_title": "Feyenoord: kaartverkoopinformatie Feyenoord – PSV",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 41,
     "gbp_max": 78,
     "fx": {
@@ -7054,7 +7088,7 @@
     "quote": "Feyenoord's TIFO team became famous abroad as well and the Italian TIFO foundation awarded Feyenoord the Best of TIFO Award 2000/01.",
     "source_title": "Wikipedia: Feyenoord",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Feyenoord&oldid=1383327803",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rotterdam",
@@ -7069,7 +7103,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7103,7 +7137,7 @@
    "tickets": {
     "url": "https://fortunasittard.nl/info/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 25.0,
@@ -7113,7 +7147,7 @@
     "source_url": "https://fortunasittard.nl/info/tickets",
     "source_title": "Fortuna Sittard: Tickets – Ticketprijzen",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 21,
     "gbp_max": 36,
     "fx": {
@@ -7136,7 +7170,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7170,7 +7204,7 @@
    "tickets": {
     "url": "https://gaeagles.tmtickets.nl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7203,7 +7237,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7237,7 +7271,7 @@
    "tickets": {
     "url": "https://tickets.fcgroningen.nl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7262,7 +7296,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7296,7 +7330,7 @@
    "tickets": {
     "url": "https://www.sc-heerenveen.nl/supporters/ticketing",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7329,7 +7363,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7363,7 +7397,7 @@
    "tickets": {
     "url": "https://www.nec-nijmegen.nl/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Amsterdam city break",
@@ -7403,7 +7437,7 @@
    "tickets": {
     "url": "https://peczwolle.nl/teams/heren/peczwolle-26-27/programma",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7436,7 +7470,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7470,7 +7504,7 @@
    "tickets": {
     "url": "https://www.psv.nl/tickets/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7495,7 +7529,7 @@
     "quote": "Besides the fan unions, there are several sets of fans who work together on tifo choreography, like Lighttown Madness among others.",
     "source_title": "Wikipedia: PSV Eindhoven",
     "source_url": "https://en.wikipedia.org/w/index.php?title=PSV_Eindhoven&oldid=1380217729",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rotterdam",
@@ -7535,7 +7569,7 @@
    "tickets": {
     "url": "https://www.sparta-rotterdam.nl/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7568,7 +7602,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7602,7 +7636,7 @@
    "tickets": {
     "url": "http://telstarticket.nl",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7635,7 +7669,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7669,7 +7703,7 @@
    "tickets": {
     "url": "https://fctwente.nl/wedstrijden/eerste-selectie",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -7702,7 +7736,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7736,7 +7770,7 @@
    "tickets": {
     "url": "https://www.fcutrecht.nl/kaartverkoop/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Amsterdam city break",
@@ -7751,7 +7785,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7785,7 +7819,7 @@
    "tickets": {
     "url": "https://www.willem-ii.nl/wedstrijdoverzicht",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rotterdam",
@@ -7800,7 +7834,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Eredivisie&oldid=1383393162",
     "source_title": "Wikipedia: 2026–27 Eredivisie (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7863,7 +7897,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7897,7 +7931,7 @@
    "tickets": {
     "url": "http://fkegnatia.weebly.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Tirana",
@@ -7912,7 +7946,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7957,7 +7991,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -7991,7 +8025,7 @@
    "tickets": {
     "url": "http://kflaci.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8016,7 +8050,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8050,7 +8084,7 @@
    "tickets": {
     "url": "https://partizani.al",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8083,7 +8117,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8117,7 +8151,7 @@
    "tickets": {
     "url": "https://www.kfskenderbeu.al/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Albanian Riviera (Sarandë)",
@@ -8132,7 +8166,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8166,7 +8200,7 @@
    "tickets": {
     "url": "http://www.kfteuta.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Durrës coast",
@@ -8181,7 +8215,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8215,7 +8249,7 @@
    "tickets": {
     "url": "https://kftirana.al/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8248,7 +8282,7 @@
     "quote": "KF Tirana has another Ultras group called \"Capital Crew\" which offer a spectacular atmosphere when they are in the stadium.",
     "source_title": "Wikipedia: KF Tirana",
     "source_url": "https://en.wikipedia.org/w/index.php?title=KF_Tirana&oldid=1374921114",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Tirana",
@@ -8263,7 +8297,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8297,7 +8331,7 @@
    "tickets": {
     "url": "https://vllaznia.al/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8322,7 +8356,7 @@
     "quote": "The Ultras group of Vllaznia are known as 'Vllaznit Ultras' and were the first official ultras fan base in Albania who were created in 2005.",
     "source_title": "Wikipedia: KF Vllaznia",
     "source_url": "https://en.wikipedia.org/w/index.php?title=KF_Vllaznia&oldid=1382461094",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Shkodër",
@@ -8337,7 +8371,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8382,7 +8416,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Kategoria_Superiore&oldid=1383402632",
     "source_title": "Wikipedia: 2026–27 Kategoria Superiore (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8415,7 +8449,7 @@
    "tickets": {
     "url": "https://fk-arsenal.me/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Bay of Kotor",
@@ -8430,7 +8464,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8492,7 +8526,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8525,7 +8559,7 @@
    "tickets": {
     "url": "https://www.fk-buducnost.me/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8550,7 +8584,7 @@
     "quote": "The 80s were also remembered for the founding of the Budućnost Ultra group , Varvari (Barbarians) which was founded in 1987.",
     "source_title": "Wikipedia: FK Budućnost Podgorica",
     "source_url": "https://en.wikipedia.org/w/index.php?title=FK_Budu%C4%87nost_Podgorica&oldid=1381746877",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Podgorica",
@@ -8565,7 +8599,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8598,7 +8632,7 @@
    "tickets": {
     "url": "https://fcdecic.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8623,7 +8657,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8667,7 +8701,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8711,7 +8745,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8755,7 +8789,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8817,7 +8851,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8879,7 +8913,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8912,7 +8946,7 @@
    "tickets": {
     "url": "https://www.fksutjeska.me/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -8937,7 +8971,7 @@
     "of": 10,
     "source_url": "https://fscg.me/",
     "source_title": "FSCG (Football Association of Montenegro): Meridianbet 1. CFL table",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -8971,7 +9005,7 @@
    "tickets": {
     "url": "https://gnkdinamo.hr/en/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9012,7 +9046,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9046,7 +9080,7 @@
    "tickets": {
     "url": "https://hnk-gorica.hr/ulaznice/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Zagreb",
@@ -9061,7 +9095,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9095,7 +9129,7 @@
    "tickets": {
     "url": "https://hajduk.ulaznice.hr",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -9105,7 +9139,7 @@
     "source_url": "https://www.24sata.hr/sport/hajduk-objavio-cijene-ulaznica-navijaci-poludjeli-da-mi-ispred-kuce-igrate-ne-bih-vas-gledao-1145245",
     "source_title": "24sata: Hajduk objavio cijene ulaznica",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 54,
     "fx": {
@@ -9120,7 +9154,7 @@
      "note": "For some stands valid club membership is needed before purchase.",
      "source_url": "https://www.lika-online.hr/hajduk-pustio-ulaznice-za-osijek-evo-koliko-kostaju-za-jednu-tribinu-vrijedi-posebno-pravilo/",
      "source_title": "Lika Online: Hajduk ulaznice za Osijek",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -9146,7 +9180,7 @@
     "quote": "Torcida members and other fervent fans gather in the north stand at the Poljud stadium, where they support their club.",
     "source_title": "Wikipedia: HNK Hajduk Split",
     "source_url": "https://en.wikipedia.org/w/index.php?title=HNK_Hajduk_Split&oldid=1382269399",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Split & Dalmatia",
@@ -9161,7 +9195,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9195,7 +9229,7 @@
    "tickets": {
     "url": "https://nkistra.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9220,7 +9254,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9254,7 +9288,7 @@
    "tickets": {
     "url": "https://lokomotiva.ulaznice.hr/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9279,7 +9313,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9313,7 +9347,7 @@
    "tickets": {
     "url": "https://ulaznice.nk-osijek.hr/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9338,7 +9372,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9372,7 +9406,7 @@
    "tickets": {
     "url": "https://nk-rijeka.hr/ulaznice/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9413,7 +9447,7 @@
     "quote": "Rijeka's ultras group is called Armada Rijeka , or simply Armada.",
     "source_title": "Wikipedia: HNK Rijeka",
     "source_url": "https://en.wikipedia.org/w/index.php?title=HNK_Rijeka&oldid=1378860742",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rijeka & Kvarner",
@@ -9428,7 +9462,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9462,7 +9496,7 @@
    "tickets": {
     "url": "https://nk-rudes.hr/ulaznice/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Zagreb",
@@ -9477,7 +9511,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9511,7 +9545,7 @@
    "tickets": {
     "url": "https://nk-slaven-belupo.hr/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 15.0,
@@ -9521,7 +9555,7 @@
     "source_url": "https://nk-slaven-belupo.hr/ulaznice/jednokratne-ulaznice",
     "source_title": "NK Slaven Belupo: Jednokratne ulaznice",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 13,
     "gbp_max": 50,
     "fx": {
@@ -9554,7 +9588,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9588,7 +9622,7 @@
    "tickets": {
     "url": "http://www.nk-varazdin.hr/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9613,7 +9647,7 @@
     "of": 10,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Croatian_Football_League&oldid=1383246383",
     "source_title": "Wikipedia: 2026–27 Croatian Football League (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9647,7 +9681,7 @@
    "tickets": {
     "url": "https://kifisiafc.gr/eisitiria/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Athens & Piraeus",
@@ -9662,7 +9696,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9696,7 +9730,7 @@
    "tickets": {
     "url": "https://www.aekfc.gr",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9737,7 +9771,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9771,7 +9805,7 @@
    "tickets": {
     "url": "https://arisfc.com.gr/el/eisitiria/eisitiria-agonon.html",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -9781,7 +9815,7 @@
     "source_url": "https://arisfc.com.gr/el/enimerosi/anakoinoseis/6944-ta-eisiteria-gia-ton-agona-me-ton-panaitoliko.html",
     "source_title": "PAE Aris: Τα εισιτήρια για τον αγώνα με τον Παναιτωλικό",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 42,
     "fx": {
@@ -9822,7 +9856,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9856,7 +9890,7 @@
    "tickets": {
     "url": "https://asterastripolis.gr",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Peloponnese (Kalamata)",
@@ -9871,7 +9905,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9905,7 +9939,7 @@
    "tickets": {
     "url": "https://www.atromitosfc.gr/category/ticketing/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Athens & Piraeus",
@@ -9920,7 +9954,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -9954,7 +9988,7 @@
    "tickets": {
     "url": "https://iraklis-fc.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -9987,7 +10021,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10021,7 +10055,7 @@
    "tickets": {
     "url": "https://www.fckalamata.gr/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Peloponnese (Kalamata)",
@@ -10036,7 +10070,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10070,7 +10104,7 @@
    "tickets": {
     "url": "https://www.ticketmaster.gr/levadiakosfc-ww/showProductList.html",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 15.0,
@@ -10080,7 +10114,7 @@
     "source_url": "https://www.levadiakosfc.gr/ta-eisitiria-gia-tin-anametrisi-ton-ari/",
     "source_title": "PAE Levadiakos: Τα εισιτήρια για την αναμέτρηση με τον Άρη",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 13,
     "gbp_max": 33,
     "fx": {
@@ -10103,7 +10137,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10137,7 +10171,7 @@
    "tickets": {
     "url": "https://www.oficretefc.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Crete (Heraklion)",
@@ -10152,7 +10186,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10186,7 +10220,7 @@
    "tickets": {
     "url": "https://olympiacos.more.com/gr-el/tickets/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 15.0,
@@ -10196,7 +10230,7 @@
     "source_url": "https://www.olympiacos.org/2026/08/16/ta-eisitiria-tou-agona-olympiakos-atromitos-3/",
     "source_title": "Olympiacos FC: Τα εισιτήρια του αγώνα Ολυμπιακός – Ατρόμητος",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 13,
     "gbp_max": 50,
     "fx": {
@@ -10211,7 +10245,7 @@
      "note": "Buying for big games requires the 2026/27 Olympiacos fan card (€15 or €20); entry via Gov.gr Wallet.",
      "source_url": "https://www.gazzetta.gr/football/superleague/2582030/olympiakos-kykloforisan-ta-eisitiria-me-ton-paok",
      "source_title": "Gazzetta: Olympiacos v PAOK tickets",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -10245,7 +10279,7 @@
     "quote": "Olympiacos fans are renowned for their passionate and fervent support of the team, with the atmosphere at home matches regarded as intimidating.",
     "source_title": "Wikipedia: Olympiacos F.C.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Olympiacos_F.C.&oldid=1381721813",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Athens & Piraeus",
@@ -10260,7 +10294,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10294,7 +10328,7 @@
    "tickets": {
     "url": "https://www.paokfc.gr/category/nea/eisitiria/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -10304,7 +10338,7 @@
     "source_url": "https://www.paokfc.gr/en/news/20261023-ta-eisitiria-tou-paok-aek/",
     "source_title": "PAOK FC: Tickets for PAOK vs. AEK",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 42,
     "fx": {
@@ -10319,7 +10353,7 @@
      "note": "A PAOK season card (€20, issued by the club) registering personal details is required.",
      "source_url": "https://www.paokfc.gr/en/news/20261023-ta-eisitiria-tou-paok-aek/",
      "source_title": "PAOK FC: Tickets for PAOK vs. AEK",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -10369,7 +10403,7 @@
     "quote": "Toumba Stadium is infamous for its hostile atmosphere, a factor that led to the attribution of the Stadium as ' The Black Hell' .",
     "source_title": "Wikipedia: Toumba Stadium",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Toumba_Stadium&oldid=1380858940",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Thessaloniki & Halkidiki",
@@ -10384,7 +10418,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10418,7 +10452,7 @@
    "tickets": {
     "url": "https://www.ticketmaster.gr/paofc-ww/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 20.0,
@@ -10428,7 +10462,7 @@
     "source_url": "https://www.pao.gr/fc/ta-eisitiria-tou-agona-panathinaikos-paok-4/",
     "source_title": "Panathinaikos FC: Τα εισιτήρια του αγώνα Παναθηναϊκός – ΠΑΟΚ",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 17,
     "gbp_max": 75,
     "fx": {
@@ -10469,7 +10503,7 @@
     "quote": "Gate 13 style of supporting includes the use of green fireworks, large and small green flags, displaying of banners and especially the creation of colourful and large choreographies, noisy and constant cheering and other supporters stuff.",
     "source_title": "Wikipedia: Panathinaikos F.C.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Panathinaikos_F.C.&oldid=1382367066",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Athens & Piraeus",
@@ -10484,7 +10518,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10518,7 +10552,7 @@
    "tickets": {
     "url": "https://www.panetolikos.gr/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Volos & Pelion",
@@ -10533,7 +10567,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10567,7 +10601,7 @@
    "tickets": {
     "url": "https://www.volosfc.com",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Volos & Pelion",
@@ -10582,7 +10616,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Super_League_Greece&oldid=1383437952",
     "source_title": "Wikipedia: 2026–27 Super League Greece (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10616,7 +10650,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Alanya",
@@ -10631,7 +10665,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10665,7 +10699,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Trabzon & Black Sea coast",
@@ -10705,7 +10739,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -10720,7 +10754,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10754,7 +10788,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 1950.0,
@@ -10764,7 +10798,7 @@
     "source_url": "https://bjk.com.tr/tr/haber/95271/kocaelispor-maci-biletleri-hakkinda-bilgilendirme.html",
     "source_title": "Beşiktaş JK: Kocaelispor maçı biletleri hakkında bilgilendirme (7 Oct 2026)",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 29,
     "gbp_max": 86,
     "fx": {
@@ -10779,7 +10813,7 @@
      "note": "All buyers need a Passo card; max 2 tickets per person; sold at Tüpraş Stadium box office, passo.com.tr and the Passo app.",
      "source_url": "https://bjk.com.tr/tr/haber/95271/kocaelispor-maci-biletleri-hakkinda-bilgilendirme.html",
      "source_title": "Beşiktaş JK ticket announcement (7 Oct 2026)",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -10813,7 +10847,7 @@
     "quote": "They were chosen as the best fan group in voting conducted by American sports viewers due to their 132-decibel noise record at a 2007 match against Liverpool .",
     "source_title": "Wikipedia: Beşiktaş J.K.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Be%C5%9Fikta%C5%9F_J.K.&oldid=1383325035",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -10828,7 +10862,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10862,7 +10896,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Trabzon & Black Sea coast",
@@ -10877,7 +10911,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10911,7 +10945,7 @@
    "tickets": {
     "url": "https://www.eyupspor.org.tr/bilet",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -10926,7 +10960,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -10960,7 +10994,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 1850.0,
@@ -10970,7 +11004,7 @@
     "source_url": "https://www.fenerbahce.org/haberler/futbol/2026/10/goztepe-macinin-biletleri-satisa-cikiyor",
     "source_title": "Fenerbahçe SK: Göztepe maçının biletleri satışta (28 Oct 2026)",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 28,
     "gbp_max": 268,
     "fx": {
@@ -10985,7 +11019,7 @@
      "note": "Sales only via Passo; from 24 hours before kick-off only holders of a Fenerbahçe-branded Passolig card can buy. Tickets are non-transferable.",
      "source_url": "https://www.fenerbahce.org/haberler/futbol/2026/10/goztepe-macinin-biletleri-satisa-cikiyor",
      "source_title": "Fenerbahçe SK ticket announcement (28 Oct 2026)",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -11011,7 +11045,7 @@
     "quote": "The club has a massive social media following and maintains a dedicated supporter base known for its passionate atmosphere, especially in home matches at Şükrü Saracoğlu Stadium (also known as Chobani Stadium for sponsorship purposes).",
     "source_title": "Wikipedia: Fenerbahçe S.K. (football)",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Fenerbah%C3%A7e_S.K._%28football%29&oldid=1382784805",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -11026,7 +11060,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11060,7 +11094,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -11093,7 +11127,7 @@
     "quote": "Galatasaray fans, including the group ultrAslan , have been described as among the most vocal supporters in European football.",
     "source_title": "Wikipedia: Galatasaray S.K. (football)",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Galatasaray_S.K._%28football%29&oldid=1383393648",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -11108,7 +11142,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11142,7 +11176,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Trabzon & Black Sea coast",
@@ -11157,7 +11191,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11191,7 +11225,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -11206,7 +11240,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11240,7 +11274,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -11257,7 +11291,7 @@
     "quote": "The derby has been marked by fervent atmospheres and, at times, security concerns reported in the Turkish press.",
     "source_title": "Wikipedia: Göztepe S.K.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=G%C3%B6ztepe_S.K.&oldid=1380042783",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Izmir & Çeşme",
@@ -11272,7 +11306,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11306,7 +11340,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -11321,7 +11355,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11355,7 +11389,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Istanbul",
@@ -11370,7 +11404,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11404,7 +11438,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Alanya",
@@ -11419,7 +11453,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11453,7 +11487,7 @@
    "tickets": {
     "url": "https://www.caykurrizespor.org.tr/bilet",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 800.0,
@@ -11463,7 +11497,7 @@
     "source_url": "https://www.caykurrizespor.org.tr/haber/caykur-rizespor---trabzonspor-macinin-biletleri-satisa-cikti-6394",
     "source_title": "Çaykur Rizespor: Rizespor – Trabzonspor maçının biletleri satışa çıktı",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 12,
     "gbp_max": 18,
     "fx": {
@@ -11504,7 +11538,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11538,7 +11572,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -11563,7 +11597,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11597,7 +11631,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -11622,7 +11656,7 @@
     "quote": "Home matches are played at the Şenol Güneş Sports Complex , where organised supporter groups produce large-scale choreographies and choreographed chanting.",
     "source_title": "Wikipedia: Trabzonspor",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Trabzonspor&oldid=1381468553",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Trabzon & Black Sea coast",
@@ -11637,7 +11671,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11671,7 +11705,7 @@
    "tickets": {
     "url": "https://www.passo.com.tr/",
     "kind": "platform",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Trabzon & Black Sea coast",
@@ -11686,7 +11720,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_S%C3%BCper_Lig&oldid=1382457198",
     "source_title": "Wikipedia: 2026–27 Süper Lig (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11720,7 +11754,7 @@
    "tickets": {
     "url": "https://www.ticketline.rs/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 500.0,
@@ -11730,7 +11764,7 @@
     "source_url": "https://partizan.rs/vesti/5541/prodaja-ulaznica-za-utakmicu-fk-partizan-fk-zemun",
     "source_title": "FK Partizan: Prodaja ulaznica za utakmicu FK Partizan – FK Zemun",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 4,
     "gbp_max": 6,
     "fx": {
@@ -11763,7 +11797,7 @@
     "quote": "Both sets of supporters sing passionate songs against their rivals, and the stadiums are known to bounce with the simultaneous jumping of the fans.",
     "source_title": "Wikipedia: FK Partizan",
     "source_url": "https://en.wikipedia.org/w/index.php?title=FK_Partizan&oldid=1382286698",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Belgrade city break",
@@ -11778,7 +11812,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serbian_SuperLiga&oldid=1382258049",
     "source_title": "Wikipedia: 2026–27 Serbian SuperLiga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11812,7 +11846,7 @@
    "tickets": {
     "url": "http://www.crvenazvezdafk.com/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 400.0,
@@ -11822,7 +11856,7 @@
     "source_url": "https://www.novosti.rs/sport/fudbal/1631114/zvezda-oglasila-poznate-cene-karata-vojvodinu-evo-moze-besplatno-marakanu",
     "source_title": "Večernje novosti: Zvezda oglasila cene karata za Vojvodinu",
     "source_type": "press",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 3,
     "gbp_max": 10,
     "fx": {
@@ -11855,7 +11889,7 @@
     "quote": "In 2012, American Bleacher Report ranked the Red Star Stadium, especially if it is sold out, as among the most intimidating stadiums in the world.",
     "source_title": "Wikipedia: Red Star Belgrade",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Red_Star_Belgrade&oldid=1382071221",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Belgrade city break",
@@ -11870,7 +11904,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serbian_SuperLiga&oldid=1382258049",
     "source_title": "Wikipedia: 2026–27 Serbian SuperLiga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11904,7 +11938,7 @@
    "tickets": {
     "url": "https://www.fkvojvodina.rs/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -11937,7 +11971,7 @@
     "of": 14,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Serbian_SuperLiga&oldid=1382258049",
     "source_title": "Wikipedia: 2026–27 Serbian SuperLiga (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -11971,7 +12005,7 @@
    "tickets": {
     "url": "https://bilety.cracovia.pl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12004,7 +12038,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12038,7 +12072,7 @@
    "tickets": {
     "url": "https://bilety.gkskatowice.eu",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 39.0,
@@ -12048,7 +12082,7 @@
     "source_url": "https://www.gkskatowice.eu/news/bilety-na-mecz-gks-lech-przyjdz-zas-na-giekse",
     "source_title": "GKS Katowice: Bilety na mecz GKS – Lech",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 7,
     "gbp_max": 11,
     "fx": {
@@ -12081,7 +12115,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12115,7 +12149,7 @@
    "tickets": {
     "url": "https://bilety.gornikzabrze.pl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12148,7 +12182,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12182,7 +12216,7 @@
    "tickets": {
     "url": "https://www.jagiellonia.pl/bilety/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Białystok",
@@ -12197,7 +12231,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12231,7 +12265,7 @@
    "tickets": {
     "url": "https://bilety.lechpoznan.pl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 55.0,
@@ -12241,7 +12275,7 @@
     "source_url": "https://bilety.lechpoznan.pl/CMS?page=kupbiletnameczlecha",
     "source_title": "Lech Poznań: Kup bilet na mecz Lecha",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 10,
     "gbp_max": 25,
     "fx": {
@@ -12274,7 +12308,7 @@
     "quote": "In September 2013, UEFA sanctioned Lech Poznań for the incident and the club was ordered to close Kocioł , the most vocal supporters' stand, for its next European home match, as well as receiving a €5,000 fine.",
     "source_title": "Wikipedia: Lech Poznań",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Lech_Pozna%C5%84&oldid=1380544744",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Poznań",
@@ -12289,7 +12323,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12323,7 +12357,7 @@
    "tickets": {
     "url": "https://bilety.legia.com",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12348,7 +12382,7 @@
     "quote": "Accordingly, in terms of quality of football support, they are also often described as the best supporters in Poland.",
     "source_title": "Wikipedia: Legia Warsaw",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Legia_Warsaw&oldid=1381542177",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Warsaw city break",
@@ -12363,7 +12397,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12397,7 +12431,7 @@
    "tickets": {
     "url": "https://bilety.pogonszczecin.pl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Szczecin",
@@ -12412,7 +12446,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12446,7 +12480,7 @@
    "tickets": {
     "url": "https://bilety.widzew.com/lista-wydarzen",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Łódź",
@@ -12461,7 +12495,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12495,7 +12529,7 @@
    "tickets": {
     "url": "http://www.wisla.krakow.pl/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12520,7 +12554,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12554,7 +12588,7 @@
    "tickets": {
     "url": "https://bilety.slaskwroclaw.pl/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Wrocław",
@@ -12569,7 +12603,7 @@
     "of": 18,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Ekstraklasa&oldid=1383296406",
     "source_title": "Wikipedia: 2026–27 Ekstraklasa (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -12603,7 +12637,7 @@
    "tickets": {
     "url": "https://www.bocajuniors.com.ar/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12620,7 +12654,7 @@
     "quote": "It is widely regarded as one of the most iconic stadiums in the world due to its design, the club's history and its intense atmosphere, and it has been host to many noteworthy players in football, including Diego Maradona , Lionel Messi , Alfredo Di Stéfano , and Pelé .",
     "source_title": "Wikipedia: La Bombonera",
     "source_url": "https://en.wikipedia.org/w/index.php?title=La_Bombonera&oldid=1381690024",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Buenos Aires",
@@ -12660,7 +12694,7 @@
    "tickets": {
     "url": "https://estudiantesdelaplata.com/category/entradas/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12710,7 +12744,7 @@
    "tickets": {
     "url": "https://www.gimnasia.org.ar/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12760,7 +12794,7 @@
    "tickets": {
     "url": "https://cahuracan.com/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12810,7 +12844,7 @@
    "tickets": {
     "url": "https://entradas.clubaindependiente.com.ar/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12860,7 +12894,7 @@
    "tickets": {
     "url": "https://www.newellsoldboys.com.ar/socios",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -12877,7 +12911,7 @@
     "quote": "The teams are crosstown rivals from cities away from the capital and have passionate fans.",
     "source_title": "Wikipedia: Rosario derby",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Rosario_derby&oldid=1377279473",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rosario",
@@ -12917,7 +12951,7 @@
    "tickets": {
     "url": "https://www.racingclub.com.ar/socios/entradas",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 113000.0,
@@ -12927,7 +12961,7 @@
     "source_url": "https://www.racingclub.com.ar/socios/entradas",
     "source_title": "Racing Club: Entradas",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 55,
     "gbp_max": 111,
     "fx": {
@@ -12942,7 +12976,7 @@
      "note": "Non-members can attend only as an 'Invitado' (guest) of a member.",
      "source_url": "https://www.racingclub.com.ar/socios/entradas",
      "source_title": "Racing Club: Entradas",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -12993,7 +13027,7 @@
    "tickets": {
     "url": "https://www.cariverplate.com.ar/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13010,7 +13044,7 @@
     "quote": "Each stadium, Boca's La Bombonera and River's El Monumental are known to bounce with the simultaneous jumping of the fans.",
     "source_title": "Wikipedia: Superclásico",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Supercl%C3%A1sico&oldid=1383414307",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Buenos Aires",
@@ -13050,7 +13084,7 @@
    "tickets": {
     "url": "https://rosariocentral.com/socios/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13067,7 +13101,7 @@
     "quote": "Rosario Central's supporters are considered one of the most significant of Argentina.",
     "source_title": "Wikipedia: Rosario Central",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Rosario_Central&oldid=1382767406",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Rosario",
@@ -13107,7 +13141,7 @@
    "tickets": {
     "url": "https://sanlorenzo.com.ar/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13157,7 +13191,7 @@
    "tickets": {
     "url": "https://www.clubtalleres.com.ar/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Córdoba",
@@ -13197,7 +13231,7 @@
    "tickets": {
     "url": "https://velez.com.ar/socios",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Buenos Aires",
@@ -13237,7 +13271,7 @@
    "tickets": {
     "url": "https://tickets.afc.co.uk/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13262,7 +13296,7 @@
     "quote": "Following the introduction of the \"Red Shed\", a new group going by the name of \"Ultras Aberdeen\" formed in 2022 and have made displays such as the \"Heroes\" display in tribute to 1983 European Cup Winners' Cup final .",
     "source_title": "Wikipedia: Aberdeen F.C.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Aberdeen_F.C.&oldid=1383396079",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Aberdeen",
@@ -13277,7 +13311,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13311,7 +13345,7 @@
    "tickets": {
     "url": "https://www.eticketing.co.uk/celtic/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 45.0,
@@ -13321,14 +13355,14 @@
     "source_url": "https://www.celticfc.com/preview/fb4e78d0-bcc1-11f1-915f-0b34260fd9a3/",
     "source_title": "Celtic FC official: \"UEFA Europa League Tickets | Celtic v RC Celta de Vigo\"",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 45.0,
     "gbp_max": 45.0,
     "fx": {
      "label": "already in pounds",
      "source_url": null,
      "source_title": null,
-     "date": "2026-11-02"
+     "date": "2026-11-05"
     }
    },
    "ticket_notes": [
@@ -13336,7 +13370,7 @@
      "note": "General sale opens a few weeks before kick-off via the official eTicketing site; a free digital account is enough. A £1.60 booking fee applies per single ticket.",
      "source_url": "https://www.celticfc.com/preview/fb4e78d0-bcc1-11f1-915f-0b34260fd9a3/",
      "source_title": "Celtic FC official: UEFA Europa League ticket information",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -13354,7 +13388,7 @@
     "quote": "On 23 October 2017, Celtic fans were awarded with the FIFA Fan Award for their tifo commemorating the 50th anniversary of the club's European cup win.",
     "source_title": "Wikipedia: Celtic F.C.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Celtic_F.C.&oldid=1382856063",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Glasgow",
@@ -13369,7 +13403,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13403,7 +13437,7 @@
    "tickets": {
     "url": "https://dundeefc.co.uk/tickets/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13436,7 +13470,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13470,7 +13504,7 @@
    "tickets": {
     "url": "https://www.dundeeunitedfc.co.uk/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13511,7 +13545,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13545,7 +13579,7 @@
    "tickets": {
     "url": "https://www.falkirkfc.co.uk/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Glasgow",
@@ -13560,7 +13594,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13594,7 +13628,7 @@
    "tickets": {
     "url": "https://www.eticketing.co.uk/heartofmidlothian/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13619,7 +13653,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13653,7 +13687,7 @@
    "tickets": {
     "url": "https://www.hibernianfc.co.uk/tickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13670,7 +13704,7 @@
     "quote": "The club's modern ultras group, Block Seven, was established in 2021 and has become known for organised vocal support, banners and large-scale tifo displays at Easter Road and away matches.",
     "source_title": "Wikipedia: Hibernian F.C.",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Hibernian_F.C.&oldid=1383391210",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Edinburgh",
@@ -13685,7 +13719,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13719,7 +13753,7 @@
    "tickets": {
     "url": "https://kilmarnockfc.ticketco.events/uk/en",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Glasgow",
@@ -13734,7 +13768,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13768,7 +13802,7 @@
    "tickets": {
     "url": "https://www.motherwellfc.co.uk/",
     "kind": "home",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 27.0,
@@ -13778,14 +13812,14 @@
     "source_url": "https://www.motherwellfc.co.uk/tickets/fir-park-entry-prices/",
     "source_title": "Motherwell FC: Fir Park entry prices",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 27.0,
     "gbp_max": 35.0,
     "fx": {
      "label": "already in pounds",
      "source_url": null,
      "source_title": null,
-     "date": "2026-11-02"
+     "date": "2026-11-05"
     }
    },
    "area": {
@@ -13801,7 +13835,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13835,7 +13869,7 @@
    "tickets": {
     "url": "https://tickets.rangers.co.uk/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "price": {
     "min": 40.0,
@@ -13845,14 +13879,14 @@
     "source_url": "https://www.rangers.co.uk/article/this-weeks-gers-guide-2026-08-04/6tEAxvltoF23MMMY2LReCL",
     "source_title": "Rangers FC official: \"This Week's Gers Guide\"",
     "source_type": "official",
-    "checked": "2026-11-02",
+    "checked": "2026-11-05",
     "gbp_min": 40.0,
     "gbp_max": 40.0,
     "fx": {
      "label": "already in pounds",
      "source_url": null,
      "source_title": null,
-     "date": "2026-11-02"
+     "date": "2026-11-05"
     }
    },
    "ticket_notes": [
@@ -13860,7 +13894,7 @@
      "note": "General sale is the third tier after season-ticket holders and MyGers members, so away-friendly fixtures often sell out before general sale. Under-14s must attend with an adult.",
      "source_url": "https://ask.rangers.co.uk/hc/en-gb/articles/31989393346577-How-do-I-buy-home-match-tickets",
      "source_title": "Rangers FC support: \"How do I buy home match tickets?\"",
-     "checked": "2026-11-02"
+     "checked": "2026-11-05"
     }
    ],
    "rivals": [
@@ -13886,7 +13920,7 @@
     "quote": "The link dates back to 1977, when Scots were moving to the German port in search of work and the Hamburg Rangers Supporters' Club was set up by HSV fans who had visited Rangers matches before and were thrilled by the atmosphere at Ibrox .",
     "source_title": "Wikipedia: Hamburger SV",
     "source_url": "https://en.wikipedia.org/w/index.php?title=Hamburger_SV&oldid=1383335876",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Glasgow",
@@ -13901,7 +13935,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -13935,7 +13969,7 @@
    "tickets": {
     "url": "https://www.perthstjohnstonefc.co.uk/ticket-office/",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "rivals": [
     {
@@ -13968,7 +14002,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   },
   {
@@ -14002,7 +14036,7 @@
    "tickets": {
     "url": "https://www.stmirren.com/matchtickets",
     "kind": "ticket",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    },
    "area": {
     "name": "Glasgow",
@@ -14017,7 +14051,7 @@
     "of": 12,
     "source_url": "https://en.wikipedia.org/w/index.php?title=2026%E2%80%9327_Scottish_Premiership&oldid=1383223765",
     "source_title": "Wikipedia: 2026–27 Scottish Premiership (league table)",
-    "checked": "2026-11-02"
+    "checked": "2026-11-05"
    }
   }
  ]
