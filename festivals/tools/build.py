@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE_URL = "https://matthewallmark.github.io/Price-of-Football/festivals"
 POF_URL = "https://matthewallmark.github.io/Price-of-Football/"
 SITE = "Price of Festivals"
-CORRECTIONS = "corrections@example.com"  # TODO: replace with a real corrections address before launch
+CORRECTIONS = "bob-reced-2zmykx@mail.grokbot.com"
 
 data = json.loads((ROOT / "data" / "festivals.json").read_text())
 META = data["meta"]
@@ -20,7 +20,7 @@ FESTS = sorted(data["festivals"], key=lambda f: (f["start"], f["name"]))
 ED = META["edition"]
 e = html.escape
 STATUS = {"on_sale": "On sale", "sold_out": "Sold out", "coming_soon": "Coming soon", "sale_held": "Sale held", "unknown": "Check site"}
-CAMP = {"included": "Camping included", "optional": "Camping or non-camping", "available": "Camping available", "none": "No camping", "unknown": "—"}
+CAMP = {"included": "Camping included", "optional": "Camping or non-camping", "available": "Camping available", "none": "No camping", "unknown": "Not stated"}
 FEES = {"included": "incl. booking fee", "extra": "+ booking fee", "unknown": "fees not stated", None: ""}
 STYPE = {"official": "Official", "agent": "Ticket agent", "press": "Press", "other": "Guide"}
 
@@ -87,7 +87,7 @@ def page(title, desc, path, body, depth=0, extra_head=""):
 <p><strong>{SITE}</strong> is an independent project. It is not affiliated with, endorsed by or connected to any festival, promoter or ticket agent. Festival names are used for identification only.</p>
 <p>Prices are collected by hand from festival websites and official ticket pages, and every figure links to its source with the date we checked it. Prices change by tier and sell out. Where we could not find a figure from a source we trust we show “—”; we never estimate. Always check the official seller before you buy, and never buy from unofficial resellers.</p>
 <p>Also from <a href="{POF_URL}">Price of Football</a>, the cost of watching UK football.</p>
-<p>Data: {ED} festival season, {len(FESTS)} festivals. Last full check {fmt_date(META['generated'])}. <a href="{pre}data/festivals.json">Download JSON</a> · <a href="{pre}data/festivals.csv">CSV</a> · <a href="{pre}about.html#corrections">Report a correction</a></p>
+<p>Data: {ED} festival season, {len(FESTS)} festivals. Page built {fmt_date(META['generated'])}; each price shows the date it was checked. <a href="{pre}data/festivals.json">Download JSON</a> · <a href="{pre}data/festivals.csv">CSV</a> · <a href="{pre}about.html#corrections">Report a correction</a></p>
 </div></footer>
 </body>
 </html>
@@ -134,7 +134,7 @@ def build_index():
 <td data-v="{d(f['start']).toordinal()}">{date_range(f)}</td>
 <td class="hide-sm" data-v="">{e(f.get('region') or '—')}</td>
 <td class="hide-sm" data-v="">{e(CAMP[f['camping']])}</td>
-<td class="num{' empty' if not a else ''}" data-v="{av}">{money(a['value']) if a else '—'}{f'<span class="sub">{e(FEES[a.get("fees")])}</span>' if a else ''}</td>
+<td class="num{' empty' if not a else ''}" data-v="{av}">{money(a['value']) if a else '—'}{f'<span class="sub">{e(FEES[a.get("fees")])}</span>' if a else '<span class="sub">not published</span>'}</td>
 <td class="num{' empty' if pd is None else ''}" data-v="{'' if pd is None else pd}">{money(pd) if pd is not None else '—'}</td>
 <td data-v=""><span class="status st-{f['status']}">{STATUS[f['status']]}</span></td>
 </tr>""")
@@ -178,7 +178,7 @@ def build_index():
 {''.join(rows)}
 </tbody></table></div>
 <p id="empty" class="small" hidden>No festivals match those filters.</p>
-<p class="small">“Per day” is the adult ticket divided by the number of days it covers (the festival's published dates, or the days named on the ticket where it covers fewer). It is our calculation, not a festival figure. “—” means we have not found a {ED} figure from a source we trust yet.</p>
+<p class="small">“Per day” is the adult ticket divided by the number of days it covers (the festival's published dates, or the days named on the ticket where it covers fewer). It is our calculation, not a festival figure. “—” with “not published” means the festival has not published a {ED} adult price we could verify; we never estimate one.</p>
 {affiliate_slot('sponsor')}
 {newsletter()}
 <section class="seo-copy"><h2>How much does a UK festival cost in {ED}?</h2>
@@ -200,7 +200,7 @@ def build_detail(f):
             note = " ".join(x for x in (p.get("label", ""), "·" if p.get("note") else "", p.get("note", "")) if x)
             trs.append(f'<tr><th scope="row">{label}</th><td class="big">{money(p["value"])}<span class="sub">{e(FEES[p.get("fees")])}</span></td><td>{e(note)}<div class="src">{src_link(p)}</div></td></tr>')
         else:
-            trs.append(f'<tr><th scope="row">{label}</th><td class="big empty">—</td><td class="small">Not found from a source we trust yet.</td></tr>')
+            trs.append(f'<tr><th scope="row">{label}</th><td class="big empty">—</td><td class="small">Not published</td></tr>')
     days_txt = str(ndays(f)) + (f" (adult ticket covers {f['adult']['days']})" if f.get("adult") and f["adult"].get("days") and f["adult"]["days"] != ndays(f) else "")
     facts = [("Dates", date_range(f) + (" (camping dates)" if f.get("dates_basis") == "camping" else "")), ("Days", days_txt),
              ("Where", place(f) or "Not confirmed"), ("Nation", f.get("nation") or "—"), ("Region", f.get("region") or "—"), ("Camping", CAMP[f["camping"]]),
@@ -302,7 +302,7 @@ def build_about():
 <li>Ticket agents add booking fees in different ways. We record whether the shown price includes them (“incl. booking fee”), says they are extra (“+ booking fee”) or does not say (“fees not stated”).</li>
 <li>Some festivals show prices only inside a booking widget we could not read. These are listed with a blank price until we can confirm one.</li></ul>
 <h2 id="corrections">Corrections</h2>
-<p>Spotted a wrong, missing or out-of-date price? Email <strong>{e(CORRECTIONS)}</strong> <!-- TODO: replace placeholder address --> with the festival, the correct figure and a link to where it is published. We fix sourced corrections quickly.</p>
+<p>Spotted a wrong, missing or out-of-date price? Email <strong>{e(CORRECTIONS)}</strong> with the festival, the correct figure and a link to where it is published. We fix sourced corrections quickly.</p>
 <h2>How the site is funded</h2>
 <p>The site is free. It may in future carry clearly labelled sponsor slots, or affiliate links to official ticket agents and camping retailers, which would pay us a small commission at no extra cost to you. Affiliate links will never change which festivals appear or how they are ranked. <!-- TODO: add affiliate disclosure wording once any programme is approved --></p>
 <h2>Data</h2>

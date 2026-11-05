@@ -1,0 +1,3867 @@
+#!/usr/bin/env python3
+"""Frozen snapshot of data/festivals.json as published in v3 (figures checked 4-5 Nov 2026).
+
+Every price object carries its own source_url, source_title, source_type and checked date, so the
+published JSON can be reproduced without re-scraping. The JSON is embedded verbatim rather than
+rebuilt from Python literals, so what you get back is byte-for-byte what shipped.
+Rebuild the site afterwards with: python3 tools/build.py
+"""
+import json, pathlib
+
+JSON_TEXT = r"""{
+ "meta": {
+  "site": "Price of Festivals",
+  "edition": "2027",
+  "currency": "GBP",
+  "generated": "2026-11-05",
+  "schema_version": 3,
+  "fields_null_means": "Not found from a source we trust. Never estimated.",
+  "definitions": {
+   "adult": "Cheapest adult weekend (main full-festival) ticket on sale, or last on sale, for the 2027 edition. For camping festivals this is the ticket that includes camping. Partial-weekend tickets are listed as extras.",
+   "noncamp": "Cheapest adult full-festival ticket without camping.",
+   "day": "Cheapest adult day ticket.",
+   "per_day": "adult price divided by the number of days the ticket covers: the days named in the ticket label where it covers fewer days than the festival, otherwise the calendar days in the published festival dates (computed, not sourced).",
+   "fees": "included = price shown includes booking fee; extra = page says fees are added; unknown = page does not say."
+  },
+  "source_types": {
+   "official": "Festival's own site or its official ticket page",
+   "agent": "An official ticket agent's listing",
+   "press": "Reputable press",
+   "other": "Festival guide or listings site"
+  }
+ },
+ "festivals": [
+  {
+   "id": "glastonbury",
+   "name": "Glastonbury Festival",
+   "start": "2027-06-23",
+   "end": "2027-06-27",
+   "dates_src": {
+    "source_url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed/",
+    "source_title": "Glastonbury: 2027 ticket information confirmed (8 Sep 2026)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Worthy Farm, Pilton",
+   "county": "Somerset",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "sale_held",
+   "status_note": "General sale held in October 2026. The balance is due 1 to 7 April 2027; check the official site for the April resale.",
+   "seller": "See Tickets",
+   "adult": {
+    "value": 408,
+    "label": "General admission, 5 days with camping",
+    "fees": "included",
+    "note": "Includes £5 booking fee. Plus £11.25 postage per order.",
+    "source_url": "https://www.glastonburyfestivals.co.uk/news/glastonbury-2027-ticket-information-confirmed/",
+    "source_title": "Glastonbury: 2027 ticket information confirmed (8 Sep 2026)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "deposit": "£100 per person, balance £308 due 1 to 7 April 2027",
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "noncamp": null,
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "isle-of-wight",
+   "name": "Isle of Wight Festival",
+   "start": "2027-06-17",
+   "end": "2027-06-20",
+   "dates_src": {
+    "source_url": "https://isleofwightfestival.com/",
+    "source_title": "Isle of Wight Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Seaclose Park, Newport",
+   "county": "Isle of Wight",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "Page says prices correct as of 23/10/2026.",
+   "seller": "Ticketmaster",
+   "adult": {
+    "value": 330,
+    "label": "Weekend, with or without camping",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://isleofwightfestival.com/tickets/",
+    "source_title": "Isle of Wight Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 330,
+    "label": "Weekend, with or without camping (same price)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://isleofwightfestival.com/tickets/",
+    "source_title": "Isle of Wight Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Older child (9-12) £45; younger child (3-8) £35; infants (2 and under) free.",
+   "parking": {
+    "value": 50,
+    "label": "Weekend parking bought in advance",
+    "fees": null,
+    "note": "Includes £2 green levy.",
+    "source_url": "https://isleofwightfestival.com/tickets/",
+    "source_title": "Isle of Wight Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 350,
+    "label": "Campervan",
+    "fees": null,
+    "note": "Sold out when checked.",
+    "source_url": "https://isleofwightfestival.com/tickets/",
+    "source_title": "Isle of Wight Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "deposit": "Payment plans and Ticketmaster instalments available",
+   "extras": [
+    "Islander weekend ticket £299 for island residents."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "download",
+   "name": "Download Festival",
+   "start": "2027-06-09",
+   "end": "2027-06-13",
+   "dates_src": {
+    "source_url": "https://downloadfestival.co.uk/",
+    "source_title": "Download Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Donington Park",
+   "county": "",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://downloadfestival.co.uk/",
+    "source_title": "Download Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "Official ticket page lists camping, non-camping and day options, but neither downloadfestival.co.uk nor Ticketmaster showed a 2027 price when checked, so the price below is a press figure.",
+   "seller": "Ticketmaster, Big Green Coach",
+   "adult": {
+    "value": 320,
+    "label": "Early bird adult camping, 3 nights",
+    "fees": "unknown",
+    "note": "Early bird price reported by Time Out in June 2026. The tier on sale now may cost more.",
+    "source_url": "https://www.timeout.com/uk/news/download-festival-2027-early-bird-tickets-prices-dates-headliner-rumours-061526",
+    "source_title": "Time Out: Download 2027 early bird prices",
+    "source_type": "press",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "noncamp": null,
+   "deposit": "PayPal Pay in 3 via Ticketmaster",
+   "extras": [
+    "Early bird 5-night adult camping was £330 (Time Out)."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "reading",
+   "name": "Reading Festival",
+   "start": "2027-08-26",
+   "end": "2027-08-29",
+   "dates_src": {
+    "source_url": "https://www.readingfestival.com/",
+    "source_title": "Reading Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Richfield Avenue",
+   "county": "Berkshire",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.readingfestival.com/",
+    "source_title": "Reading Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "1st release.",
+   "seller": "Ticketmaster",
+   "adult": {
+    "value": 326,
+    "label": "Weekend camping (from Thursday), 1st release",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.readingfestival.com/tickets",
+    "source_title": "Reading Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "deposit": "£20 deposit plus 8 monthly instalments",
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "noncamp": null,
+   "extras": [
+    "Weekend camping plus early entry (from Wednesday) £362."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "leeds",
+   "name": "Leeds Festival",
+   "start": "2027-08-26",
+   "end": "2027-08-29",
+   "dates_src": {
+    "source_url": "https://www.leedsfestival.com/tickets",
+    "source_title": "Leeds Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Bramham Park",
+   "county": "West Yorkshire",
+   "region": "Yorkshire and the Humber",
+   "loc_src": {
+    "source_url": "https://www.leedsfestival.com/tickets",
+    "source_title": "Leeds Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "1st release.",
+   "seller": "Ticketmaster",
+   "adult": {
+    "value": 326,
+    "label": "Weekend camping (from Thursday)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.leedsfestival.com/tickets",
+    "source_title": "Leeds Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 296,
+    "label": "Weekend non-camping (arena Fri to Sun)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.leedsfestival.com/tickets",
+    "source_title": "Leeds Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "deposit": "£20 deposit plus monthly instalments",
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "extras": [
+    "Weekend camping plus early entry (from Wednesday) £362."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "creamfields",
+   "name": "Creamfields",
+   "start": "2027-08-26",
+   "end": "2027-08-29",
+   "dates_src": {
+    "source_url": "https://www.creamfields.com/",
+    "source_title": "Creamfields homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Daresbury",
+   "county": "Cheshire",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "The 2-day Saturday and Sunday camping ticket (£250 + £25) was sold out.",
+   "seller": "Creamfields / Ticketmaster",
+   "adult": {
+    "value": 325,
+    "label": "Standard 4-day camping",
+    "fees": "included",
+    "note": "£300 plus £25 booking fee.",
+    "source_url": "https://www.creamfields.com/tickets",
+    "source_title": "Creamfields: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": {
+    "value": 300,
+    "label": "Standard 3-day non-camping (Fri to Sun)",
+    "fees": "included",
+    "note": "£275 plus £25 booking fee.",
+    "source_url": "https://www.creamfields.com/tickets",
+    "source_title": "Creamfields: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": {
+    "value": 85.5,
+    "label": "Standard Friday day ticket",
+    "fees": "included",
+    "note": "£75 plus £10.50 booking fee. Saturday or Sunday: £125 plus £15.",
+    "source_url": "https://www.creamfields.com/tickets",
+    "source_title": "Creamfields: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "deposit": "£20 deposit plus 9 payments",
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "extras": [
+    "Standard 3-day camping £280 + £25 booking fee."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "boomtown",
+   "name": "Boomtown Fair",
+   "start": "2027-08-11",
+   "end": "2027-08-15",
+   "dates_src": {
+    "source_url": "https://www.boomtownfair.co.uk/tickets/",
+    "source_title": "Boomtown: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Matterley Estate, near Winchester",
+   "county": "Hampshire",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "18+ festival (UK Festival Guides).",
+   "seller": "Kaboodle",
+   "adult": {
+    "value": 325,
+    "label": "Thursday entry, travelling by public transport",
+    "fees": "unknown",
+    "note": "Thursday entry for other travel is from £370. The page also says 'starting at £315' without saying which ticket that is.",
+    "source_url": "https://www.boomtownfair.co.uk/tickets/",
+    "source_title": "Boomtown: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "deposit": "£38 deposit plus 7 instalments",
+   "kids": "18+ only",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "noncamp": null,
+   "extras": [
+    "Wednesday entry from £395 (public transport) or £450 (other).",
+    "£20 refundable eco bond added to every entry ticket."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "green-man",
+   "name": "Green Man",
+   "start": "2027-08-19",
+   "end": "2027-08-22",
+   "dates_src": {
+    "source_url": "https://www.greenman.net/tickets/",
+    "source_title": "Green Man: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Glanusk Estate, Crickhowell",
+   "county": "Powys",
+   "region": "Wales",
+   "loc_src": {
+    "source_url": "https://www.greenman.net/tickets/",
+    "source_title": "Green Man: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "sold_out",
+   "status_note": "All 2027 tickets are sold out. The festival runs an official resale scheme; check its own site for details.",
+   "seller": "Green Man",
+   "adult": {
+    "value": 318,
+    "label": "Adult weekend ticket with camping (Thu to Sun)",
+    "fees": "extra",
+    "note": "Booking fees are extra. Student/under-25 £286.",
+    "source_url": "https://www.greenman.net/tickets/",
+    "source_title": "Green Man: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Teen (13-17) £227; Little Folk 6-12 £66; 3-5 £44; infants free.",
+   "parking": {
+    "value": 34,
+    "label": "Orange car park pass",
+    "fees": "extra",
+    "note": "Park and ride £15.",
+    "source_url": "https://www.greenman.net/tickets/",
+    "source_title": "Green Man: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 197,
+    "label": "Small live-in vehicle",
+    "fees": "extra",
+    "note": "Large live-in vehicle £265. People tickets are extra.",
+    "source_url": "https://www.greenman.net/tickets/",
+    "source_title": "Green Man: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "noncamp": null,
+   "deposit": "",
+   "extras": [
+    "Settlement ticket (from Monday) adult £404."
+   ],
+   "nation": "Wales",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "truck",
+   "name": "Truck Festival",
+   "start": "2027-07-23",
+   "end": "2027-07-25",
+   "dates_src": {
+    "source_url": "https://tickets.truckfestival.com/event/truck-festival-2027/hill-farm/3691891?clearoffer=true",
+    "source_title": "Truck Festival 2027 official ticket shop",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Hill Farm, Steventon",
+   "county": "Oxfordshire",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://tickets.truckfestival.com/event/truck-festival-2027/hill-farm/3691891?clearoffer=true",
+    "source_title": "Truck Festival 2027 official ticket shop",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Tier 3 on sale. The festival runs Friday to Sunday; Thursday entry tickets let you arrive on 22 July.",
+   "seller": "Truck Festival",
+   "adult": {
+    "value": 190,
+    "label": "General camping, Friday entry (tier 3)",
+    "fees": "included",
+    "note": "£180 face value plus booking fee. A £2 transaction fee is added per order. The main tickets page says 'from £182 inc. all fees'; the ticket shop showed £190.",
+    "source_url": "https://tickets.truckfestival.com/event/truck-festival-2027/hill-farm/3691891?clearoffer=true",
+    "source_title": "Truck Festival 2027 official ticket shop",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "kids": "Kids 6-12 £23; 5 and under £12.50 (from the main tickets page, truckfestival.com/tickets).",
+   "parking": {
+    "value": 39,
+    "label": "Car park, booked in advance",
+    "fees": "included",
+    "note": "From the main tickets page.",
+    "source_url": "https://truckfestival.com/tickets/",
+    "source_title": "Truck Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "campervan": {
+    "value": 212,
+    "label": "Campervan without electric hook-up",
+    "fees": "included",
+    "note": "With hook-up £312.",
+    "source_url": "https://truckfestival.com/tickets/",
+    "source_title": "Truck Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": null,
+   "noncamp": null,
+   "deposit": "Payment plan from £18.88 a month",
+   "extras": [
+    "Thursday entry general camping (tier 3) £242 (£230 face value)."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "end-of-the-road",
+   "name": "End of the Road",
+   "start": "2027-09-02",
+   "end": "2027-09-05",
+   "dates_src": {
+    "source_url": "https://endoftheroad.citizenticket.co.uk/events/end-of-the-road/end-of-the-road-festival-2027/",
+    "source_title": "End of the Road 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Larmer Tree Gardens, Tollard Royal",
+   "county": "Dorset",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://endoftheroad.citizenticket.co.uk/events/end-of-the-road/end-of-the-road-festival-2027/",
+    "source_title": "End of the Road 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Tier 4. No day tickets.",
+   "seller": "Citizen Ticket",
+   "adult": {
+    "value": 359.12,
+    "label": "Tier 4 adult weekend with camping",
+    "fees": "included",
+    "note": "£335 plus £24.12 booking fee.",
+    "source_url": "https://endoftheroad.citizenticket.co.uk/events/end-of-the-road/end-of-the-road-festival-2027/",
+    "source_title": "End of the Road 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Youth 13-17 £220; child 6-12 £95; child 3-5 £75 (all plus booking fee); infants free but need a ticket.",
+   "parking": {
+    "value": 30,
+    "label": "Car parking",
+    "fees": "extra",
+    "note": "",
+    "source_url": "https://www.endoftheroadfestival.com/tickets/",
+    "source_title": "End of the Road: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "campervan": null,
+   "day": null,
+   "noncamp": null,
+   "deposit": "£60 initial payment plus monthly payments to 30 June 2027",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "parklife",
+   "name": "Parklife",
+   "start": "2027-07-10",
+   "end": "2027-07-11",
+   "dates_src": {
+    "source_url": "https://www.parklife.uk.com/tickets",
+    "source_title": "Parklife 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Heaton Park",
+   "county": "Greater Manchester",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://www.parklife.uk.com/tickets",
+    "source_title": "Parklife 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Early bird weekend.",
+   "seller": "Parklife",
+   "adult": {
+    "value": 162.9,
+    "label": "Weekend general admission",
+    "fees": "included",
+    "note": "Including all fees.",
+    "source_url": "https://www.parklife.uk.com/tickets",
+    "source_title": "Parklife 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 162.9,
+    "label": "Weekend general admission",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://www.parklife.uk.com/tickets",
+    "source_title": "Parklife 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "deposit": "£20 deposit plus 6 monthly payments",
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "extras": [
+    "Weekend VIP £223.10."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "tramlines",
+   "name": "Tramlines",
+   "start": "2027-07-23",
+   "end": "2027-07-25",
+   "dates_src": {
+    "source_url": "https://tramlines.org.uk/tramlines-2027-super-early-bird-pre-sale-sign-up/",
+    "source_title": "Tramlines 2027 presale page",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Hillsborough Park",
+   "county": "South Yorkshire",
+   "region": "Yorkshire and the Humber",
+   "loc_src": {
+    "source_url": "https://tramlines.org.uk/",
+    "source_title": "Tramlines homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Tier 2. Super early bird, early bird and tier 1 have sold out.",
+   "seller": "Tramlines",
+   "adult": {
+    "value": 165,
+    "label": "Weekend general admission (tier 2)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.tramlines.org.uk/tickets/",
+    "source_title": "Tramlines: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 165,
+    "label": "Weekend general admission (tier 2)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.tramlines.org.uk/tickets/",
+    "source_title": "Tramlines: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Kids weekend from £12.50.",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "deposit": "Monthly plan from £16.66",
+   "extras": [
+    "Weekend VIP £235."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "boardmasters",
+   "name": "Boardmasters",
+   "start": "2027-08-04",
+   "end": "2027-08-08",
+   "dates_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "venue": "Watergate Bay and Fistral Beach, Newquay",
+   "county": "Cornwall",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Boardmasters",
+   "adult": {
+    "value": 259,
+    "label": "General camping (from)",
+    "fees": "unknown",
+    "note": "Includes a £20 litter bond, refunded when you return a full bag of rubbish.",
+    "source_url": "https://boardmasters.com/book-tickets-2027/",
+    "source_title": "Boardmasters: Book tickets (2027)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 233,
+    "label": "3-day non-camping",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://boardmasters.com/book-tickets-2027/",
+    "source_title": "Boardmasters: Book tickets (2027)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Child tickets from £45 (general camping).",
+   "parking": null,
+   "campervan": null,
+   "day": null,
+   "deposit": "",
+   "extras": [
+    "Chilled camping £294; VIP camping £379.",
+    "Big Green Coach camping returns from £51."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "camp-bestival-dorset",
+   "name": "Camp Bestival Dorset",
+   "start": "2027-07-29",
+   "end": "2027-08-01",
+   "dates_src": {
+    "source_url": "https://dorset.campbestival.net/weekend-tickets/",
+    "source_title": "Camp Bestival Dorset: Weekend tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Lulworth Castle",
+   "county": "Dorset",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "The page also lists a 'Tier 7, coming soon'.",
+   "seller": "Ticketmaster",
+   "adult": {
+    "value": 225,
+    "label": "Adult general weekend camping",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://dorset.campbestival.net/weekend-tickets/",
+    "source_title": "Camp Bestival Dorset: Weekend tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Teen 13-17 £157.50; child 10-12 £130.50; child 5-9 £110.50.",
+   "parking": null,
+   "campervan": {
+    "value": 160,
+    "label": "General campervan pass",
+    "fees": null,
+    "note": "General caravan £180. People tickets are extra.",
+    "source_url": "https://dorset.campbestival.net/weekend-tickets/",
+    "source_title": "Camp Bestival Dorset: Weekend tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "noncamp": null,
+   "deposit": "Ticketmaster instalments",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "lytham",
+   "name": "Lytham Festival",
+   "start": "2027-06-30",
+   "end": "2027-07-04",
+   "dates_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "venue": "Lytham Green",
+   "county": "Lancashire",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://www.ukfestivalguides.com/news/14092026/uk-festivals-2027-which-one-fits-you-and-what-to-book-right-now/",
+    "source_title": "UK Festival Guides 2027 planning guide (14 Sep 2026)",
+    "source_type": "other",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Ticketmaster",
+   "adult": {
+    "value": 325,
+    "label": "5-day pass, general admission wave 1 (from)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.lythamfestival.com/lytham-festival-tickets-prices-2027",
+    "source_title": "Lytham Festival: 2027 ticket prices",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 325,
+    "label": "5-day pass, general admission wave 1 (from)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.lythamfestival.com/lytham-festival-tickets-prices-2027",
+    "source_title": "Lytham Festival: 2027 ticket prices",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": {
+    "value": 63.25,
+    "label": "Day ticket, general admission release 1 (cheapest night listed)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.lythamfestival.com/lytham-festival-tickets-prices-2027",
+    "source_title": "Lytham Festival: 2027 ticket prices",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "parking": null,
+   "campervan": null,
+   "deposit": "",
+   "extras": [
+    "Day prices differ by night; the dearest release 1 day is £74.75."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "latitude",
+   "name": "Latitude",
+   "start": "2027-07-22",
+   "end": "2027-07-25",
+   "dates_src": {
+    "source_url": "https://www.latitudefestival.com/news/latitude-2027-early-bird-tickets-key-info/",
+    "source_title": "Latitude: 2027 Early Bird tickets key info (10 Aug 2026)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Henham Park",
+   "county": "Suffolk",
+   "region": "East of England",
+   "loc_src": {
+    "source_url": "https://www.latitudefestival.com/news/latitude-2027-early-bird-tickets-key-info/",
+    "source_title": "Latitude: 2027 Early Bird tickets key info (10 Aug 2026)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Early bird on sale; day tickets coming soon.",
+   "seller": "Ticketmaster",
+   "adult": {
+    "value": 320,
+    "label": "Early bird adult weekend, general camping",
+    "fees": "extra",
+    "note": "Ticket page says all tickets are subject to booking and delivery fees.",
+    "source_url": "https://www.latitudefestival.com/news/latitude-2027-early-bird-tickets-key-info/",
+    "source_title": "Latitude: 2027 Early Bird tickets key info (10 Aug 2026)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Accompanied teen £195; child £28.",
+   "parking": {
+    "value": 0,
+    "label": "Car parking",
+    "fees": null,
+    "note": "The tickets page says car parking is free.",
+    "source_url": "https://www.latitudefestival.com/tickets",
+    "source_title": "Latitude: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "campervan": null,
+   "day": null,
+   "noncamp": null,
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "big-sky",
+   "name": "Big Sky Beer Festival",
+   "start": "2027-07-09",
+   "end": "2027-07-10",
+   "dates_src": {
+    "source_url": "https://www.woldtopbrewery.co.uk/product/big-sky-festival-ticket",
+    "source_title": "Wold Top Brewery: Big Sky Festival ticket",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Wold Top Brewery, Hunmanby Grange",
+   "county": "East Yorkshire",
+   "region": "Yorkshire and the Humber",
+   "loc_src": {
+    "source_url": "https://www.woldtopbrewery.co.uk/product/big-sky-festival-ticket",
+    "source_title": "Wold Top Brewery: Big Sky Festival ticket",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "The page still shows the early-bird prices it said were valid to 31 October 2026, and every ticket option is still in stock in the shop, so there is no sign of a sold-out weekend or a higher tier being charged yet. Checked again after the early-bird deadline.",
+   "seller": "Wold Top Brewery",
+   "adult": {
+    "value": 32,
+    "label": "Weekend pass",
+    "fees": "unknown",
+    "note": "Includes 2 free pints. Camping is sold separately. The page does not state whether any booking fee is added, and it still labels these as early-bird prices valid to 31 October 2026 while charging them after that date.",
+    "source_url": "https://www.woldtopbrewery.co.uk/product/big-sky-festival-ticket",
+    "source_title": "Wold Top Brewery: Big Sky Festival ticket",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 32,
+    "label": "Weekend pass",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.woldtopbrewery.co.uk/product/big-sky-festival-ticket",
+    "source_title": "Wold Top Brewery: Big Sky Festival ticket",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": {
+    "value": 17,
+    "label": "Friday ticket",
+    "fees": "unknown",
+    "note": "Saturday £20.",
+    "source_url": "https://www.woldtopbrewery.co.uk/product/big-sky-festival-ticket",
+    "source_title": "Wold Top Brewery: Big Sky Festival ticket",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "parking": null,
+   "campervan": {
+    "value": 24,
+    "label": "Weekend camping (2 nights)",
+    "fees": "unknown",
+    "note": "Per pitch, not per person. One night £12.",
+    "source_url": "https://www.woldtopbrewery.co.uk/product/big-sky-festival-ticket",
+    "source_title": "Wold Top Brewery: Big Sky Festival ticket",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "deposit": "",
+   "extras": [
+    "A beer festival with live music.",
+    "Camping passes: 1 night £12, 2 nights £24 per pitch."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "one-love",
+   "name": "One Love Festival",
+   "start": "2027-08-20",
+   "end": "2027-08-22",
+   "dates_src": {
+    "source_url": "https://www.onelovefestival.co.uk/tickets/",
+    "source_title": "One Love Festival 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Bentley Estate, near Lewes",
+   "county": "East Sussex",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.onelovefestival.co.uk/tickets/",
+    "source_title": "One Love Festival 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "One Love Festival",
+   "adult": {
+    "value": 115,
+    "label": "Weekend ticket (from)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.onelovefestival.co.uk/tickets/",
+    "source_title": "One Love Festival 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": {
+    "value": 40,
+    "label": "Day ticket (from)",
+    "fees": "unknown",
+    "note": "Friday or Saturday £50. Day plus camping from £65.",
+    "source_url": "https://www.onelovefestival.co.uk/tickets/",
+    "source_title": "One Love Festival 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "kids": "Under-12s free. Child 12-14 weekend £55.",
+   "parking": null,
+   "campervan": null,
+   "noncamp": null,
+   "deposit": "Payment plans from £20 a month",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "plumpton-revival",
+   "name": "Plumpton Revival",
+   "start": "2027-08-07",
+   "end": "2027-08-08",
+   "dates_src": {
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Plumpton Racecourse",
+   "county": "East Sussex",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Plumpton Revival",
+   "adult": {
+    "value": 150,
+    "label": "Adult weekend ticket and camping",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 120,
+    "label": "Adult weekend ticket (no camping)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": {
+    "value": 70,
+    "label": "Adult day ticket",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": {
+    "value": 15,
+    "label": "Car parking pass",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 50,
+    "label": "Campervan ticket",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://plumptonrevival.co.uk/tickets",
+    "source_title": "Plumpton Revival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "65+ tickets are 10% off."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "buddhafield",
+   "name": "Buddhafield Festival",
+   "start": "2027-07-14",
+   "end": "2027-07-18",
+   "dates_src": {
+    "source_url": "https://buddhafield.citizenticket.com/events/buddhafield/buddhafield-festival-2027/",
+    "source_title": "Buddhafield Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "",
+   "county": "Somerset",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://buddhafield.citizenticket.com/events/buddhafield/buddhafield-festival-2027/",
+    "source_title": "Buddhafield Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Citizen Ticket",
+   "adult": {
+    "value": 194.99,
+    "label": "Adult early bird, full event with camping",
+    "fees": "included",
+    "note": "£185 plus £9.99 booking fee. Standard adult £225 plus £12.15.",
+    "source_url": "https://buddhafield.citizenticket.com/events/buddhafield/buddhafield-festival-2027/",
+    "source_title": "Buddhafield Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Young person 13-17 £80 + fee; child 3-5 £35 + fee.",
+   "parking": {
+    "value": 39.52,
+    "label": "Car pass, full event",
+    "fees": "included",
+    "note": "£37.50 plus £2.03 booking fee.",
+    "source_url": "https://buddhafield.citizenticket.com/events/buddhafield/buddhafield-festival-2027/",
+    "source_title": "Buddhafield Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 84.32,
+    "label": "Live-in pass (6m and under)",
+    "fees": "included",
+    "note": "£80 plus £4.32 booking fee.",
+    "source_url": "https://buddhafield.citizenticket.com/events/buddhafield/buddhafield-festival-2027/",
+    "source_title": "Buddhafield Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "noncamp": null,
+   "deposit": "",
+   "extras": [
+    "Concession adult £165 + fee."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "stowaway",
+   "name": "Stowaway Festival",
+   "start": "2027-07-30",
+   "end": "2027-08-01",
+   "dates_src": {
+    "source_url": "https://www.stowawayfestival.co.uk/tickets",
+    "source_title": "Stowaway Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "dates_basis": "festival",
+   "venue": "Blackpit Farm, Silverstone Road, Stowe (MK18 5LJ)",
+   "county": "Buckinghamshire",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.stowawayfestival.co.uk/terms-conditions",
+    "source_title": "Stowaway Festival: Terms and conditions",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "2027 tickets on sale. The festival runs Friday 30 July to Sunday 1 August; camping closes Monday midday.",
+   "seller": "Stowaway",
+   "adult": {
+    "value": 225.72,
+    "label": "Adult weekend with camping",
+    "fees": "included",
+    "note": "Including booking fee.",
+    "source_url": "https://www.stowawayfestival.co.uk/tickets",
+    "source_title": "Stowaway Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Teen 13-17 £122.04; child 2-12 £64.80.",
+   "parking": {
+    "value": 21,
+    "label": "Car pass",
+    "fees": null,
+    "note": "",
+    "source_url": "https://www.stowawayfestival.co.uk/tickets",
+    "source_title": "Stowaway Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 114.45,
+    "label": "Camper",
+    "fees": null,
+    "note": "",
+    "source_url": "https://www.stowawayfestival.co.uk/tickets",
+    "source_title": "Stowaway Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "noncamp": null,
+   "deposit": "9-month payment plan or Klarna Pay in 3",
+   "extras": [
+    "Buy 5, get one free group discount."
+   ],
+   "nation": "England"
+  },
+  {
+   "id": "ely-folk",
+   "name": "Ely Folk Festival",
+   "start": "2027-07-09",
+   "end": "2027-07-11",
+   "dates_src": {
+    "source_url": "https://elyfolkfestival.co.uk/tickets/",
+    "source_title": "Ely Folk Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "",
+   "county": "Cambridgeshire",
+   "region": "East of England",
+   "loc_src": {
+    "source_url": "https://elyfolkfestival.co.uk/tickets/",
+    "source_title": "Ely Folk Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "Early bird (tier 1).",
+   "seller": "Ely Folk Festival",
+   "adult": {
+    "value": 130,
+    "label": "Adult weekend ticket, early bird",
+    "fees": "unknown",
+    "note": "Tent pitch is £30 extra.",
+    "source_url": "https://elyfolkfestival.co.uk/tickets/",
+    "source_title": "Ely Folk Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": {
+    "value": 130,
+    "label": "Adult weekend ticket, early bird",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://elyfolkfestival.co.uk/tickets/",
+    "source_title": "Ely Folk Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": {
+    "value": 36,
+    "label": "Friday adult day ticket, early bird",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://elyfolkfestival.co.uk/tickets/",
+    "source_title": "Ely Folk Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "campervan": {
+    "value": 52,
+    "label": "Caravan or campervan pitch",
+    "fees": null,
+    "note": "",
+    "source_url": "https://elyfolkfestival.co.uk/tickets/",
+    "source_title": "Ely Folk Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "kids": "Youth 12-17 £43; children under 12 free.",
+   "parking": null,
+   "deposit": "Klarna",
+   "extras": [
+    "Concession (over 66 and registered disabled) £120."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "cambridge-folk",
+   "name": "Cambridge Folk Festival",
+   "start": "2027-07-30",
+   "end": "2027-08-01",
+   "dates_src": {
+    "source_url": "https://www.cambridgefolkfestival.co.uk/",
+    "source_title": "Cambridge Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Cherry Hinton Hall",
+   "county": "Cambridgeshire",
+   "region": "East of England",
+   "loc_src": {
+    "source_url": "https://www.cambridgefolkfestival.co.uk/",
+    "source_title": "Cambridge Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "Tier 1 went on sale on 2 October 2026.",
+   "seller": "Cambridge Live",
+   "adult": {
+    "value": 170,
+    "label": "Full festival ticket (from)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.cambridgefolkfestival.co.uk/",
+    "source_title": "Cambridge Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 170,
+    "label": "Full festival ticket (from)",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.cambridgefolkfestival.co.uk/",
+    "source_title": "Cambridge Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": {
+    "value": 21,
+    "label": "Weekend parking (Netherhall School), from",
+    "fees": null,
+    "note": "",
+    "source_url": "https://www.cambridgefolkfestival.co.uk/",
+    "source_title": "Cambridge Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 85,
+    "label": "Cherry Hinton caravan, from",
+    "fees": null,
+    "note": "Sold out when checked.",
+    "source_url": "https://www.cambridgefolkfestival.co.uk/",
+    "source_title": "Cambridge Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "day": null,
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "cropredy",
+   "name": "Fairport's Cropredy Convention",
+   "start": "2027-08-12",
+   "end": "2027-08-14",
+   "dates_src": {
+    "source_url": "https://www.fairportconvention.com/festival-faqs/",
+    "source_title": "Fairport Convention: Festival FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Cropredy, near Banbury",
+   "county": "Oxfordshire",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.fairportconvention.com/festival-faqs/",
+    "source_title": "Fairport Convention: Festival FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "coming_soon",
+   "status_note": "Tickets go on sale at 10am on Monday 7 December 2026.",
+   "seller": "AXS",
+   "adult": {
+    "value": 250,
+    "label": "Three-day festival ticket",
+    "fees": "extra",
+    "note": "£2 handling charge per order.",
+    "source_url": "https://www.fairportconvention.com/festival-faqs/",
+    "source_title": "Fairport Convention: Festival FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": {
+    "value": 250,
+    "label": "Three-day festival ticket",
+    "fees": "extra",
+    "note": "",
+    "source_url": "https://www.fairportconvention.com/festival-faqs/",
+    "source_title": "Fairport Convention: Festival FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "kids": "Teen 12-17 £90.",
+   "parking": {
+    "value": 15,
+    "label": "Parking for non-campers",
+    "fees": null,
+    "note": "",
+    "source_url": "https://www.fairportconvention.com/festival-faqs/",
+    "source_title": "Fairport Convention: Festival FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "campervan": {
+    "value": 65,
+    "label": "Three-day camping, per vehicle",
+    "fees": null,
+    "note": "",
+    "source_url": "https://www.fairportconvention.com/festival-faqs/",
+    "source_title": "Fairport Convention: Festival FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": null,
+   "deposit": "PayPal Pay in 3",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "victorious",
+   "name": "Victorious Festival",
+   "start": "2027-08-27",
+   "end": "2027-08-29",
+   "dates_src": {
+    "source_url": "https://www.victoriousfestival.co.uk/information/tickets/",
+    "source_title": "Victorious Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Southsea Common, Portsmouth",
+   "county": "Hampshire",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.victoriousfestival.co.uk/information/tickets/",
+    "source_title": "Victorious Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Victorious Festival",
+   "adult": {
+    "value": 220.32,
+    "label": "Weekend camping ticket (from)",
+    "fees": "included",
+    "note": "Including booking fee.",
+    "source_url": "https://www.victoriousfestival.co.uk/buy-tickets-2027/",
+    "source_title": "Victorious Festival: Buy tickets 2027",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 209.52,
+    "label": "Weekend ticket (from)",
+    "fees": "included",
+    "note": "Including booking fee.",
+    "source_url": "https://www.victoriousfestival.co.uk/buy-tickets-2027/",
+    "source_title": "Victorious Festival: Buy tickets 2027",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "2000trees",
+   "name": "2000trees",
+   "start": "2027-07-07",
+   "end": "2027-07-10",
+   "dates_src": {
+    "source_url": "https://2000trees.co.uk/info/getting-to-trees",
+    "source_title": "2000trees: Getting to Trees",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Upcote Farm, Withington",
+   "county": "Gloucestershire",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://2000trees.co.uk/info/getting-to-trees",
+    "source_title": "2000trees: Getting to Trees",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "included",
+   "status": "sold_out",
+   "status_note": "Dates confirmed as Wednesday 7 to Saturday 10 July 2027: every page of 2000trees.co.uk carries '7TH - 10TH JULY 2027', and the ticket types match (3-day Thursday to Saturday, 4-day Wednesday to Saturday). The ticket shop shows the booking window ending on Sunday 11 July at 15:00 because that is the departure deadline (the site says all guests must be off site by 14:00 on Sunday). One line on the site's travel page says the festival is 'held from Thursday to Sunday', which conflicts with its own banner and ticket types; we have gone with the banner. The 4-day and both VIP tickets are sold out and the 3-day ticket is a wait list, so nothing is currently purchasable.",
+   "seller": "Ticket Tailor",
+   "adult": {
+    "value": 220,
+    "label": "3-day weekend, early bird (last price published; not on sale now)",
+    "fees": "included",
+    "note": "Super early bird was £175 and the early bird is £220. Both are shown on the shop but the 3-day ticket is wait-list only, so nothing is currently purchasable at that price.",
+    "source_url": "https://tickets.2000trees.co.uk/events/2000trees/2213997",
+    "source_title": "2000trees 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": {
+    "value": 95,
+    "label": "Day ticket",
+    "fees": "included",
+    "note": "Thursday, Friday or Saturday.",
+    "source_url": "https://tickets.2000trees.co.uk/events/2000trees/2213997",
+    "source_title": "2000trees 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": {
+    "value": 30,
+    "label": "Weekend parking",
+    "fees": "included",
+    "note": "Day parking £15.",
+    "source_url": "https://tickets.2000trees.co.uk/events/2000trees/2213997",
+    "source_title": "2000trees 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 175,
+    "label": "Standard campervan, no electric hook-up",
+    "fees": "included",
+    "note": "With hook-up £310.",
+    "source_url": "https://tickets.2000trees.co.uk/events/2000trees/2213997",
+    "source_title": "2000trees 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Child 4-13 £30 for the weekend; under 4s free but need a ticket.",
+   "deposit": "Instalment plans via GoCardless; the 4-day plan is sold out.",
+   "extras": [
+    "VIP weekend £315. VIP bolt-on for existing weekend holders £75 (3-day) or £95 (4-day).",
+    "Thursday, Friday and Saturday day tickets £95 each.",
+    "Wednesday early arrival is included with the 4-day ticket; 3-day tickets enter on Thursday."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "arctangent",
+   "name": "ArcTanGent",
+   "start": "2027-08-18",
+   "end": "2027-08-21",
+   "dates_src": {
+    "source_url": "https://arctangent.co.uk/info/ticket-info/",
+    "source_title": "ArcTanGent: Ticket info",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Todenham Manor Farm (GL56 9NW)",
+   "county": "Gloucestershire",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://buytickets.at/arctangent/2263452/r/webticketpage",
+    "source_title": "ArcTanGent 2027 official ticket shop",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Official site dates are 18 to 21 August 2027 and the ticket FAQ says 'ArcTanGent runs from Wednesday – Saturday', with 3-day tickets entering on Thursday: that makes Wednesday 18 the build-up day and Saturday 21 the last day. The ticket shop's Sun 22 August end time is the departure deadline. Early bird tickets are on sale in the official shop.",
+   "seller": "Ticket Tailor",
+   "adult": {
+    "value": 220,
+    "label": "3-day festival ticket, Thursday to Saturday, early bird",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://buytickets.at/arctangent/2263452/r/webticketpage",
+    "source_title": "ArcTanGent 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": {
+    "value": 95,
+    "label": "Day ticket",
+    "fees": "included",
+    "note": "Wednesday, Thursday, Friday or Saturday.",
+    "source_url": "https://buytickets.at/arctangent/2263452/r/webticketpage",
+    "source_title": "ArcTanGent 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": {
+    "value": 30,
+    "label": "Weekend car parking",
+    "fees": "included",
+    "note": "Day parking £10.",
+    "source_url": "https://buytickets.at/arctangent/2263452/r/webticketpage",
+    "source_title": "ArcTanGent 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 195,
+    "label": "Standard campervan, no electric hook-up",
+    "fees": "included",
+    "note": "Oversize pitch (14m x 7m) £350.",
+    "source_url": "https://buytickets.at/arctangent/2263452/r/webticketpage",
+    "source_title": "ArcTanGent 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Child 4-13 £30 for the weekend; under 4s free but need a ticket.",
+   "deposit": "Monthly payment plans: 3-day £30 x 8, 4-day £36.25 x 8.",
+   "extras": [
+    "4-day ticket (Wednesday to Saturday) early bird £270.",
+    "VIP 3-day £315; VIP 4-day £365.",
+    "Wednesday bolt-on for existing 3-day ticket holders £65."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "bloodstock",
+   "name": "Bloodstock Open Air",
+   "start": "2027-08-05",
+   "end": "2027-08-08",
+   "dates_src": {
+    "source_url": "https://bloodstock.uk.com/",
+    "source_title": "Bloodstock homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Catton Park",
+   "county": "Derbyshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://bloodstock.uk.com/",
+    "source_title": "Bloodstock homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Standard weekend tickets with camping are on sale at See Tickets. Several VIP and campervan options are already sold out.",
+   "seller": "See Tickets",
+   "adult": {
+    "value": 244.5,
+    "label": "Standard weekend with camping, Thursday to Sunday",
+    "fees": "included",
+    "note": "£235 face value plus booking fees. Wednesday arrival version £279.50.",
+    "source_url": "https://bloodstock.seetickets.com/event/bloodstock/catton-park/3699737",
+    "source_title": "See Tickets: Bloodstock 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": {
+    "value": 35.5,
+    "label": "Weekend car parking",
+    "fees": "included",
+    "note": "£40 on the gate.",
+    "source_url": "https://bloodstock.seetickets.com/event/bloodstock/catton-park/3699737",
+    "source_title": "See Tickets: Bloodstock 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "campervan": null,
+   "kids": "Child 4-11 £73.95; under 4s free but need a ticket.",
+   "deposit": "Instalment plan: six payments of about £39.16.",
+   "extras": [
+    "Standard weekend with Wednesday arrival £279.50.",
+    "Wednesday early arrival only (with a weekend ticket) £35.50.",
+    "Campervan passes sold out; campervan with power £260.95 was also sold out.",
+    "Serpent's Lair VIP bar pass sold out."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "beautiful-days",
+   "name": "Beautiful Days",
+   "start": "2027-08-20",
+   "end": "2027-08-22",
+   "dates_src": {
+    "source_url": "https://www.beautifuldays.org/tickets/",
+    "source_title": "Beautiful Days: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Escot Park",
+   "county": "Devon",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.beautifuldays.org/tickets/",
+    "source_title": "Beautiful Days: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "coming_soon",
+   "status_note": "Tickets go on sale at 10am on Thursday 5 November 2026. The 2027 prices are already printed on the official tickets page.",
+   "seller": "See Tickets / Levellers",
+   "adult": {
+    "value": 220,
+    "label": "Adult weekend camping ticket",
+    "fees": "extra",
+    "note": "All tickets are subject to booking fees. Weekend tickets include camping from Thursday to Monday.",
+    "source_url": "https://www.beautifuldays.org/tickets/",
+    "source_title": "Beautiful Days: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": {
+    "value": 30,
+    "label": "Yellow car parking pass",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.beautifuldays.org/tickets/",
+    "source_title": "Beautiful Days: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 130,
+    "label": "Blue campervan pass",
+    "fees": "unknown",
+    "note": "Small campervan (5.5m max) £100. Campervan with power hook-up £230.",
+    "source_url": "https://www.beautifuldays.org/tickets/",
+    "source_title": "Beautiful Days: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Child 10 to under 16 £105; child 5 to under 10 £85; under 5 £35.",
+   "deposit": "",
+   "extras": [
+    "Caravan pass £140; caravan with power £240.",
+    "No e-tickets: physical tickets are posted in July 2027."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "shambala",
+   "name": "Shambala",
+   "start": "2027-08-26",
+   "end": "2027-08-29",
+   "dates_src": {
+    "source_url": "https://www.shambalafestival.org/",
+    "source_title": "Shambala homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Kelmarsh Hall and Gardens, Kelmarsh (NN6 9LY)",
+   "county": "Northamptonshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://www.shambalafestival.org/travel/",
+    "source_title": "Shambala: Travel",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Tier 3 on sale at £299.37 and tier 4 (£309.72) is 'coming soon'; tiers 1 and 2 are sold out. A refundable £25 recycling bond is added to each order.",
+   "seller": "Kaboodle",
+   "adult": {
+    "value": 299.37,
+    "label": "Adult weekend, tier 3",
+    "fees": "included",
+    "note": "£289 plus £10.37 booking fee.",
+    "source_url": "https://tickets.shambalafestival.org/?t=kaboodle-9y4i4&c=235&p=27865&k=14753b3d1662372d1f1d20783bef28610086afa1",
+    "source_title": "Shambala 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Green traveller adult ticket £268.32."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "bearded-theory",
+   "name": "Bearded Theory",
+   "start": "2027-05-26",
+   "end": "2027-05-30",
+   "dates_src": {
+    "source_url": "https://beardedtheory.co.uk/tickets/",
+    "source_title": "Bearded Theory: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Catton Park, Walton-on-Trent",
+   "county": "Derbyshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://beardedtheory.co.uk/tickets/",
+    "source_title": "Bearded Theory: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Early bird adult weekend on sale. The payment-plan version was sold out.",
+   "seller": "alt.tickets",
+   "adult": {
+    "value": 269.95,
+    "label": "Adult weekend, early bird (Thursday to Sunday)",
+    "fees": "included",
+    "note": "£260 face value plus booking fee.",
+    "source_url": "https://www.alttickets.com/bearded-theory-tickets/walton-on-trent-catton-park/2027-05-19-09-00-85651",
+    "source_title": "alt.tickets: Bearded Theory 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31",
+    "days": 4
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": {
+    "value": 155,
+    "label": "Campervan, 4 nights",
+    "fees": "included",
+    "note": "£150 face value plus fee. 5 nights £190.",
+    "source_url": "https://www.alttickets.com/bearded-theory-tickets/walton-on-trent-catton-park/2027-05-19-09-00-85651",
+    "source_title": "alt.tickets: Bearded Theory 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "kids": "Child 12-16 £95; child 8-11 £68.50.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "valley-fest",
+   "name": "Valley Fest",
+   "start": "2027-07-29",
+   "end": "2027-08-01",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/valley-fest/",
+    "source_title": "Skiddle: Valley Fest 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Near Bristol (BS40 8SZ)",
+   "county": "",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/valley-fest/",
+    "source_title": "Skiddle: Valley Fest 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "Tier 1 early bird on sale.",
+   "seller": "Skiddle",
+   "adult": {
+    "value": 137.49,
+    "label": "Tier 1 early bird adult weekend (Friday to Sunday)",
+    "fees": "included",
+    "note": "£124.99 plus booking fee. A Thursday add-on is £29.99 plus booking fee.",
+    "source_url": "https://www.skiddle.com/infofeed/ticketbox.php?ilid=42778158&pid=0&aid=0&eid=0&bid=0&test=false",
+    "source_title": "Skiddle ticket box: Valley Fest 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": {
+    "value": 20,
+    "label": "Car parking in advance",
+    "fees": "extra",
+    "note": "From the Skiddle festival page. More on the gate.",
+    "source_url": "https://www.skiddle.com/festivals/valley-fest/",
+    "source_title": "Skiddle: Valley Fest 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "campervan": {
+    "value": 131.99,
+    "label": "Live-in vehicle",
+    "fees": "included",
+    "note": "£119.99 plus booking fee.",
+    "source_url": "https://www.skiddle.com/infofeed/ticketbox.php?ilid=42778158&pid=0&aid=0&eid=0&bid=0&test=false",
+    "source_title": "Skiddle ticket box: Valley Fest 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "kids": "Teen weekend £59.99 plus booking fee; child weekend free.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "lindisfarne",
+   "name": "Lindisfarne Festival",
+   "start": "2027-09-02",
+   "end": "2027-09-04",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/lindisfarne-festival/",
+    "source_title": "Skiddle: Lindisfarne Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Beal Farm",
+   "county": "Northumberland",
+   "region": "North East England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/lindisfarne-festival/",
+    "source_title": "Skiddle: Lindisfarne Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "Over-18s only (official site). 2nd release weekend on sale.",
+   "seller": "Skiddle",
+   "adult": {
+    "value": 189,
+    "label": "Weekend camping, Thursday to Sunday (2nd release)",
+    "fees": "included",
+    "note": "£180 plus booking fee.",
+    "source_url": "https://www.skiddle.com/infofeed/ticketbox.php?ilid=42719465&pid=0&aid=0&eid=0&bid=0&test=false",
+    "source_title": "Skiddle ticket box: Lindisfarne Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": {
+    "value": 36.75,
+    "label": "Car parking",
+    "fees": "included",
+    "note": "£35 plus booking fee.",
+    "source_url": "https://www.skiddle.com/infofeed/ticketbox.php?ilid=42719465&pid=0&aid=0&eid=0&bid=0&test=false",
+    "source_title": "Skiddle ticket box: Lindisfarne Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "campervan": null,
+   "kids": "18+ only",
+   "deposit": "",
+   "extras": [
+    "Friday to Sunday 1st release £157.50 (£150 plus booking fee).",
+    "Saturday to Sunday early bird £120.75 (£115 plus booking fee)."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "gemfest",
+   "name": "GemFest",
+   "start": "2027-06-17",
+   "end": "2027-06-20",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/gemfest/",
+    "source_title": "Skiddle: GemFest 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Charlton Park Estate",
+   "county": "Wiltshire",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/gemfest/",
+    "source_title": "Skiddle: GemFest 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Second release on sale; the first release (£99 plus booking fee) was not on sale.",
+   "seller": "Skiddle",
+   "adult": {
+    "value": 129,
+    "label": "Second release, Friday entry (all in)",
+    "fees": "included",
+    "note": "Shown as '[ALL IN]'.",
+    "source_url": "https://www.skiddle.com/infofeed/ticketbox.php?ilid=42462731&pid=0&aid=0&eid=0&bid=0&test=false",
+    "source_title": "Skiddle ticket box: GemFest 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Thursday entry, second release £159 all in."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "we-out-here",
+   "name": "We Out Here",
+   "start": "2027-08-19",
+   "end": "2027-08-22",
+   "dates_src": {
+    "source_url": "https://weoutherefestival.com/tickets/",
+    "source_title": "We Out Here: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Wimborne St Giles",
+   "county": "Dorset",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://weoutherefestival.com/",
+    "source_title": "We Out Here homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "General release weekend on sale. Day tickets not on sale yet.",
+   "seller": "Kaboodle",
+   "adult": {
+    "value": 317.13,
+    "label": "General release weekend, 18+",
+    "fees": "included",
+    "note": "£295 face value plus £22.13 booking fee.",
+    "source_url": "https://go.kaboodle.co.uk/woh-2027-wbsg",
+    "source_title": "We Out Here 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Child 4-13 £27.50.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "just-so",
+   "name": "Just So Festival",
+   "start": "2027-08-20",
+   "end": "2027-08-22",
+   "dates_src": {
+    "source_url": "https://justsofestival.org.uk/tickets/",
+    "source_title": "Just So Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Rode Hall Estate",
+   "county": "Cheshire",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://justsofestival.org.uk/tickets/",
+    "source_title": "Just So Festival: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Tier 1 on sale. Family festival. Payment plans over 3, 6, 9 or 12 months.",
+   "seller": "Citizen Ticket",
+   "adult": {
+    "value": 194.18,
+    "label": "Tier 1 adult weekend with camping",
+    "fees": "included",
+    "note": "£185 plus £9.18 booking fee.",
+    "source_url": "https://www.citizenticket.com/event/just-so-festival-2027/",
+    "source_title": "Just So Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": {
+    "value": 68.42,
+    "label": "Adult Saturday ticket",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://www.citizenticket.com/event/just-so-festival-2027/",
+    "source_title": "Just So Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": {
+    "value": 28.07,
+    "label": "Car parking",
+    "fees": "included",
+    "note": "£26.50 plus £1.57 booking fee.",
+    "source_url": "https://www.citizenticket.com/event/just-so-festival-2027/",
+    "source_title": "Just So Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 101.43,
+    "label": "Live-in vehicle",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://www.citizenticket.com/event/just-so-festival-2027/",
+    "source_title": "Just So Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "tunes-in-the-dunes",
+   "name": "Tunes in the Dunes",
+   "start": "2027-06-11",
+   "end": "2027-06-13",
+   "dates_src": {
+    "source_url": "https://tunesinthedunes.co.uk/",
+    "source_title": "Tunes in the Dunes homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Perranporth Beach",
+   "county": "Cornwall",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://tunesinthedunes.co.uk/",
+    "source_title": "Tunes in the Dunes homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Tunes Festivals",
+   "adult": {
+    "value": 95,
+    "label": "Adult weekend with camping",
+    "fees": "included",
+    "note": "£90 plus £5 fee.",
+    "source_url": "https://tickets.tunesfestivals.com/events/tunes-in-the-dunes-2027",
+    "source_title": "Tunes in the Dunes 2027 official ticket shop",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": {
+    "value": 80,
+    "label": "Adult weekend, no camping",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://tickets.tunesfestivals.com/events/tunes-in-the-dunes-2027",
+    "source_title": "Tunes in the Dunes 2027 official ticket shop",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Child weekend camping £70 plus £5 fee.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "wychwood",
+   "name": "Wychwood Festival",
+   "start": "2027-06-04",
+   "end": "2027-06-06",
+   "dates_src": {
+    "source_url": "https://wychwoodfestival.com/",
+    "source_title": "Wychwood Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Cheltenham Racecourse",
+   "county": "Gloucestershire",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://wychwoodfestival.com/",
+    "source_title": "Wychwood Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "optional",
+   "status": "coming_soon",
+   "status_note": "Early bird has sold out. Tier 1 weekend camping is priced at £129.50 plus booking fee. Pre-sale opens at 10am on Thursday 5 November 2026 to people who registered; general sale opens at 10am on Friday 6 November. About 40% of camping tickets were still available when the pre-sale was announced.",
+   "seller": "Kaboodle",
+   "adult": {
+    "value": 129.5,
+    "label": "Tier 1 adult weekend with camping (pre-sale from 5 Nov)",
+    "fees": "extra",
+    "note": "Plus booking fee. Weekend without camping £124.50. The official booking portal lists all prices including fees.",
+    "source_url": "https://thefestivals.uk/supergrass-and-human-league-headline-wychwood-2027/",
+    "source_title": "The Festivals: Supergrass and Human League headline Wychwood 2027 (2 Nov 2026)",
+    "source_type": "press",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 124.5,
+    "label": "Tier 1 adult weekend, no camping",
+    "fees": "extra",
+    "note": "",
+    "source_url": "https://thefestivals.uk/supergrass-and-human-league-headline-wychwood-2027/",
+    "source_title": "The Festivals: Supergrass and Human League headline Wychwood 2027 (2 Nov 2026)",
+    "source_type": "press",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Age 10-15 weekend with camping £69.50; under 10s free but need a ticket.",
+   "deposit": "",
+   "extras": [
+    "Thursday entry is a separate add-on ticket (David Rodigan MBE and The Ordinary Boys play it).",
+    "Boutique camping from £145.83 for a traditional emperor tent to £252.50 for a deluxe bell tent."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "glastonbudget",
+   "name": "Glastonbudget",
+   "start": "2027-05-27",
+   "end": "2027-05-30",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/glastonbudget/",
+    "source_title": "Skiddle: Glastonbudget 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Turnpost Farm, Wymeswold",
+   "county": "Leicestershire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/glastonbudget/",
+    "source_title": "Skiddle: Glastonbudget 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Price from the payment-plan listing; the same tier is sold for full payment.",
+   "seller": "Gigantic",
+   "adult": {
+    "value": 166.95,
+    "label": "Adult (18+) weekend, includes standard camping",
+    "fees": "included",
+    "note": "£157.50 plus £9.45 booking fee.",
+    "source_url": "https://glastonbudget.gigantic.com/glastonbudget-tickets/leicestershire-turnpost-farm/2027-05-20-00-00-55379",
+    "source_title": "Gigantic: Glastonbudget 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Youth weekend £115.54.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "neighbourhood-weekender",
+   "name": "Neighbourhood Weekender",
+   "start": "2027-05-29",
+   "end": "2027-05-30",
+   "dates_src": {
+    "source_url": "https://nbhdweekender.com/information/",
+    "source_title": "Neighbourhood Weekender: Information",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Victoria Park",
+   "county": "Warrington",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/neighbourhood-weekender/",
+    "source_title": "Skiddle: Neighbourhood Weekender 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Weekend tickets on sale. No camping: it is a two-day city park festival.",
+   "seller": "See Tickets",
+   "adult": {
+    "value": 171.5,
+    "label": "Weekend ticket, Saturday and Sunday",
+    "fees": "included",
+    "note": "£155 face value plus booking fees.",
+    "source_url": "https://www.seetickets.com/event/neighbourhood-weekender/victoria-park/3646448",
+    "source_title": "See Tickets: Neighbourhood Weekender 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 171.5,
+    "label": "Weekend ticket, Saturday and Sunday",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://www.seetickets.com/event/neighbourhood-weekender/victoria-park/3646448",
+    "source_title": "See Tickets: Neighbourhood Weekender 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "parking": {
+    "value": 33,
+    "label": "Weekend car parking",
+    "fees": "included",
+    "note": "£30 face value. Parking is limited; the festival advises public transport.",
+    "source_url": "https://www.seetickets.com/event/neighbourhood-weekender/victoria-park/3646448",
+    "source_title": "See Tickets: Neighbourhood Weekender 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "campervan": null,
+   "kids": "Kids weekend ticket (10 and under) £86.25; maximum two children per adult.",
+   "deposit": "",
+   "extras": [
+    "Day tickets are on sale for Saturday 29 May or Sunday 30 May."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "belladrum",
+   "name": "Belladrum Tartan Heart Festival",
+   "start": "2027-07-29",
+   "end": "2027-07-31",
+   "dates_src": {
+    "source_url": "https://tartanheartfestival.com/faqs",
+    "source_title": "Belladrum Tartan Heart Festival: FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Belladrum Estate (IV4 7BA), near Inverness",
+   "county": "Highland",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://tartanheartfestival.com/faqs",
+    "source_title": "Belladrum Tartan Heart Festival: FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Early bird sold out; general on-sale weekend tickets available.",
+   "seller": "Gigantic",
+   "adult": {
+    "value": 253,
+    "label": "Weekend adult (18+), general on-sale, camping included",
+    "fees": "included",
+    "note": "£230 face value plus £23 booking fee. Early bird (£242) sold out.",
+    "source_url": "https://www.gigantic.com/belladrum-tickets/inverness-belladrum-estate/2027-07-29-08-00",
+    "source_title": "Gigantic: Belladrum 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Youth 13-17 early bird £198 (sold out).",
+   "deposit": "",
+   "extras": [],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "hebcelt",
+   "name": "HebCelt (Hebridean Celtic Festival)",
+   "start": "2027-07-15",
+   "end": "2027-07-17",
+   "dates_src": {
+    "source_url": "https://www.hebceltfest.com/booking",
+    "source_title": "HebCelt: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Stornoway, Isle of Lewis",
+   "county": "Na h-Eileanan Siar",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://www.hebceltfest.com/booking",
+    "source_title": "HebCelt: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Arena weekend runs Thursday to Saturday. Camping not confirmed on the tickets page.",
+   "seller": "HebCelt",
+   "adult": {
+    "value": 180,
+    "label": "Arena weekend (Thursday to Saturday)",
+    "fees": "included",
+    "note": "The page says 'Buy online with no booking fees'. Payment plans (via Skiddle) carry booking fees.",
+    "source_url": "https://www.hebceltfest.com/booking",
+    "source_title": "HebCelt: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Concession £150; youth 14-17 £115; child 6-13 £60; infant 0-5 £14.",
+   "deposit": "",
+   "extras": [],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "kelburn-garden-party",
+   "name": "Kelburn Garden Party",
+   "start": "2027-07-01",
+   "end": "2027-07-05",
+   "dates_src": {
+    "source_url": "https://www.citizenticket.com/events/kelburn-arts/kelburn-garden-party-2027/",
+    "source_title": "Kelburn Garden Party 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Kelburn Estate, Fairlie, near Largs",
+   "county": "North Ayrshire",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://www.kelburngardenparty.com/tickets/",
+    "source_title": "Kelburn Garden Party: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Tier 3 on sale. Dates are the ticket shop's opening and closing times (Thursday 4pm to Monday 1pm).",
+   "seller": "Citizen Ticket",
+   "adult": {
+    "value": 318.08,
+    "label": "Adult 4-day weekend, tier 3 (Thursday to Sunday)",
+    "fees": "included",
+    "note": "£290 plus £28.08 booking fee. Includes camping and a £10 returnable bond.",
+    "source_url": "https://www.citizenticket.com/events/kelburn-arts/kelburn-garden-party-2027/",
+    "source_title": "Kelburn Garden Party 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05",
+    "days": 4
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Youth 13-17 3-day £115.32; child 5-12 3-day £44.08.",
+   "deposit": "",
+   "extras": [
+    "Adult 3-day weekend (Friday to Sunday), tier 3: £274.24 (£250 plus £24.24 booking fee), includes camping and a £10 returnable bond."
+   ],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "eden",
+   "name": "Eden Festival",
+   "start": "2027-06-10",
+   "end": "2027-06-13",
+   "dates_src": {
+    "source_url": "https://edenfestival.citizenticket.co.uk/event/eden-festival-2027/",
+    "source_title": "Eden Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Raehills Meadows (DG11 1ET)",
+   "county": "Dumfries and Galloway",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://edenfestival.citizenticket.co.uk/event/eden-festival-2027/",
+    "source_title": "Eden Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Tier 1 not available; tier 2 on sale.",
+   "seller": "Citizen Ticket",
+   "adult": {
+    "value": 206.11,
+    "label": "Adult 4-day weekend, tier 2 (Thursday to Sunday)",
+    "fees": "included",
+    "note": "£194 plus £12.11 booking fee.",
+    "source_url": "https://edenfestival.citizenticket.co.uk/event/eden-festival-2027/",
+    "source_title": "Eden Festival 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Teen 13-17 4-day tier 2 £101.17.",
+   "deposit": "",
+   "extras": [
+    "Adult 3-day weekend (Friday to Sunday), tier 1: £158.41 (£149 plus £9.41 booking fee)."
+   ],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "party-at-the-palace",
+   "name": "Party at the Palace",
+   "start": "2027-08-07",
+   "end": "2027-08-08",
+   "dates_src": {
+    "source_url": "https://partyatthepalace.co.uk/product/buy-tickets/",
+    "source_title": "Party at the Palace: Buy tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Linlithgow Palace",
+   "county": "West Lothian",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://partyatthepalace.co.uk/",
+    "source_title": "Party at the Palace homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "",
+   "seller": "Party at the Palace",
+   "adult": {
+    "value": 86.9,
+    "label": "Earlybird weekend ticket",
+    "fees": "included",
+    "note": "£79 plus £7.90 booking fee. Full-price weekend £99 plus booking fee.",
+    "source_url": "https://partyatthepalace.co.uk/product/buy-tickets/",
+    "source_title": "Party at the Palace: Buy tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": null,
+   "day": {
+    "value": 49.5,
+    "label": "Earlybird Saturday ticket",
+    "fees": "included",
+    "note": "£45 plus £4.50 booking fee.",
+    "source_url": "https://partyatthepalace.co.uk/product/buy-tickets/",
+    "source_title": "Party at the Palace: Buy tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "doune-the-rabbit-hole",
+   "name": "Back Doune The Rabbit Hole",
+   "start": "2027-07-16",
+   "end": "2027-07-18",
+   "dates_src": {
+    "source_url": "https://www.backdounetherabbithole.co.uk/tickets/",
+    "source_title": "Back Doune The Rabbit Hole: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Cardross Estate",
+   "county": "Stirlingshire",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://www.backdounetherabbithole.co.uk/tickets/",
+    "source_title": "Back Doune The Rabbit Hole: Tickets",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Tier 1 tickets on sale. Camping is included with every festival ticket.",
+   "seller": "REBLL",
+   "adult": {
+    "value": 177.14,
+    "label": "Adult 4-day ticket, Thursday to Sunday, tier 1",
+    "fees": "included",
+    "note": "£165 face value plus £12.14 booking fee. Includes the Thursday campers' party.",
+    "source_url": "https://portal.reblltickets.com/events/back-doune-the-rabbit-hole-festival-2027",
+    "source_title": "Back Doune the Rabbit Hole 2027 official ticket shop (REBLL)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": {
+    "value": 32.69,
+    "label": "Weekend car parking",
+    "fees": "included",
+    "note": "£30 plus £2.69 booking fee.",
+    "source_url": "https://portal.reblltickets.com/events/back-doune-the-rabbit-hole-festival-2027",
+    "source_title": "Back Doune the Rabbit Hole 2027 official ticket shop (REBLL)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 80.84,
+    "label": "Live-in vehicle pass",
+    "fees": "included",
+    "note": "£75 plus £5.84 booking fee.",
+    "source_url": "https://portal.reblltickets.com/events/back-doune-the-rabbit-hole-festival-2027",
+    "source_title": "Back Doune the Rabbit Hole 2027 official ticket shop (REBLL)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Junior 4-day (4-17) £70.14 including fee; under 4s free.",
+   "deposit": "",
+   "extras": [
+    "Adult 3-day (Friday to Sunday) £150.39 including fee.",
+    "Motorcycle parking £5.94 including fee."
+   ],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "terminal-v",
+   "name": "Terminal V (Glasgow)",
+   "start": "2027-06-04",
+   "end": "2027-06-06",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/terminal-v-festival/",
+    "source_title": "Skiddle: Terminal V Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Clydeside Live, Glasgow",
+   "county": "Glasgow",
+   "region": "Scotland",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/terminal-v-festival/",
+    "source_title": "Skiddle: Terminal V Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Tickets are on sale by payment plan; the site does not yet show a sale date for full-price tickets.",
+   "seller": "Terminal V",
+   "adult": {
+    "value": 199,
+    "label": "3-day weekend ticket",
+    "fees": "extra",
+    "note": "Plus booking fee. Or five payments of £42.50 plus a £10 deposit.",
+    "source_url": "https://www.terminalv.co.uk/festival/tickets",
+    "source_title": "Terminal V: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 199,
+    "label": "3-day weekend ticket",
+    "fees": "extra",
+    "note": "",
+    "source_url": "https://www.terminalv.co.uk/festival/tickets",
+    "source_title": "Terminal V: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": {
+    "value": 65,
+    "label": "Friday day ticket",
+    "fees": "extra",
+    "note": "Saturday or Sunday £85.",
+    "source_url": "https://www.terminalv.co.uk/festival/tickets",
+    "source_title": "Terminal V: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": null,
+   "campervan": null,
+   "kids": "18+ event.",
+   "deposit": "Five payments of £42.50 plus a £10 deposit on the 3-day weekend.",
+   "extras": [
+    "2-day weekend £145.",
+    "Platinum upgrade for the 3-day weekend £99."
+   ],
+   "nation": "Scotland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "focus-wales",
+   "name": "FOCUS Wales",
+   "start": "2027-05-06",
+   "end": "2027-05-08",
+   "dates_src": {
+    "source_url": "https://www.gigantic.com/focus-wales-tickets/wrexham-various-wrexham-venues/2027-05-06-10-00",
+    "source_title": "Gigantic: FOCUS Wales 2027 standard pass (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Various venues, Wrexham",
+   "county": "Wrexham",
+   "region": "Wales",
+   "loc_src": {
+    "source_url": "https://www.gigantic.com/focus-wales-tickets/wrexham-various-wrexham-venues/2027-05-06-10-00",
+    "source_title": "Gigantic: FOCUS Wales 2027 standard pass (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "on_sale",
+   "status_note": "Multi-venue showcase festival.",
+   "seller": "Gigantic",
+   "adult": {
+    "value": 88,
+    "label": "Standard festival pass, early bird",
+    "fees": "included",
+    "note": "£80 plus £8 booking fee. The official tickets page lists it as £80 + booking fee.",
+    "source_url": "https://www.gigantic.com/focus-wales-tickets/wrexham-various-wrexham-venues/2027-05-06-10-00",
+    "source_title": "Gigantic: FOCUS Wales 2027 standard pass (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Fast track early bird pass £110 plus booking fee (official tickets page).",
+    "Delegate early bird pass £140 plus booking fee."
+   ],
+   "nation": "Wales",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "steelhouse",
+   "name": "Steelhouse Festival",
+   "start": "2027-07-23",
+   "end": "2027-07-25",
+   "dates_src": {
+    "source_url": "https://www.gigantic.com/steelhouse-festival-tickets/ebbw-vale-hafod-y-dafal-farm/2027-07-23-12-00",
+    "source_title": "Gigantic: Steelhouse Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Hafod-Y-Dafal Farm, Ebbw Vale (NP13 2ER)",
+   "county": "Blaenau Gwent",
+   "region": "Wales",
+   "loc_src": {
+    "source_url": "https://www.gigantic.com/steelhouse-festival-tickets/ebbw-vale-hafod-y-dafal-farm/2027-07-23-12-00",
+    "source_title": "Gigantic: Steelhouse Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "First release.",
+   "seller": "Gigantic",
+   "adult": {
+    "value": 178.2,
+    "label": "Weekend arena, aged 15+ (first release)",
+    "fees": "included",
+    "note": "£165 face value plus £13.20 booking fee. Camping is sold separately.",
+    "source_url": "https://www.gigantic.com/steelhouse-festival-tickets/ebbw-vale-hafod-y-dafal-farm/2027-07-23-12-00",
+    "source_title": "Gigantic: Steelhouse Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": {
+    "value": 70.2,
+    "label": "Friday day ticket, 15+",
+    "fees": "included",
+    "note": "£65 plus £5.20 booking fee.",
+    "source_url": "https://www.gigantic.com/steelhouse-festival-tickets/ebbw-vale-hafod-y-dafal-farm/2027-07-23-12-00",
+    "source_title": "Gigantic: Steelhouse Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "parking": null,
+   "campervan": null,
+   "kids": "Weekend arena 4-14 £43.20; under 4s free.",
+   "deposit": "",
+   "extras": [
+    "VIP upgrade £81 including fee."
+   ],
+   "nation": "Wales",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "gottwood",
+   "name": "Gottwood",
+   "start": "2027-06-10",
+   "end": "2027-06-13",
+   "dates_src": {
+    "source_url": "https://www.gottwood.co.uk/",
+    "source_title": "Gottwood homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Carreglwyd, Llanfaethlu, Anglesey",
+   "county": "Anglesey",
+   "region": "Wales",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/gottwood/",
+    "source_title": "Skiddle: Gottwood 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "coming_soon",
+   "status_note": "10th to 13th June 2027 at Anglesey. Tickets go on sale at 10am on Friday 6 November 2026, mailing-list only, by deposit and instalment; no price is published yet.",
+   "seller": "",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "Wales",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "stendhal",
+   "name": "Stendhal Festival",
+   "start": "2027-07-01",
+   "end": "2027-07-03",
+   "dates_src": {
+    "source_url": "https://go.kaboodle.co.uk/St3ndh@l2027",
+    "source_title": "Stendhal Festival 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Ballymully Cottage Farm, Limavady",
+   "county": "County Londonderry",
+   "region": "Northern Ireland",
+   "loc_src": {
+    "source_url": "https://www.stendhalfestival.com/",
+    "source_title": "Stendhal Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "Super early bird on sale.",
+   "seller": "Kaboodle",
+   "adult": {
+    "value": 134.55,
+    "label": "Adult weekend camping, 3 nights (Thursday to Saturday), super early bird",
+    "fees": "included",
+    "note": "£130 face value plus £4.55 booking fee. A £1 transaction fee is added per booking.",
+    "source_url": "https://go.kaboodle.co.uk/St3ndh@l2027",
+    "source_title": "Stendhal Festival 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "noncamp": {
+    "value": 87.98,
+    "label": "Adult non-camping, 2 days (Friday and Saturday), super early bird",
+    "fees": "included",
+    "note": "Covers 2 of the 3 days.",
+    "source_url": "https://go.kaboodle.co.uk/St3ndh@l2027",
+    "source_title": "Stendhal Festival 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Adult camping 2 nights (Friday to Saturday), super early bird £108.68."
+   ],
+   "nation": "Northern Ireland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "master-mcgrath",
+   "name": "Master McGrath Festival",
+   "start": "2027-05-21",
+   "end": "2027-05-22",
+   "dates_src": {
+    "source_url": "https://mastermcgrathfestival.co.uk/",
+    "source_title": "Master McGrath Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Brownlow Castle, Lurgan",
+   "county": "County Armagh",
+   "region": "Northern Ireland",
+   "loc_src": {
+    "source_url": "https://mastermcgrathfestival.co.uk/",
+    "source_title": "Master McGrath Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "coming_soon",
+   "status_note": "Line-up and prices are still listed as 'coming soon'. Tickets are sold through Eventbrite and two Lurgan shops.",
+   "seller": "",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "Northern Ireland",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "kendal-calling",
+   "name": "Kendal Calling",
+   "start": "2027-07-29",
+   "end": "2027-08-01",
+   "dates_src": {
+    "source_url": "https://kendalcalling.co.uk/",
+    "source_title": "Kendal Calling homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Lowther Deer Park, near Penrith",
+   "county": "Cumbria",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://kendalcalling.co.uk/",
+    "source_title": "Kendal Calling homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Release 5 adult weekend tickets on sale; live-in vehicles and two camping fields are sold out.",
+   "seller": "See Tickets",
+   "adult": {
+    "value": 242.74,
+    "label": "Adult weekend camping, release 5",
+    "fees": "included",
+    "note": "£229 face value plus booking fees.",
+    "source_url": "https://kendalcalling.seetickets.com/event/kendal-calling-2027/lowther-deer-park/3699840",
+    "source_title": "See Tickets: Kendal Calling 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Teen 11-15 weekend camping £128.95; child 6-10 £47.50; under 5 £11.",
+   "deposit": "Instalment plans available at checkout; from £22.80 a month.",
+   "extras": [
+    "Thursday add-on is sold as a separate ticket.",
+    "Live-in vehicle passes, Emperors Field and Great Plains camping are sold out.",
+    "Deer Lodge boutique camping from £775."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "y-not",
+   "name": "Y Not Festival",
+   "start": "2027-07-29",
+   "end": "2027-08-01",
+   "dates_src": {
+    "source_url": "https://ynotfestival.com/",
+    "source_title": "Y Not Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Pikehall, near Matlock",
+   "county": "Derbyshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/Y-Not-Festival/",
+    "source_title": "Skiddle: Y Not Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "Weekend tickets cover Friday to Sunday and start at £212 including all fees; Thursday entry costs £55 more. The site's structured data and its official coach partner give 29 July to 1 August 2027. The FAQ's 'Thursday 31th July' cannot be right because 31 July 2027 is a Saturday; the Thursday of that weekend is 29 July, which is what the Thursday entry upgrade applies to.",
+   "seller": "Y Not Festival",
+   "adult": {
+    "value": 212,
+    "label": "Weekend, Friday to Sunday entry and camping (from)",
+    "fees": "unknown",
+    "note": "Includes all fees. The ticket page shows this as the 'from' price for the Friday to Sunday weekend ticket.",
+    "source_url": "https://ynotfestival.com/tickets/",
+    "source_title": "Y Not Festival: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": {
+    "value": 30,
+    "label": "Parking pass in advance",
+    "fees": "extra",
+    "note": "£30 plus booking fee.",
+    "source_url": "https://ynotfestival.com/faqs/",
+    "source_title": "Y Not Festival: FAQs",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "campervan": {
+    "value": 180,
+    "label": "Live-in vehicle",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://ynotfestival.com/tickets/",
+    "source_title": "Y Not Festival: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Weekend plus Thursday £265 including all fees.",
+    "Thursday entry upgrade £55.",
+    "Live-in vehicle pass from £180.",
+    "Paradise Peaks upgrade from £315."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "gloworm",
+   "name": "Gloworm Festival",
+   "start": "2027-08-13",
+   "end": "2027-08-15",
+   "dates_src": {
+    "source_url": "https://www.gigantic.com/gloworm-festival-tickets/nottinghamshire-thoresby-park/2027-08-13-17-00",
+    "source_title": "Gigantic: Gloworm Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Thoresby Park (NG22 9EP)",
+   "county": "Nottinghamshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://www.gigantic.com/gloworm-festival-tickets/nottinghamshire-thoresby-park/2027-08-13-17-00",
+    "source_title": "Gigantic: Gloworm Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "Tier 1. Family festival.",
+   "seller": "Gigantic",
+   "adult": {
+    "value": 148.5,
+    "label": "Adult weekend ticket with camping (tier 1)",
+    "fees": "included",
+    "note": "£135 face value plus £13.50 booking fee. Includes 1 parking space per tent pitch.",
+    "source_url": "https://www.gigantic.com/gloworm-festival-tickets/nottinghamshire-thoresby-park/2027-08-13-17-00",
+    "source_title": "Gigantic: Gloworm Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 88,
+    "label": "Adult weekend entry, Saturday and Sunday, no camping",
+    "fees": "included",
+    "note": "£80 plus £8 booking fee. Covers 2 of the 3 days.",
+    "source_url": "https://www.gigantic.com/gloworm-festival-tickets/nottinghamshire-thoresby-park/2027-08-13-17-00",
+    "source_title": "Gigantic: Gloworm Festival 2027 (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Family camping offer (2 adults, 2 children) £506 including fees."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "elderflower-fields",
+   "name": "Elderflower Fields",
+   "start": "2027-05-28",
+   "end": "2027-05-31",
+   "dates_src": {
+    "source_url": "https://www.citizenticket.com/events/elderflower-fields/elderflower-fields-2027/",
+    "source_title": "Elderflower Fields 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Pippingford Park, Nutley",
+   "county": "East Sussex",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/elderflower-fields/",
+    "source_title": "Skiddle: Elderflower Fields 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "included",
+   "status": "on_sale",
+   "status_note": "1st release. Family festival.",
+   "seller": "Citizen Ticket",
+   "adult": {
+    "value": 175.5,
+    "label": "Adult weekend, 1st release, standard camping included",
+    "fees": "included",
+    "note": "£165 plus £10.50 booking fee. Final release £244.40.",
+    "source_url": "https://www.citizenticket.com/events/elderflower-fields/elderflower-fields-2027/",
+    "source_title": "Elderflower Fields 2027 on Citizen Ticket (official)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Child 4-16 weekend £96 (1st release); under 4s free.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "mighty-hoopla",
+   "name": "Mighty Hoopla",
+   "start": "2027-06-05",
+   "end": "2027-06-06",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/mighty-hoopla/",
+    "source_title": "Skiddle: Mighty Hoopla 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Brockwell Park",
+   "county": "London",
+   "region": "London",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/mighty-hoopla/",
+    "source_title": "Skiddle: Mighty Hoopla 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "Saturday is sold out; Sunday and weekend tickets are on sale.",
+   "seller": "Kaboodle",
+   "adult": {
+    "value": 204.5,
+    "label": "Weekend ticket, Saturday and Sunday",
+    "fees": "included",
+    "note": "£189.50 face value plus £15 booking fee. A £1 transaction fee is added per order.",
+    "source_url": "https://go.kaboodle.co.uk/MH-2027",
+    "source_title": "Mighty Hoopla 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 204.5,
+    "label": "Weekend ticket, Saturday and Sunday",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://go.kaboodle.co.uk/MH-2027",
+    "source_title": "Mighty Hoopla 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": {
+    "value": 114.5,
+    "label": "Sunday general admission",
+    "fees": "included",
+    "note": "£104.50 face value plus £10 booking fee. Saturday day tickets are sold out.",
+    "source_url": "https://go.kaboodle.co.uk/MH-2027",
+    "source_title": "Mighty Hoopla 2027 official ticket shop (Kaboodle)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": null,
+   "campervan": null,
+   "kids": "18+ event.",
+   "deposit": "",
+   "extras": [
+    "Groupla: six weekend tickets for the price of five, £169.50 each.",
+    "Pre-2pm Sunday entry £94.50."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "love-saves-the-day",
+   "name": "Love Saves The Day",
+   "start": "2027-05-29",
+   "end": "2027-05-30",
+   "dates_src": {
+    "source_url": "https://tickets.lovesavestheday.org/",
+    "source_title": "Love Saves The Day 2027 tickets (official Eventcube shop)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Ashton Court",
+   "county": "Bristol",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://tickets.lovesavestheday.org/",
+    "source_title": "Love Saves The Day 2027 tickets (official Eventcube shop)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "none",
+   "status": "coming_soon",
+   "status_note": "Tickets go on sale on Friday 6 November 2026 through the festival's own Eventcube shop. Payment plans start from a £20 deposit plus fees. No 2027 price is published yet.",
+   "seller": "Eventcube",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "field-day",
+   "name": "Field Day",
+   "start": "2027-05-29",
+   "end": "2027-05-29",
+   "dates_src": {
+    "source_url": "https://www.fielddayfestivals.com/",
+    "source_title": "Field Day homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Brockwell Park",
+   "county": "London",
+   "region": "London",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/field-day/",
+    "source_title": "Skiddle: Field Day 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "unknown",
+   "status_note": "2027 edition is Saturday 29 May at Brockwell Park. The site is taking sign-ups for the next wave of tickets; no price is published yet.",
+   "seller": "",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "the-great-escape",
+   "name": "The Great Escape",
+   "start": "2027-05-12",
+   "end": "2027-05-15",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/the-great-escape/",
+    "source_title": "Skiddle: The Great Escape 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Brighton Dome and various venues",
+   "county": "Brighton",
+   "region": "South East England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/the-great-escape/",
+    "source_title": "Skiddle: The Great Escape 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "on_sale",
+   "status_note": "Super early bird and early bird tickets are sold out. The 2027 saver ticket and the 4-day pass are on sale.",
+   "seller": "DICE / Ticketmaster",
+   "adult": {
+    "value": 104.17,
+    "label": "4-day festival pass, Wednesday to Saturday",
+    "fees": "included",
+    "note": "Price shown as 'from' on DICE, which says the price you see is the price you pay. Access to all showcases across 30+ venues.",
+    "source_url": "https://dice.fm/event/bb7r3o-the-great-escape-festival-2027-4-day-pass-12th-may-various-venues-brighton-brighton-tickets",
+    "source_title": "DICE: The Great Escape 2027 4-day pass (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 104.17,
+    "label": "4-day festival pass, Wednesday to Saturday",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://dice.fm/event/bb7r3o-the-great-escape-festival-2027-4-day-pass-12th-may-various-venues-brighton-brighton-tickets",
+    "source_title": "DICE: The Great Escape 2027 4-day pass (official agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Under 16s must be with an adult; no under 5s.",
+   "deposit": "",
+   "extras": [
+    "Single-day and two-day tickets are also sold.",
+    "Spotlight Shows are ticketed separately."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "liverpool-sound-city",
+   "name": "Liverpool Sound City",
+   "start": "2027-05-01",
+   "end": "2027-05-02",
+   "dates_src": {
+    "source_url": "https://www.liverpoolsoundcity.co.uk/tickets",
+    "source_title": "Liverpool Sound City: Tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Multiple venues",
+   "county": "Liverpool",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/liverpool-sound-city/",
+    "source_title": "Skiddle: Liverpool Sound City 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "unknown",
+   "status_note": "Festival weekend ticket covers Saturday 1 and Sunday 2 May 2027 across all venues. Sold via See Tickets, whose listings would not load for us; no price is published on the festival site.",
+   "seller": "",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "parklands",
+   "name": "Parklands Festival",
+   "start": "2027-06-18",
+   "end": "2027-06-20",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/parklands-festival/",
+    "source_title": "Skiddle: Parklands Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Haughton Hall, Shifnal",
+   "county": "Shropshire",
+   "region": "West Midlands",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/parklands-festival/",
+    "source_title": "Skiddle: Parklands Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "Early bird tickets on sale. 18+ event.",
+   "seller": "Fatsoma",
+   "adult": {
+    "value": 66,
+    "label": "Full weekend ticket, early bird",
+    "fees": "included",
+    "note": "£60 plus £6 booking fee.",
+    "source_url": "https://fatso.ma/fvzsg",
+    "source_title": "Parklands Festival 2027 tickets (official Fatsoma page)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": {
+    "value": 27.5,
+    "label": "Friday only, early bird",
+    "fees": "included",
+    "note": "£25 plus £2.50 booking fee. Saturday £44 including fee; Sunday £16.50.",
+    "source_url": "https://fatso.ma/fvzsg",
+    "source_title": "Parklands Festival 2027 tickets (official Fatsoma page)",
+    "source_type": "agent",
+    "checked": "2026-11-05"
+   },
+   "parking": null,
+   "campervan": null,
+   "kids": "18+ event.",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "beardy-folk",
+   "name": "Beardy Folk Festival",
+   "start": "2027-06-17",
+   "end": "2027-06-20",
+   "dates_src": {
+    "source_url": "https://www.beardyfolkfestival.co.uk/",
+    "source_title": "Beardy Folk Festival homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Hopton Court, near Ludlow",
+   "county": "Shropshire",
+   "region": "West Midlands",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/beardy-folk-festival/",
+    "source_title": "Skiddle: Beardy Folk Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "on_sale",
+   "status_note": "3-day weekend tickets and day tickets have good availability; 4-day weekend tickets are sold out.",
+   "seller": "Ticket Tailor",
+   "adult": {
+    "value": 168,
+    "label": "Adult 3-day weekend ticket, tier 2",
+    "fees": "included",
+    "note": "3-day weekend covers Friday to Sunday. The 4-day ticket that includes Thursday is sold out.",
+    "source_url": "https://buytickets.at/beardyfolkfestival/2339621",
+    "source_title": "Beardy Folk Festival 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": {
+    "value": 57.75,
+    "label": "Adult day ticket",
+    "fees": "included",
+    "note": "Saturday day ticket £63.",
+    "source_url": "https://buytickets.at/beardyfolkfestival/2339621",
+    "source_title": "Beardy Folk Festival 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": {
+    "value": 57.75,
+    "label": "Motorhome, car with caravan or car with tent pitch",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://buytickets.at/beardyfolkfestival/2339621",
+    "source_title": "Beardy Folk Festival 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "campervan": {
+    "value": 57.75,
+    "label": "Motorhome, car with caravan or car with tent pitch",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://buytickets.at/beardyfolkfestival/2339621",
+    "source_title": "Beardy Folk Festival 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Youth 13-17 weekend £84; child 5-12 £21; under 5s free.",
+   "deposit": "",
+   "extras": [
+    "2027 festival programme £5."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "exile",
+   "name": "Exile Festival",
+   "start": "2027-06-25",
+   "end": "2027-06-27",
+   "dates_src": {
+    "source_url": "https://www.exilemusicfestival.co.uk/",
+    "source_title": "Exile Music Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Sabine Hay Farm, Matlock",
+   "county": "Derbyshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/exile-festival/",
+    "source_title": "Skiddle: Exile Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "unknown",
+   "status": "coming_soon",
+   "status_note": "Early bird tickets go on sale in late November or early December 2026; no 2027 price is published yet.",
+   "seller": "",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "towerfest",
+   "name": "Towerfest",
+   "start": "2027-06-17",
+   "end": "2027-06-20",
+   "dates_src": {
+    "source_url": "https://www.towerfest.co.uk/",
+    "source_title": "Towerfest homepage",
+    "source_type": "official",
+    "checked": "2026-10-31"
+   },
+   "venue": "Drax Sports and Social Club, Selby",
+   "county": "North Yorkshire",
+   "region": "Yorkshire and the Humber",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/towerfest/",
+    "source_title": "Skiddle: Towerfest 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "Booking for 2027 is fully open. The festival sold out in 2025 and 2026.",
+   "seller": "Towerfest",
+   "adult": {
+    "value": 80,
+    "label": "Full weekend ticket, Friday to Sunday",
+    "fees": "unknown",
+    "note": "",
+    "source_url": "https://www.towerfest.co.uk/ticket-info--------124--------Tickets",
+    "source_title": "Towerfest: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": null,
+   "day": {
+    "value": 25,
+    "label": "Single day ticket",
+    "fees": "unknown",
+    "note": "Friday, Saturday or Sunday. Two-day tickets £50.",
+    "source_url": "https://www.towerfest.co.uk/ticket-info--------124--------Tickets",
+    "source_title": "Towerfest: 2027 tickets",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [
+    "Friday and Saturday £50; Saturday and Sunday £50.",
+    "Camping pitches from £40."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "buckle-and-boots",
+   "name": "Buckle & Boots",
+   "start": "2027-05-27",
+   "end": "2027-05-30",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/buckle-and-boots/",
+    "source_title": "Skiddle: Buckle & Boots 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Whitebottom Farm, Marple Bridge",
+   "county": "Greater Manchester",
+   "region": "North West England",
+   "loc_src": {
+    "source_url": "https://www.tickettailor.com/events/bucklebootsfestival/2213988",
+    "source_title": "Buckle & Boots 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "available",
+   "status": "on_sale",
+   "status_note": "Tickets on sale tier by tier. Camping is included in the weekend ticket; the four-day long weekend ticket costs more.",
+   "seller": "Ticket Tailor",
+   "adult": {
+    "value": 142,
+    "label": "Early bird weekend adult with camping, Friday to Monday",
+    "fees": "included",
+    "note": "Super early bird was £137. The shop also lists tier 1 at £152 and final release at £162, so the price rises as tiers sell.",
+    "source_url": "https://www.tickettailor.com/events/bucklebootsfestival/2213988",
+    "source_title": "Buckle & Boots 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "noncamp": {
+    "value": 122,
+    "label": "Early bird weekend adult, no camping, Friday to Sunday",
+    "fees": "included",
+    "note": "Super early bird £117; tier 1 £132.",
+    "source_url": "https://www.tickettailor.com/events/bucklebootsfestival/2213988",
+    "source_title": "Buckle & Boots 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Child 15 and under with camping £82 early bird; £92 long weekend.",
+   "deposit": "",
+   "extras": [
+    "Long weekend adult with camping (Thursday to Monday) £162 early bird.",
+    "Long weekend adult, no camping £142 early bird.",
+    "Glamping is booked separately."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "dot-to-dot",
+   "name": "Dot to Dot Festival",
+   "start": "2027-05-29",
+   "end": "2027-05-30",
+   "dates_src": {
+    "source_url": "https://www.skiddle.com/festivals/dot-to-dot-festival/",
+    "source_title": "Skiddle: Dot to Dot Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "venue": "Multiple venues, Bristol and Nottingham",
+   "county": "",
+   "region": "South West England",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/dot-to-dot-festival/",
+    "source_title": "Skiddle: Dot to Dot Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "on_sale",
+   "status_note": "Early bird tickets on sale for Bristol (29 May) and Nottingham (30 May); one wristband covers all venues in that city.",
+   "seller": "Gigantic",
+   "adult": {
+    "value": 24.75,
+    "label": "Early bird day ticket, one city",
+    "fees": "included",
+    "note": "£22.50 face value plus £2.25 booking fee. One ticket covers every venue in that city on that day; Bristol is Saturday 29 May, Nottingham Sunday 30 May. 14+.",
+    "source_url": "https://www.gigantic.com/dot-to-dot-festival-tickets/nottingham-various-nottingham-venues/2027-05-30-12-00",
+    "source_title": "Gigantic: Dot To Dot Festival Nottingham 2027 (ticket agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05",
+    "days": 1
+   },
+   "noncamp": {
+    "value": 24.75,
+    "label": "Early bird day ticket, one city",
+    "fees": "included",
+    "note": "",
+    "source_url": "https://www.gigantic.com/dot-to-dot-festival-tickets/nottingham-various-nottingham-venues/2027-05-30-12-00",
+    "source_title": "Gigantic: Dot To Dot Festival Nottingham 2027 (ticket agent)",
+    "source_type": "agent",
+    "checked": "2026-11-05",
+    "days": 1
+   },
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "Minimum age 14.",
+   "deposit": "",
+   "extras": [
+    "Bristol (Saturday 29 May) and Nottingham (Sunday 30 May) are ticketed separately."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "gate-to-southwell",
+   "name": "Gate to Southwell Festival",
+   "start": "2027-07-01",
+   "end": "2027-07-04",
+   "dates_src": {
+    "source_url": "https://www.gtsf.uk/",
+    "source_title": "Gate to Southwell Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Eakring Lane, Kirklington, near Newark",
+   "county": "Nottinghamshire",
+   "region": "East Midlands",
+   "loc_src": {
+    "source_url": "https://www.gtsf.uk/",
+    "source_title": "Gate to Southwell Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "camping": "optional",
+   "status": "on_sale",
+   "status_note": "Tier 2 on sale after early bird and tier 1 sold out. Camping and a pitch ticket are extra.",
+   "seller": "Ticket Tailor",
+   "adult": {
+    "value": 169.05,
+    "label": "Adult weekend, Friday to Sunday, tier 2",
+    "fees": "included",
+    "note": "£161 face value plus the 5% booking fee. The festival site confirms tier 2 is the tier on sale.",
+    "source_url": "https://buytickets.at/gatetosouthwellfestival/2356823",
+    "source_title": "GTSF 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05",
+    "days": 3
+   },
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": {
+    "value": 25.2,
+    "label": "Adult camping ticket, per person",
+    "fees": "included",
+    "note": "£24 plus 5% fee. A standard pitch (£11.55) or large pitch (£27.30) is also required per pitch.",
+    "source_url": "https://buytickets.at/gatetosouthwellfestival/2356823",
+    "source_title": "GTSF 2027 official ticket shop (Ticket Tailor)",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "kids": "Youth weekend (12-17) £51.71 including fee; under 12s free but need a pass.",
+   "deposit": "",
+   "extras": [
+    "Adult weekend extra, Thursday to Sunday, tier 2 £191.10 including fee.",
+    "Wednesday evening add-on £16.80 including fee.",
+    "Standard campsite pitch £11.55; large pitch £27.30; both including fee."
+   ],
+   "nation": "England",
+   "dates_basis": "festival"
+  },
+  {
+   "id": "mint-festival",
+   "name": "Mint Festival",
+   "start": "2027-05-01",
+   "end": "2027-05-02",
+   "dates_src": {
+    "source_url": "https://mintfestival.co.uk/",
+    "source_title": "Mint Festival homepage",
+    "source_type": "official",
+    "checked": "2026-11-05"
+   },
+   "venue": "Newsam Green Farm",
+   "county": "Leeds",
+   "region": "Yorkshire and the Humber",
+   "loc_src": {
+    "source_url": "https://www.skiddle.com/festivals/mint-festival/",
+    "source_title": "Skiddle: Mint Festival 2027",
+    "source_type": "agent",
+    "checked": "2026-10-31"
+   },
+   "camping": "none",
+   "status": "on_sale",
+   "status_note": "Presale went on sale at 11am on Wednesday 4 November 2026 (half price for mailing-list sign-ups) but the site does not publish the price.",
+   "seller": "",
+   "adult": null,
+   "noncamp": null,
+   "day": null,
+   "parking": null,
+   "campervan": null,
+   "kids": "",
+   "deposit": "",
+   "extras": [],
+   "nation": "England",
+   "dates_basis": "festival"
+  }
+ ]
+}"""
+
+data = json.loads(JSON_TEXT)
+out = pathlib.Path(__file__).resolve().parent.parent / "data" / "festivals.json"
+out.write_text(json.dumps(data, indent=1, ensure_ascii=False))
+print(f"wrote {out} ({len(data['festivals'])} festivals, {sum(1 for f in data['festivals'] if f.get('adult'))} priced)")
